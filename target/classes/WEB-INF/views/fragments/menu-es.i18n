@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-﻿# master.menu #################################################################
+# master.menu #################################################################
 
 master.menu.home = Inicio
 master.menu.sign-up = Registrarse
@@ -20,6 +20,10 @@ master.menu.sign-out = Salir
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.antquiher1 = 54185066X: Quijano Herrera, Antonio
+master.menu.anonymous.alfcadmor = 49134556R: Cadenas Morales, Alfonso
+master.menu.anonymous.alefrarod = 53772321T: Fraile Rodríguez, Alejandro
+master.menu.anonymous.jualopqui1 = 53769416Q: Lopez Quiros, Juan
+master.menu.anonymous.diecrequi = 30260025Y: Crespo Quinta, Diego
 
 # master.menu.administrator ###################################################
 
@@ -39,7 +43,7 @@ master.menu.provider.favourite-link = Enlace favorito
 
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
-
+master.menu.anonymous.diecrequi = 30260025Y: Crespo Quinta, Diego
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
