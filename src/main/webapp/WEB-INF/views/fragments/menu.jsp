@@ -21,6 +21,9 @@
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.alefrarod" action="https://www.realbetisbalompie.es"/>
+			<acme:menu-suboption code="master.menu.anonymous.pedolirod" action="https://www.thelordoftheguides.com/lost-ark/guias/"/>
+			<acme:menu-suboption code="master.menu.anonymous.jualopqui1" action="https://wtfhappenedin1971.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.diecrequi" action="https://magic.wizards.com/es"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
