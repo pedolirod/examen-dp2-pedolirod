@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
@@ -58,8 +57,6 @@ public class Patronage extends AbstractEntity{
 	protected String link;
 	
 	
-	@OneToMany
-	protected String sequenceNumber;
 	
 	
 }

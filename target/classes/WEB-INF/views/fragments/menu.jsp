@@ -23,6 +23,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.antquiher1" action="https://eu4.paradoxwikis.com/Achievements"/>
 			<acme:menu-suboption code="master.menu.anonymous.alfcadmor" action="https://www.primevideo.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.alefrarod" action="https://www.realbetisbalompie.es"/>
+			<acme:menu-suboption code="master.menu.anonymous.pedolirod" action="https://www.thelordoftheguides.com/lost-ark/guias/"/>
 			<acme:menu-suboption code="master.menu.anonymous.jualopqui1" action="https://wtfhappenedin1971.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.diecrequi" action="https://magic.wizards.com/es"/>
 		</acme:menu-option>
