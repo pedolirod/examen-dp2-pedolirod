@@ -1,6 +1,5 @@
 package acme.artifact;
 
-import java.awt.Toolkit;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -34,7 +33,7 @@ public class PartOf extends AbstractEntity{
 	@NotNull
 	@Valid
 	@ManyToOne(optional=false)
-	protected Toolkit toolkit;
+	protected ToolKit toolkit;
 	
 	
 

@@ -3,8 +3,6 @@ package acme.patronDashboard;
 import java.io.Serializable;
 import java.util.Map;
 
-import javax.persistence.Entity;
-
 import org.springframework.data.util.Pair;
 
 import acme.datatypes.StatusType;
@@ -12,7 +10,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-@Entity
 @Getter
 @Setter
 public class AdminDashboard implements Serializable{
