@@ -56,7 +56,17 @@ public class Patronage extends AbstractEntity{
 	@URL
 	protected String link;
 	
+	// Relationships ----------------------------------------------------------
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Patron			patron;
 	
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Patron			inventor;
 	
 	
 }
