@@ -18,7 +18,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Annoucenment extends AbstractEntity{
+public class Announcement extends AbstractEntity{
 
 	//Serialisation identifier
 	
@@ -32,15 +32,15 @@ public class Annoucenment extends AbstractEntity{
 		protected Date creationMoment;
 		
 		@NotBlank
-		@Length(min=1,max=101)
+		@Length(min=1,max=100)
 		protected String title;
 		
 		@NotBlank
-		@Length(min=1,max=256)
+		@Length(min=1,max=255)
 		protected String body;
 		
 		
-		protected Boolean flag;
+		protected boolean flag;
 		
 		
 		@URL
