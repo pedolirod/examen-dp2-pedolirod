@@ -2,9 +2,7 @@ package acme.systemSetting;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 
-import org.hibernate.type.CurrencyType;
 import org.hibernate.validator.constraints.Range;
 
 import acme.framework.entities.AbstractEntity;
@@ -14,7 +12,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class systemSetting extends AbstractEntity{
+public class SystemSetting extends AbstractEntity{
 
 	
 	 //Serialisation identifier -----------------------------------------------
@@ -33,14 +31,13 @@ public class systemSetting extends AbstractEntity{
 		protected Integer strongSpamThreshold;
 		
 		
-		protected CurrencyType currency;
+		protected String defaultCurrency;
 		
-		@Pattern(regexp = "^[a-zA-Z0-9]{1,64}(,s[a-zA-Z0-9]{1,64})$",  message = "default.error.conversion")
+		protected String acceptedCurrencies;
+		
 		@NotBlank
 		protected String weakSpam;
 		
-		
-		@Pattern(regexp = "^[a-zA-Z0-9]{1,64}(,s[a-zA-Z0-9]{1,64})$",  message = "default.error.conversion")
 		@NotBlank
 		protected String strongSpam;
 }

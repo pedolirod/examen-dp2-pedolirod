@@ -63,7 +63,7 @@ public class Artifact extends AbstractEntity{
 	//Relationships
 	@NotNull
 	@Valid
-	@ManyToOne(optional=true)
+	@ManyToOne(optional=false)
 	protected Inventor inventor;
 	
 	
