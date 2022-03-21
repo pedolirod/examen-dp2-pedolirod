@@ -55,6 +55,7 @@ public class Artifact extends AbstractEntity{
 	
 	protected ArtifactType type;
 	
+
 	
 	
 	
