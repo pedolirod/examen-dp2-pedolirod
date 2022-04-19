@@ -57,3 +57,7 @@ master.menu.user-account.become-consumer = Hazte consumidor
 # master.menu.provider ########################################################
 
 master.menu.announcement = Anuncio
+
+# any.menu.artifact ########################################################
+
+any.menu.artifact = Útiles

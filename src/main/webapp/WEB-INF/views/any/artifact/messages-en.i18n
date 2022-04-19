@@ -8,13 +8,13 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-any.tool.form.label.name = Name
-any.tool.form.label.code = Code
-any.tool.form.label.technology = Technology
-any.tool.form.label.description = Description
-any.tool.form.label.retailPrice = Retail price
-any.tool.form.label.link = Link
+any.artifact.form.label.name = Name
+any.artifact.form.label.code = Code
+any.artifact.form.label.technology = Technology
+any.artifact.form.label.description = Description
+any.artifact.form.label.retailPrice = RetailPrice
+any.artifact.form.label.link = Link
 
-any.tool.list.label.name = Name
-any.tool.list.label.code = Code
-any.tool.list.label.description = Description
+any.artifact.list.label.name = Name
+any.artifact.list.label.code = Code
+any.artifact.list.label.description = Description
