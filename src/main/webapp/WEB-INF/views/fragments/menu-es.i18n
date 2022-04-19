@@ -56,4 +56,9 @@ master.menu.user-account.become-consumer = Hazte consumidor
 
 # master.menu.provider ########################################################
 
+# master.menu.announcement ########################################################
 master.menu.announcement = Anuncio
+
+# master.menu.tool-kit ########################################################
+master.menu.tool-kit = Caja de Herramientas
+

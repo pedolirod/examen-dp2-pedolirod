@@ -56,4 +56,9 @@ master.menu.user-account.become-consumer = Become a consumer
 
 # master.menu.provider ########################################################
 
+# master.menu.announcement ########################################################
 master.menu.announcement = Announcement
+
+# master.menu.tool-kit ########################################################
+master.menu.tool-kit = ToolKit
+
