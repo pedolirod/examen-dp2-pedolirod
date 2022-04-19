@@ -16,8 +16,10 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form readonly="true">
-	<acme:input-textbox code="authenticated.announcement.form.label.creationMoment" path="creationMoment"/>	
-	<acme:input-textbox code="authenticated.announcement.form.label.title" path="title"/>	
-	<acme:input-textarea code="authenticated.announcement.form.label.body" path="body"/>
-	<acme:input-textbox code="authenticated.announcement.form.label.link" path="link"/>
+	<acme:input-textbox code="any.artifact.form.label.name" path="name"/>	
+	<acme:input-textbox code="any.artifact.form.label.code" path="code"/>	
+	<acme:input-textarea code="any.artifact.form.label.technology" path="technology"/>
+	<acme:input-textbox code="any.artifact.form.label.description" path="description"/>
+	<acme:input-textbox code="any.artifact.form.label.retailPrice" path="retail price"/>
+	<acme:input-textbox code="any.artifact.form.label.link" path="link"/>
 </acme:form>
