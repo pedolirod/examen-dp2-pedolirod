@@ -13,6 +13,7 @@ any.toolkit.form.label.title = Título
 any.toolkit.form.label.description = Descripción
 any.toolkit.form.label.assemblyNotes = Notas de ensamblaje
 any.toolkit.form.label.link = Enlace
+any.toolkit.form.button.partOf = Artefactos
 
 any.toolkit.list.label.code = Código
 any.toolkit.list.label.title = Título
