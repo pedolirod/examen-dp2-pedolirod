@@ -10,22 +10,26 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Any;
 
 @Controller
-public class anyToolController extends AbstractController<Any, Artifact> {
+public class anyArtifactController extends AbstractController<Any, Artifact> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected anyToolListService	listService;
+	protected anyToolListService	listToolService;
+	
+	@Autowired
+	protected anyComponentListService	listComponentService;
 
 	@Autowired
-	protected anyToolShowService	showService;
+	protected anyArtifactShowService	showService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("list", this.listService);
+		super.addCommand("list-tool","list", this.listToolService);
+		super.addCommand("list-component","list", this.listComponentService);
 		super.addCommand("show", this.showService);
 	}
 
