@@ -12,7 +12,7 @@ any.artifact.form.label.name = Name
 any.artifact.form.label.code = Code
 any.artifact.form.label.technology = Technology
 any.artifact.form.label.description = Description
-any.artifact.form.label.retailPrice = RetailPrice
+any.artifact.form.label.retail-price = Retail price
 any.artifact.form.label.link = Link
 
 any.artifact.list.label.name = Name

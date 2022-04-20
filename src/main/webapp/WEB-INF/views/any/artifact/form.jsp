@@ -20,6 +20,6 @@
 	<acme:input-textbox code="any.artifact.form.label.code" path="code"/>	
 	<acme:input-textarea code="any.artifact.form.label.technology" path="technology"/>
 	<acme:input-textbox code="any.artifact.form.label.description" path="description"/>
-	<acme:input-textbox code="any.artifact.form.label.retailPrice" path="retail price"/>
+	<acme:input-textbox code="any.artifact.form.label.retail-price" path="retailPrice"/>
 	<acme:input-textbox code="any.artifact.form.label.link" path="link"/>
 </acme:form>

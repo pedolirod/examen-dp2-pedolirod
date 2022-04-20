@@ -44,8 +44,10 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
-		
-		<acme:menu-option code="any.menu.artifact" action="/any/artifact/list" access="isAnonymous()"/>
+		<acme:menu-option code="any.menu.artifact" access="isAnonymous()">
+			<acme:menu-suboption code="any.menu.artifact.tool" action="/any/artifact/list-tool"/>
+			<acme:menu-suboption code="any.menu.artifact.component" action="/any/artifact/list-component"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>

@@ -60,4 +60,6 @@ master.menu.announcement = Announcement
 
 # any.menu.artifact ########################################################
 
-any.menu.artifact = Tools
+any.menu.artifact = Artifact
+any.menu.artifact.tool = Tool
+any.menu.artifact.component = Component
