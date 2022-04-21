@@ -48,6 +48,13 @@
 			<acme:menu-suboption code="any.menu.artifact.tool" action="/any/artifact/list-tool"/>
 			<acme:menu-suboption code="any.menu.artifact.component" action="/any/artifact/list-component"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="inventor.menu.artifact" access="hasRole('Inventor')">
+			<acme:menu-suboption code="inventor.menu.artifact.tool" action="/inventor/artifact/list-tool"/>
+			<acme:menu-suboption code="inventor.menu.artifact.component" action="/inventor/artifact/list-component"/>
+		</acme:menu-option>
+		
+		
 	</acme:menu-left>
 
 	<acme:menu-right>

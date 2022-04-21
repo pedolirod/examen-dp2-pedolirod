@@ -8,4 +8,13 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+inventor.artifact.form.label.name = Nombre
+inventor.artifact.form.label.code = Código
+inventor.artifact.form.label.technology = Tecnología
+inventor.artifact.form.label.description = Descripcion
+inventor.artifact.form.label.retail-price = Precio al por menor 
+inventor.artifact.form.label.link = Enlace
 
+inventor.artifact.list.label.name = Nombre
+inventor.artifact.list.label.code = Código
+inventor.artifact.list.label.description = Descripcion
