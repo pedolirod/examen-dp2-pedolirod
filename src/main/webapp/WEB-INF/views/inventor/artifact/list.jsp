@@ -16,9 +16,9 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="inventor.artifact.list.label.name" path="name" width="20%"/>
-	<acme:list-column code="inventor.artifact.list.label.code" path="code" width="20%"/>
-	<acme:list-column code="inventor.artifact.list.label.description" path="description" width="60%"/>
+	<acme:list-column code="any.artifact.list.label.name" path="name" width="20%"/>
+	<acme:list-column code="any.artifact.list.label.code" path="code" width="20%"/>
+	<acme:list-column code="any.artifact.list.label.description" path="description" width="60%"/>
 </acme:list>
 
 

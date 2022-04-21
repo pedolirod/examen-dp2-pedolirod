@@ -16,10 +16,10 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form readonly="true">
-	<acme:input-textbox code="inventor.artifact.form.label.name" path="name"/>	
-	<acme:input-textbox code="inventor.artifact.form.label.code" path="code"/>	
-	<acme:input-textarea code="inventor.artifact.form.label.technology" path="technology"/>
-	<acme:input-textbox code="inventor.artifact.form.label.description" path="description"/>
-	<acme:input-textbox code="inventor.artifact.form.label.retail-price" path="retailPrice"/>
-	<acme:input-textbox code="inventor.artifact.form.label.link" path="link"/>
+	<acme:input-textbox code="any.artifact.form.label.name" path="name"/>	
+	<acme:input-textbox code="any.artifact.form.label.code" path="code"/>	
+	<acme:input-textarea code="any.artifact.form.label.technology" path="technology"/>
+	<acme:input-textbox code="any.artifact.form.label.description" path="description"/>
+	<acme:input-textbox code="any.artifact.form.label.retail-price" path="retailPrice"/>
+	<acme:input-textbox code="any.artifact.form.label.link" path="link"/>
 </acme:form>

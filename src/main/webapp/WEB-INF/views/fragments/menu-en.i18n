@@ -63,3 +63,9 @@ master.menu.announcement = Announcement
 any.menu.artifact = Artifact
 any.menu.artifact.tool = Tool
 any.menu.artifact.component = Component
+
+# inventor.menu.artifact ########################################################
+
+inventor.menu.artifact = Artifact
+inventor.menu.artifact.tool = Tool
+inventor.menu.artifact.component = Component
