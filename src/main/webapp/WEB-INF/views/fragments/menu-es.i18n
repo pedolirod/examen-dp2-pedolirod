@@ -63,3 +63,6 @@ master.menu.announcement = Anuncio
 any.menu.artifact = Artefacto
 any.menu.artifact.tool = Herramienta
 any.menu.artifact.component = Componente
+
+# entities ########################################################
+any.menu.chirp = Chirp

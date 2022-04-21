@@ -47,6 +47,10 @@
 		<acme:menu-option code="any.menu.artifact" access="isAnonymous()">
 			<acme:menu-suboption code="any.menu.artifact.tool" action="/any/artifact/list-tool"/>
 			<acme:menu-suboption code="any.menu.artifact.component" action="/any/artifact/list-component"/>
+			
+		</acme:menu-option>
+		<acme:menu-option code="any.menu.chirp" access="isAnonymous()">
+		<acme:menu-suboption code="any.menu.chirp" action="/any/chirp/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
