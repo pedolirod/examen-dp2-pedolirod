@@ -30,8 +30,6 @@ public class AnyArtifactListTest extends TestHarness {
 		super.checkInputBoxHasValue("retail-price", RetailPrice);
 		super.checkInputBoxHasValue("description", Description);
 		super.checkInputBoxHasValue("link", Link);
-
-		super.signOut();
 	}
 
 	// Ancillary methods ------------------------------------------------------
