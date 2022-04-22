@@ -14,12 +14,12 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
 @Service
-public class inventorToolListService implements AbstractListService<Inventor, Artifact> {
+public class InventorToolListService implements AbstractListService<Inventor, Artifact> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected inventorArtifactRepository repository;
+	protected InventorArtifactRepository repository;
 
 	// AbstractListService<Anonymous, Artifact>  interface -------------------------
 
@@ -37,7 +37,9 @@ public class inventorToolListService implements AbstractListService<Inventor, Ar
 
 		Collection<Artifact> result;
 
-		result = this.repository.findManyTool(ArtifactType.TOOL);
+		int i = request.getPrincipal().getActiveRoleId();
+		
+		result = this.repository.findManyTool(ArtifactType.TOOL, i);
 
 		return result;
 	}

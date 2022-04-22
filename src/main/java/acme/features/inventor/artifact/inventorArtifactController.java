@@ -11,18 +11,18 @@ import acme.framework.roles.Any;
 import acme.roles.Inventor;
 
 @Controller
-public class inventorArtifactController extends AbstractController<Inventor, Artifact> {
+public class InventorArtifactController extends AbstractController<Inventor, Artifact> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected inventorToolListService	listToolService;
+	protected InventorToolListService	listToolService;
 	
 	@Autowired
-	protected inventorComponentListService	listComponentService;
+	protected InventorComponentListService	listComponentService;
 
 	@Autowired
-	protected inventorArtifactShowService	showService;
+	protected InventorArtifactShowService	showService;
 
 	// Constructors -----------------------------------------------------------
 

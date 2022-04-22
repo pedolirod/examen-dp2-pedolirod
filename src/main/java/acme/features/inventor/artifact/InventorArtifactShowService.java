@@ -6,17 +6,16 @@ import org.springframework.stereotype.Service;
 import acme.artifact.Artifact;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class inventorArtifactShowService implements AbstractShowService<Inventor, Artifact> {
+public class InventorArtifactShowService implements AbstractShowService<Inventor, Artifact> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected inventorArtifactRepository repository;
+	protected InventorArtifactRepository repository;
 
 	// AbstractShowService<Anonymous, Artifact> interface --------------------------
 

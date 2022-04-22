@@ -10,12 +10,12 @@ import acme.artifact.ArtifactType;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface inventorArtifactRepository extends AbstractRepository {
+public interface InventorArtifactRepository extends AbstractRepository {
 
 	@Query("select a from Artifact a where a.id = :id")
 	Artifact findOneToolById(int id);
 
-	@Query("select a from Artifact a where a.type = :arifact_type")
-	Collection<Artifact> findManyTool(ArtifactType arifact_type);
+	@Query("select a from Artifact a where a.type = :arifact_type and a.inventor.id = :id")
+	Collection<Artifact> findManyTool(ArtifactType arifact_type, int id);
 
 }

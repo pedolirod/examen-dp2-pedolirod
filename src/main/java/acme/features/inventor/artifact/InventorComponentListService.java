@@ -9,17 +9,17 @@ import acme.artifact.Artifact;
 import acme.artifact.ArtifactType;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Any;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
 @Service
-public class inventorComponentListService implements AbstractListService<Inventor, Artifact> {
+public class InventorComponentListService implements AbstractListService<Inventor, Artifact> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected inventorArtifactRepository repository;
+	protected InventorArtifactRepository repository;
 
 	// AbstractListService<Anonymous, Artifact>  interface -------------------------
 
@@ -36,8 +36,10 @@ public class inventorComponentListService implements AbstractListService<Invento
 		assert request != null;
 
 		Collection<Artifact> result;
-
-		result = this.repository.findManyTool(ArtifactType.COMPONENT);
+		
+		int i = request.getPrincipal().getActiveRoleId();
+		
+		result = this.repository.findManyTool(ArtifactType.COMPONENT, i);
 
 		return result;
 	}
