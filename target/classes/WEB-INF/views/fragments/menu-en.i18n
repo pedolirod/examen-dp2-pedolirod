@@ -63,3 +63,7 @@ master.menu.announcement = Announcement
 any.menu.artifact = Artifact
 any.menu.artifact.tool = Tool
 any.menu.artifact.component = Component
+
+# inventor.menu.patronage-report ########################################################
+
+inventor.menu.patronage-report = Patronage report

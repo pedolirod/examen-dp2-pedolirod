@@ -48,12 +48,13 @@
 			<acme:menu-suboption code="any.menu.artifact.tool" action="/any/artifact/list-tool"/>
 			<acme:menu-suboption code="any.menu.artifact.component" action="/any/artifact/list-component"/>
 		</acme:menu-option>
+		<acme:menu-option code="master.menu.announcement" action="/authenticated/announcement/list" access="isAuthenticated()"/>
+		<acme:menu-option code="inventor.menu.patronage-report" action="/inventor/patronage-report/list" access="hasRole('Inventor')"/>
 	</acme:menu-left>
 
 	<acme:menu-right>
 		<acme:menu-option code="master.menu.sign-up" action="/anonymous/user-account/create" access="isAnonymous()"/>
 		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
-		<acme:menu-option code="master.menu.announcement" action="/authenticated/announcement/list" access="isAuthenticated()"/>
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
