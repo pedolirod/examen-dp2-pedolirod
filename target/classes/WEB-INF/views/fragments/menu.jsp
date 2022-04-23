@@ -48,6 +48,9 @@
 			<acme:menu-suboption code="any.menu.artifact.tool" action="/any/artifact/list-tool"/>
 			<acme:menu-suboption code="any.menu.artifact.component" action="/any/artifact/list-component"/>
 		</acme:menu-option>
+		<acme:menu-option code="any.menu.artifact" access="hasRole('Administrator')">
+			<acme:menu-suboption code="any.menu.artifact.tool" action="/administrator/admin-dashboard/show"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
