@@ -1,5 +1,5 @@
 /*
- * AuthenticatedConsumerController.java
+ * InventorToolKitController.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,35 +10,37 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.consumer;
+package acme.features.patron.toolKit;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import acme.artifact.ToolKit;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Authenticated;
-import acme.roles.Consumer;
+import acme.roles.Inventor;
+
 
 @Controller
-public class AuthenticatedConsumerController extends AbstractController<Authenticated, Consumer> {
+//@RequestMapping("/Inventor/ToolKit/")
+public class InventorToolKitController extends AbstractController<Inventor, ToolKit> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedConsumerCreateService	createService;
+	protected InventorToolKitListService listService;
 
 	@Autowired
-	protected AuthenticatedConsumerUpdateService	updateService;
+	protected InventorToolKitShowService showService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("create", this.createService);
-		super.addCommand("update", this.updateService);
+		super.addCommand("list", this.listService);
+		super.addCommand("show", this.showService);
 	}
 
 }
