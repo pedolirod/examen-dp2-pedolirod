@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import acme.artifact.Artifact;
 import acme.artifact.ArtifactType;
+import acme.datatypes.StatusType;
+import acme.entities.patronage.Patronage;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -17,4 +19,7 @@ public interface AdminDashboardRepository extends AbstractRepository {
 
 	@Query("select a from Artifact a where  a.technology=:technology and a.type = :artifact_type")
 	Collection<Artifact> findArtifactTechnologyCurrency(String technology, ArtifactType artifact_type);
+
+	@Query("select p from Patronage p where  p.status=:status")
+	Collection<Patronage> findPatronage(StatusType status);
 }
