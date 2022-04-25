@@ -25,15 +25,16 @@ master.menu.anonymous.alefrarod = 53772321T: Fraile Rodríguez, Alejandro
 master.menu.anonymous.pedolirod = 20231423W: Oliva Rodríguez, Pedro
 master.menu.anonymous.jualopqui1 = 53769416Q: Lopez Quiros, Juan
 master.menu.anonymous.diecrequi = 30260025Y: Crespo Quinta, Diego
-master.menu.anonymous.artifact.tool = Tool
-master.menu.anonymous.artifact.component = Component
-master.menu.anonymous.chirp = Chirp
-master.menu.anonymous.tool-kit = ToolKit
+master.menu.anonymous.artifact.tool = Tools
+master.menu.anonymous.artifact.component = Components
+master.menu.anonymous.chirp = Chirps
+master.menu.anonymous.tool-kit = Toolkits
+master.menu.authenticated.user-account = User accounts
 
 # master.menu.authenticated ########################################################
 
 master.menu.authenticated = Authenticated
-master.menu.authenticated.announcement = Announcement
+master.menu.authenticated.announcement = Announcements
 
 # master.menu.authenticated #######################################################
 
@@ -52,12 +53,12 @@ master.menu.administrator.system-setting = System Setting
 
 # master.menu.provider ########################################################
 
-master.menu.provider = Provider
+master.menu.provider = Inventor
 master.menu.provider.favourite-link = Favourite link
 
 # master.menu.consumer ##########################################################
 
-master.menu.consumer = Consumer
+master.menu.consumer = Patron
 master.menu.consumer.favourite-link = Favourite link
 
 # master.menu.user-account ####################################################

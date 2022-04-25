@@ -27,8 +27,11 @@
 			<acme:menu-suboption code="master.menu.anonymous.jualopqui1" action="https://wtfhappenedin1971.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.diecrequi" action="https://magic.wizards.com/es"/>
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.authenticated.user-account" action="/any/user-account/list"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.tool" action="/any/artifact/list-tool"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.component" action="/any/artifact/list-component"/>
+			<acme:menu-suboption code="master.menu.anonymous.tool-kit" action="/any/tool-kit/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.chirp" action="/any/chirp/list"/>
 			
@@ -36,9 +39,10 @@
 
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
       <acme:menu-suboption code="master.menu.authenticated.systemSetting" action="/authenticated/system-setting/show"/>
+      <acme:menu-suboption code="master.menu.authenticated.user-account" action="/any/user-account/list"/>
       <acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.tool" action="/any/artifact/list-tool"/>
-			<acme:menu-suboption code="master.menu.anonymous.tool-kit" action="/any/tool-kit/list" access="isAnonymous()"/>
+			<acme:menu-suboption code="master.menu.anonymous.tool-kit" action="/any/tool-kit/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.component" action="/any/artifact/list-component"/>
 			<acme:menu-suboption code="master.menu.authenticated.announcement" action="/authenticated/announcement/list"/>
 			<acme:menu-separator/>
@@ -84,7 +88,6 @@
 	<acme:menu-right>
 		<acme:menu-option code="master.menu.sign-up" action="/anonymous/user-account/create" access="isAnonymous()"/>
 		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
-		<acme:menu-option code="master.menu.announcement" action="/authenticated/announcement/list" access="isAuthenticated()"/>
 		
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
