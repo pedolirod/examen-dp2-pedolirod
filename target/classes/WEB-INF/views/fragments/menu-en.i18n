@@ -25,7 +25,12 @@ master.menu.anonymous.alefrarod = 53772321T: Fraile Rodríguez, Alejandro
 master.menu.anonymous.pedolirod = 20231423W: Oliva Rodríguez, Pedro
 master.menu.anonymous.jualopqui1 = 53769416Q: Lopez Quiros, Juan
 master.menu.anonymous.diecrequi = 30260025Y: Crespo Quinta, Diego
+master.menu.anonymous.artifact.tool = Tool
+master.menu.anonymous.artifact.component = Component
 
+# master.menu.authenticated ########################################################
+
+master.menu.authenticated.announcement = Announcement
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
@@ -54,16 +59,6 @@ master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 
-# master.menu.provider ########################################################
+# master.menu.inventor ########################################################
 
-master.menu.announcement = Announcement
-
-# any.menu.artifact ########################################################
-
-any.menu.artifact = Artifact
-any.menu.artifact.tool = Tool
-any.menu.artifact.component = Component
-
-# inventor.menu.patronage-report ########################################################
-
-inventor.menu.patronage-report = Patronage report
+master.menu.inventor.patronage-report = Patronage report

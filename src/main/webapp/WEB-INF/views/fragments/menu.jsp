@@ -26,8 +26,17 @@
 			<acme:menu-suboption code="master.menu.anonymous.pedolirod" action="https://www.thelordoftheguides.com/lost-ark/guias/"/>
 			<acme:menu-suboption code="master.menu.anonymous.jualopqui1" action="https://wtfhappenedin1971.com/"/>
 			<acme:menu-suboption code="master.menu.anonymous.diecrequi" action="https://magic.wizards.com/es"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.anonymous.artifact.tool" action="/any/artifact/list-tool"/>
+			<acme:menu-suboption code="master.menu.anonymous.artifact.component" action="/any/artifact/list-component"/>
 		</acme:menu-option>
 
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+			<acme:menu-suboption code="master.menu.anonymous.artifact.tool" action="/any/artifact/list-tool"/>
+			<acme:menu-suboption code="master.menu.anonymous.artifact.component" action="/any/artifact/list-component"/>
+			<acme:menu-suboption code="master.menu.authenticated.announcement" action="/authenticated/announcement/list"/>
+		</acme:menu-option>
+		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
@@ -44,12 +53,11 @@
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
-		<acme:menu-option code="any.menu.artifact" access="isAnonymous()">
-			<acme:menu-suboption code="any.menu.artifact.tool" action="/any/artifact/list-tool"/>
-			<acme:menu-suboption code="any.menu.artifact.component" action="/any/artifact/list-component"/>
+		
+		<acme:menu-option code="master.menu.consumer" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.patronage-report" action="/inventor/patronage-report/list"/>
 		</acme:menu-option>
-		<acme:menu-option code="master.menu.announcement" action="/authenticated/announcement/list" access="isAuthenticated()"/>
-		<acme:menu-option code="inventor.menu.patronage-report" action="/inventor/patronage-report/list" access="hasRole('Inventor')"/>
+		
 	</acme:menu-left>
 
 	<acme:menu-right>
