@@ -8,11 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.announcement.form.label.title = Título:
-authenticated.announcement.form.label.creationMoment = Momento de creación
-authenticated.announcement.form.label.body = Cuerpo
-authenticated.announcement.form.label.flag = Bandera
-authenticated.announcement.form.label.link = Enlace
+inventor.announcement.form.label.title = Título:
+inventor.announcement.form.label.creationMoment = Momento de creación
+inventor.announcement.form.label.body = Cuerpo
+inventor.announcement.form.label.flag = Bandera
+inventor.announcement.form.label.link = Enlace
 
-authenticated.announcement.list.label.title = Título
-authenticated.announcement.list.label.body = Cuerpo
+inventor.announcement.list.label.title = Título
+inventor.announcement.list.label.body = Cuerpo
