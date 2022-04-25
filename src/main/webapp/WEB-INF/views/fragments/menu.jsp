@@ -36,6 +36,7 @@
 
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.anonymous.artifact.tool" action="/any/artifact/list-tool"/>
+			<acme:menu-suboption code="master.menu.anonymous.tool-kit" action="/any/tool-kit/list" access="isAnonymous()"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.component" action="/any/artifact/list-component"/>
 			<acme:menu-suboption code="master.menu.authenticated.announcement" action="/authenticated/announcement/list"/>
 			<acme:menu-separator/>
@@ -60,10 +61,11 @@
 		</acme:menu-option>
 		
 
-		<acme:menu-option code="master.menu.tool-kit" action="/any/tool-kit/list" access="isAnonymous()"/>
+		
 
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.patronage" action="/inventor/patronage/list"/>
+			<acme:menu-suboption code="master.menu.inventor.tool-kit" action="/inventor/tool-kit/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">

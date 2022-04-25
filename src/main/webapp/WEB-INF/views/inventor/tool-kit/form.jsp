@@ -21,4 +21,6 @@
 	<acme:input-textarea code="inventor.toolkit.form.label.description" path="description"/>
 	<acme:input-textbox code="inventor.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
 	<acme:input-textbox code="inventor.toolkit.form.label.link" path="link"/>
+	
+	<acme:button code="any.toolkit.form.button.partOf" action="/any/part-of/list?masterId=${id}"/>
 </acme:form>
