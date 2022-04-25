@@ -35,6 +35,11 @@ master.menu.anonymous.tool-kit = Caja de Herramientas
 master.menu.authenticated = Autenticado
 master.menu.authenticated.announcement = Anuncio
 
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Autenticado
+master.menu.authenticated.systemSetting = Configuración del sistema
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador

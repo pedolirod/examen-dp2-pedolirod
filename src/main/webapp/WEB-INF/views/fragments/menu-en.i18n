@@ -35,6 +35,11 @@ master.menu.anonymous.tool-kit = ToolKit
 master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement = Announcement
 
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.systemSetting = System setting
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator

@@ -35,6 +35,8 @@
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
+      <acme:menu-suboption code="master.menu.authenticated.systemSetting" action="/authenticated/system-setting/show"/>
+      <acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.tool" action="/any/artifact/list-tool"/>
 			<acme:menu-suboption code="master.menu.anonymous.tool-kit" action="/any/tool-kit/list" access="isAnonymous()"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.component" action="/any/artifact/list-component"/>
