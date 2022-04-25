@@ -29,12 +29,17 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.tool" action="/any/artifact/list-tool"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.component" action="/any/artifact/list-component"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.anonymous.chirp" action="/any/chirp/list"/>
+			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.anonymous.artifact.tool" action="/any/artifact/list-tool"/>
 			<acme:menu-suboption code="master.menu.anonymous.artifact.component" action="/any/artifact/list-component"/>
 			<acme:menu-suboption code="master.menu.authenticated.announcement" action="/authenticated/announcement/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="any.menu.chirp" action="/any/chirp/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -55,7 +60,13 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Inventor')">
+			<acme:menu-suboption code="inventor.menu.patronage" action="/inventor/patronage/list"/>
+			
 			<acme:menu-suboption code="master.menu.inventor.patronage-report" action="/inventor/patronage-report/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
+		<acme:menu-suboption code="master.menu.patron.patronage" action="/patron/patronage/list"/>
 		</acme:menu-option>
 		
 	</acme:menu-left>
