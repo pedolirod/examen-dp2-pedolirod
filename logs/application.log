@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 2022-04-25 18:30:58.757 INFO  [acme.Launcher@main] Starting Launcher using Java 1.8.0_261 on LAPTOP-KD3M7QQ5 with PID 16488 (C:\Users\manol\Desktop\dp2\Workspace-22.0\Workspace-22.0\Frameworks\Acme-Framework-22.3\target\classes started by manol in C:\Users\manol\git\Acme-Toolkit) 
 2022-04-25 18:30:58.758 DEBUG [acme.Launcher@main] Running with Spring Boot v2.4.2, Spring v5.3.3 
 2022-04-25 18:30:58.758 INFO  [acme.Launcher@main] The following profiles are active: development,default 
@@ -168,7 +167,6 @@
 2022-04-25 18:31:04.053 DEBUG [acme.Launcher@main] Found entity class 'acme.framework.roles.Any 
 2022-04-25 18:31:04.053 DEBUG [acme.Launcher@main] Found entity class 'acme.framework.roles.Authenticated 
 2022-04-25 18:31:04.056 INFO  [acme.Launcher@main] Running application (Standalone) 
-=======
 2022-04-22 18:56:52.786 INFO  [acme.Launcher@main] Starting Launcher using Java 1.8.0_261 on LAPTOP-KD3M7QQ5 with PID 2112 (C:\Users\manol\Desktop\dp2\Workspace-22.0\Workspace-22.0\Frameworks\Acme-Framework-22.3\target\classes started by manol in C:\Users\manol\git\Acme-Toolkit) 
 2022-04-22 18:56:52.786 DEBUG [acme.Launcher@main] Running with Spring Boot v2.4.2, Spring v5.3.3 
 2022-04-22 18:56:52.787 INFO  [acme.Launcher@main] The following profiles are active: development,default 
@@ -496,4 +494,3 @@
 2022-04-22 18:57:30 ERROR [org.apache.jsp.WEB_002dINF.views.master.panic_jsp@http-nio-8080-exec-2] HTTP GET /acme-toolkit-22.1/master/panic HTTP/1.1 
 2022-04-22 18:57:30 ERROR [org.apache.jsp.WEB_002dINF.views.master.panic_jsp@http-nio-8080-exec-2] Status: 500 
 2022-04-22 18:57:30.001 ERROR [org.apache.jsp.WEB_002dINF.views.master.panic_jsp@http-nio-8080-exec-2] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: JSPException including path '/WEB-INF/views/administrator/admin-dashboard/form.jsp'.\norg.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): JSPException including path '/WEB-INF/views/administrator/admin-dashboard/form.jsp'.\norg.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): JSPException including path '/WEB-INF/views/administrator/admin-dashboard/form.jsp'.\norg.apache.jsp.tag.web.print_tag.doTag(print_tag.java:167): java.lang.AssertionError\nacme.framework.helpers.ConversionHelper.convert(ConversionHelper.java:46): java.lang.AssertionError 
->>>>>>> branch 'Task-076' of https://github.com/diecrequi/Acme-Toolkit.git
