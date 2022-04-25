@@ -143,3 +143,58 @@
 		</tr>
 	</jstl:forEach>
 </table>
+<h2>
+	<acme:message code="administrator.dashboard.form.title.patronages" />
+</h2>
+<table class="table table-sm">
+	<jstl:forEach var="entry" items="${adminDashboard.totalNumberOfPatronages.entrySet()}">
+		<tr>
+			<th scope="row"><acme:message
+					code="administrator.dashboard.form.label.total-number-of" /> <acme:print
+					value="${entry.key}" />
+			</th>
+			<td><acme:print value="${entry.value}" /> <acme:print
+					value="${entry.key}" /></td>
+		</tr>
+	</jstl:forEach>
+	<jstl:forEach var="entry" items="${adminDashboard.avgBudget.entrySet()}">
+		<tr>
+			<th scope="row"><acme:message
+					code="administrator.dashboard.form.label.avg-budget-of" /> <acme:print
+					value="${entry.key}" />
+			</th>
+			<td><acme:print value="${entry.value}" /> <acme:print
+					value="${entry.key}" /></td>
+		</tr>
+	</jstl:forEach>
+	<jstl:forEach var="entry" items="${adminDashboard.deviationBudget.entrySet()}">
+		<tr>
+			<th scope="row"><acme:message
+					code="administrator.dashboard.form.label.deviation-budget-of" /> <acme:print
+					value="${entry.key}" />
+			</th>
+			<td><acme:print value="${entry.value}" /> <acme:print
+					value="${entry.key}" /></td>
+		</tr>
+	</jstl:forEach>
+	<jstl:forEach var="entry" items="${adminDashboard.maxdBudget.entrySet()}">
+		<tr>
+			<th scope="row"><acme:message
+					code="administrator.dashboard.form.label.max-prize-in" /> <acme:print
+					value="${entry.key}" />
+			</th>
+			<td><acme:print value="${entry.value}" /> <acme:print
+					value="${entry.key}" /></td>
+		</tr>
+	</jstl:forEach>
+	<jstl:forEach var="entry" items="${adminDashboard.minBudget.entrySet()}">
+		<tr>
+			<th scope="row"><acme:message
+					code="administrator.dashboard.form.label.min-prize-in" /> <acme:print
+					value="${entry.key}" />
+			</th>
+			<td><acme:print value="${entry.value}" /> <acme:print
+					value="${entry.key}" /></td>
+		</tr>
+	</jstl:forEach>
+</table>
