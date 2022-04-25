@@ -52,6 +52,15 @@
 		<acme:menu-option code="any.menu.chirp" access="isAnonymous()">
 		<acme:menu-suboption code="any.menu.chirp" action="/any/chirp/list"/>
 		</acme:menu-option>
+		
+		
+		<acme:menu-option code="patron.menu.patronage" access="hasRole('Patron')">
+		<acme:menu-suboption code="patron.menu.patronage" action="/patron/patronage/list"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="inventor.menu.patronage" access="hasRole('Inventor')">
+		<acme:menu-suboption code="inventor.menu.patronage" action="/inventor/patronage/list"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>

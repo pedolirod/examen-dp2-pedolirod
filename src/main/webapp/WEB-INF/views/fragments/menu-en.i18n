@@ -66,3 +66,6 @@ any.menu.artifact.component = Component
 
 # entities ########################################################
 any.menu.chirp = Chirp
+
+patron.menu.patronage = Patronage
+inventor.menu.patronage = Patronage
