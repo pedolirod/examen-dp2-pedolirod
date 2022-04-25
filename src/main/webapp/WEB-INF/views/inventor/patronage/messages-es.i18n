@@ -16,6 +16,7 @@ patron.patronage.form.label.startDate = Fecha inicio
 patron.patronage.form.label.finishDate = Fecha fin
 patron.patronage.form.label.link = Link
 patron.patronage.form.label.patron = Patron
+patron.patronage.form.label.patronageReport = Reporte de patronage
 
 patron.patronage.list.label.code = Codigo
 patron.patronage.list.label.budget = Presupuesto

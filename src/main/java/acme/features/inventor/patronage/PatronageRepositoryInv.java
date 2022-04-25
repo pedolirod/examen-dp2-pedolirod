@@ -5,7 +5,6 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.chirp.Chirp;
 import acme.entities.patronage.Patronage;
 import acme.framework.repositories.AbstractRepository;
 

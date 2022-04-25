@@ -13,6 +13,7 @@
 <%@page language="java"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form readonly="true">
@@ -23,6 +24,8 @@
 	<acme:input-textbox code="patron.patronage.form.label.startDate" path="startDate"/>
 	<acme:input-textbox code="patron.patronage.form.label.finishDate" path="finishDate"/>
 	<acme:input-textbox code="patron.patronage.form.label.link" path="link"/>
-		<acme:button code="patron.patronage.form.label.patron" action="/any/user-account/show?masterId=${patronId}"/>
-	
+	<acme:button code="patron.patronage.form.label.patron" action="/any/user-account/show?masterId=${patronId}"/>
+	<jstl:if test="${esInventor}">
+	<acme:button code="patron.patronage.form.label.patronageReport" action="/inventor/patronage-report/list?patronageId=${id}"/>
+	</jstl:if>
 </acme:form>

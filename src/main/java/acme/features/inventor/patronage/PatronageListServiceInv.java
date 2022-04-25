@@ -5,17 +5,11 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.announcement.Announcement;
-import acme.entities.chirp.Chirp;
 import acme.entities.patronage.Patronage;
-import acme.features.authenticated.announcements.authenticatedAnnouncementsRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Any;
-import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
-import acme.roles.Patron;
 
 @Service
 public class PatronageListServiceInv implements AbstractListService<Inventor, Patronage>{

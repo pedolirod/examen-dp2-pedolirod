@@ -1,19 +1,11 @@
 package acme.features.patron.patronage;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.announcement.Announcement;
-import acme.entities.chirp.Chirp;
 import acme.entities.patronage.Patronage;
-import acme.features.authenticated.announcements.authenticatedAnnouncementsRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Any;
-import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Patron;
 
@@ -40,8 +32,9 @@ public class PatronageShowService implements AbstractShowService<Patron, Patrona
 			assert entity != null;
 			assert model != null;
 
-			request.unbind(entity, model, "status", "code", "legalStuff", "budget", "startDate", "link", "patron.userAccount.id", "inventor.userAccount.id");
+			request.unbind(entity, model, "id", "status", "code", "legalStuff", "budget", "startDate", "link");
 			model.setAttribute("inventorId", entity.getInventor().getUserAccount().getId());
+			model.setAttribute("esInventor", false);
 		}
 
 		@Override

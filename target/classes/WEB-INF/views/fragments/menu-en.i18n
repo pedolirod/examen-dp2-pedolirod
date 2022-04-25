@@ -31,6 +31,7 @@ master.menu.anonymous.chirp = Chirp
 
 # master.menu.authenticated ########################################################
 
+master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement = Announcement
 
 # master.menu.administrator ###################################################
@@ -63,8 +64,11 @@ master.menu.user-account.become-consumer = Become a consumer
 
 # master.menu.inventor ########################################################
 
+master.menu.inventor = Inventor
 master.menu.inventor.patronage-report = Patronage report
+master.menu.inventor.patronage = Patronage
 
 # master.menu.patron ########################################################
 
+master.menu.patron = Patron
 master.menu.patron.patronage = Patronage

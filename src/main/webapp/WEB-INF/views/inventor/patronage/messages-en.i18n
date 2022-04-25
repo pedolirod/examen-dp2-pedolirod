@@ -17,6 +17,7 @@ patron.patronage.form.label.finishDate = finishDate
 patron.patronage.form.label.link = Link
 patron.patronage.form.label.patron = Patron
 patron.patronage.form.label.inventor = Inventor
+patron.patronage.form.label.patronageReport = patronage Report
 
 patron.patronage.list.label.code = Code
 patron.patronage.list.label.budget = Budget
