@@ -28,6 +28,7 @@ master.menu.anonymous.diecrequi = 30260025Y: Crespo Quinta, Diego
 master.menu.anonymous.artifact.tool = Tool
 master.menu.anonymous.artifact.component = Component
 master.menu.anonymous.chirp = Chirp
+master.menu.anonymous.tool-kit = Caja de Herramientas
 
 # master.menu.authenticated ########################################################
 
@@ -69,6 +70,15 @@ master.menu.inventor.artifact.tool = Tool
 master.menu.inventor.artifact.component = Component
 master.menu.inventor.patronage = Patronage
 
+
+# master.menu.announcement ########################################################
+master.menu.announcement = Anuncio
+
+# master.menu.tool-kit ########################################################
+master.menu.tool-kit = Caja de Herramientas
+
+
 # master.menu.patron ########################################################
 master.menu.patron = Patrón
 master.menu.patron.patronage = Patrocinio
+

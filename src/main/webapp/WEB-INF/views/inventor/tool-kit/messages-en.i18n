@@ -1,0 +1,18 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+inventor.announcement.form.label.title = Title:
+inventor.announcement.form.label.creationMoment = Creation moment
+inventor.announcement.form.label.body = Body
+inventor.announcement.form.label.flag = Flag
+inventor.announcement.form.label.link = Link
+
+inventor.announcement.list.label.title = Title
+inventor.announcement.list.label.body = Body
