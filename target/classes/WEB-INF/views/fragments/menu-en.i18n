@@ -70,5 +70,11 @@ master.menu.inventor.patronage = Patronage
 
 # master.menu.patron ########################################################
 
+# master.menu.announcement ########################################################
+master.menu.announcement = Announcement
+
+# master.menu.tool-kit ########################################################
+master.menu.tool-kit = ToolKit
+
 master.menu.patron = Patron
 master.menu.patron.patronage = Patronage

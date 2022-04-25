@@ -68,6 +68,13 @@ master.menu.inventor = Inventor
 master.menu.inventor.patronage-report = Informe de patronage
 master.menu.inventor.patronage = Patrocinio
 
+# master.menu.announcement ########################################################
+master.menu.announcement = Anuncio
+
+# master.menu.tool-kit ########################################################
+master.menu.tool-kit = Caja de Herramientas
+
 # master.menu.patron ########################################################
 master.menu.patron = Patrón
 master.menu.patron.patronage = Patrocinio
+
