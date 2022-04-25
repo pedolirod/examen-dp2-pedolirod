@@ -9,7 +9,6 @@ import acme.artifact.Artifact;
 import acme.artifact.ArtifactType;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
