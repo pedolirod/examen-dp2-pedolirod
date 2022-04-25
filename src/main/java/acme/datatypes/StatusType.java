@@ -1,5 +1,5 @@
 package acme.datatypes;
 
 public enum StatusType {
-PROPOSED, ACCPETED, DENIED
+PROPOSED, ACCEPTED, DENIED
 }

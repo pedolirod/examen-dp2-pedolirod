@@ -1,4 +1,4 @@
-package acme.patronDashboard;
+package acme.Dashboard;
 
 import java.io.Serializable;
 import java.util.Map;
