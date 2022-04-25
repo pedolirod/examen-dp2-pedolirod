@@ -153,8 +153,7 @@
 					code="administrator.dashboard.form.label.total-number-of" /> <acme:print
 					value="${entry.key}" />
 			</th>
-			<td><acme:print value="${entry.value}" /> <acme:print
-					value="${entry.key}" /></td>
+			<td><acme:print value="${entry.value}" />
 		</tr>
 	</jstl:forEach>
 	<jstl:forEach var="entry" items="${adminDashboard.avgBudget.entrySet()}">
@@ -163,8 +162,7 @@
 					code="administrator.dashboard.form.label.avg-budget-of" /> <acme:print
 					value="${entry.key}" />
 			</th>
-			<td><acme:print value="${entry.value}" /> <acme:print
-					value="${entry.key}" /></td>
+			<td><acme:print value="${entry.value}" />
 		</tr>
 	</jstl:forEach>
 	<jstl:forEach var="entry" items="${adminDashboard.deviationBudget.entrySet()}">
@@ -173,8 +171,7 @@
 					code="administrator.dashboard.form.label.deviation-budget-of" /> <acme:print
 					value="${entry.key}" />
 			</th>
-			<td><acme:print value="${entry.value}" /> <acme:print
-					value="${entry.key}" /></td>
+			<td><acme:print value="${entry.value}" />
 		</tr>
 	</jstl:forEach>
 	<jstl:forEach var="entry" items="${adminDashboard.maxdBudget.entrySet()}">
@@ -183,8 +180,7 @@
 					code="administrator.dashboard.form.label.max-prize-in" /> <acme:print
 					value="${entry.key}" />
 			</th>
-			<td><acme:print value="${entry.value}" /> <acme:print
-					value="${entry.key}" /></td>
+			<td><acme:print value="${entry.value}" />
 		</tr>
 	</jstl:forEach>
 	<jstl:forEach var="entry" items="${adminDashboard.minBudget.entrySet()}">
@@ -193,8 +189,7 @@
 					code="administrator.dashboard.form.label.min-prize-in" /> <acme:print
 					value="${entry.key}" />
 			</th>
-			<td><acme:print value="${entry.value}" /> <acme:print
-					value="${entry.key}" /></td>
+			<td><acme:print value="${entry.value}" />
 		</tr>
 	</jstl:forEach>
 </table>
