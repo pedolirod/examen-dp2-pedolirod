@@ -19,5 +19,5 @@
 	<acme:input-textbox code="authenticated.announcement.form.label.creationMoment" path="creationMoment"/>	
 	<acme:input-textbox code="authenticated.announcement.form.label.title" path="title"/>	
 	<acme:input-textarea code="authenticated.announcement.form.label.body" path="body"/>
-	<acme:input-textbox code="authenticated.announcement.form.label.link" path="link"/>	
+	<acme:input-textbox code="authenticated.announcement.form.label.link" path="link"/>
 </acme:form>
