@@ -65,7 +65,8 @@ master.menu.user-account.become-consumer = Become a consumer
 # master.menu.inventor ########################################################
 
 master.menu.inventor = Inventor
-master.menu.inventor.patronage-report = Patronage report
+master.menu.inventor.artifact.tool = Tool
+master.menu.inventor.artifact.component = Component
 master.menu.inventor.patronage = Patronage
 
 # master.menu.patron ########################################################

@@ -60,12 +60,17 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.artifact.tool" action="/inventor/artifact/list-tool"/>
+			<acme:menu-suboption code="master.menu.inventor.artifact.component" action="/inventor/artifact/list-component"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.inventor.patronage" action="/inventor/patronage/list"/>
+			
 		</acme:menu-option>
-		
+
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 		<acme:menu-suboption code="master.menu.patron.patronage" action="/patron/patronage/list"/>
 		</acme:menu-option>
+
 		
 	</acme:menu-left>
 
