@@ -23,7 +23,7 @@
 			<acme:input-textbox code="any.chirp.form.label.body" path="body"/>
 			<acme:input-textbox code="any.chirp.form.label.email" path="email"/>
 			
-			<acme:submit code="any.shout.form.button.create" action="/any/chirp/create"/>
+			<acme:submit code="any.chirp.form.button.create" action="/any/chirp/create"/>
 		</acme:form>
 		
 	</jstl:when>

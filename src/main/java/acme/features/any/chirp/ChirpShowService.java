@@ -33,6 +33,7 @@ public class ChirpShowService implements AbstractShowService<Any, Chirp>{
 			assert model != null;
 
 			request.unbind(entity, model, "creationMoment", "title", "author", "body", "email");
+			model.setAttribute("isNew", false);
 		}
 
 		@Override
