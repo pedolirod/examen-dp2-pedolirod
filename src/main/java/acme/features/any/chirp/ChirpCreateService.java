@@ -88,7 +88,6 @@ public class ChirpCreateService implements AbstractCreateService<Any, Chirp> {
 	public void create(final Request<Chirp> request, final Chirp entity) {
 		assert request != null;
 		assert entity != null;
-		System.out.println("juan");
 
 		this.repository.save(entity);
 	}

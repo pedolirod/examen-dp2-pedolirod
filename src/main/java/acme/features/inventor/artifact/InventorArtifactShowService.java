@@ -33,6 +33,8 @@ public class InventorArtifactShowService implements AbstractShowService<Inventor
 		assert model != null;
 
 		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link");
+		
+		model.setAttribute("isNew", false);
 	}
 
 	@Override
