@@ -33,7 +33,7 @@ public class InventorArtifactController extends AbstractController<Inventor, Art
 	protected void initialise() {
 		super.addCommand("list-tool","list", this.listToolService);
 		super.addCommand("list-component","list", this.listComponentService);
-		super.addCommand("create-tool","list", this.createToolService);
+		super.addCommand("create-tool","create", this.createToolService);
 		super.addCommand("show", this.showService);
 	}
 

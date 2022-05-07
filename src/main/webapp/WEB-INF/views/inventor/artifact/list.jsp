@@ -20,5 +20,6 @@
 	<acme:list-column code="any.artifact.list.label.code" path="code" width="20%"/>
 	<acme:list-column code="any.artifact.list.label.description" path="description" width="60%"/>
 </acme:list>
+	<acme:button code="any.tool.list.button.create" action="/inventor/artifact/create-tool"/>
 
-<acme:button code="any.artifact.list.button.create" action="/inventor/artifact/create-tool"/>
+
