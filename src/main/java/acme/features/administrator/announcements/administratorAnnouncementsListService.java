@@ -12,12 +12,12 @@ import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class authenticatedAnnouncementsListService implements AbstractListService<Authenticated, Announcement> {
+public class administratorAnnouncementsListService implements AbstractListService<Administrator, Announcement> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected authenticatedAnnouncementsRepository repository;
+	protected administratorAnnouncementsRepository repository;
 
 	// AbstractListService<Anonymous, Announcement>  interface -------------------------
 
