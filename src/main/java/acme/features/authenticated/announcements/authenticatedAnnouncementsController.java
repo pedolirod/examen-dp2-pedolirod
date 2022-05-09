@@ -19,6 +19,9 @@ public class authenticatedAnnouncementsController extends AbstractController<Aut
 
 	@Autowired
 	protected authenticatedAnnouncementsShowService	showService;
+	
+	@Autowired
+	protected administratorAnnouncementsShowService	createService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -27,6 +30,7 @@ public class authenticatedAnnouncementsController extends AbstractController<Aut
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
+		super.addCommand("show", this.createService);
 	}
 
 }
