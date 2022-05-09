@@ -27,6 +27,7 @@ public class authenticatedAnnouncementsController extends AbstractController<Aut
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
+		super.addCommand("create", this.createService);
 	}
 
 }
