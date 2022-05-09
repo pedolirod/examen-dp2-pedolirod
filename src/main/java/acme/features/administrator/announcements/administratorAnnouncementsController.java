@@ -10,15 +10,18 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Authenticated;
 
 @Controller
-public class authenticatedAnnouncementsController extends AbstractController<Authenticated, Announcement> {
+public class authenticatedAnnouncementsController extends AbstractController<Administrator, Announcement> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected authenticatedAnnouncementsListService	listService;
+	protected administratorAnnouncementsListService	listService;
 
 	@Autowired
-	protected authenticatedAnnouncementsShowService	showService;
+	protected administratorAnnouncementsShowService	showService;
+	
+	@Autowired
+	protected AnnouncementCreateService	createService;
 
 	// Constructors -----------------------------------------------------------
 
