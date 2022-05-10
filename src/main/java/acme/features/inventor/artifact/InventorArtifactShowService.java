@@ -45,7 +45,7 @@ public class InventorArtifactShowService implements AbstractShowService<Inventor
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneToolById(id);
+		result = this.repository.findOneArtifactById(id);
 
 		return result;
 	}

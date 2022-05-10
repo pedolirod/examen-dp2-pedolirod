@@ -34,6 +34,8 @@
 			
 		</acme:form>
 		
+		<acme:submit code="any.tool.form.button.update" action="/inventor/artifact/update-tool"/>
+		
 	</jstl:otherwise>
 
 </jstl:choose>
