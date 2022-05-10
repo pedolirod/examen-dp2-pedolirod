@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.entities.announcement.Announcement;
+import acme.features.administrator.announcements.AdministratorAnnouncementsShowService;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Authenticated;
 
@@ -21,7 +22,7 @@ public class authenticatedAnnouncementsController extends AbstractController<Aut
 	protected authenticatedAnnouncementsShowService	showService;
 	
 	@Autowired
-	protected administratorAnnouncementsShowService	createService;
+	protected AdministratorAnnouncementsShowService	createService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -30,7 +31,7 @@ public class authenticatedAnnouncementsController extends AbstractController<Aut
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
-		super.addCommand("show", this.createService);
+		super.addCommand("create", this.createService);
 	}
 
 }

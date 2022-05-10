@@ -1,31 +1,22 @@
-/*
- * AnonymousChirpCreateService.java
- *
- * Copyright (C) 2012-2022 Rafael Corchuelo.
- *
- * In keeping with the traditional purpose of furthering education and research, it is
- * the policy of the copyright owner to permit non-commercial use and redistribution of
- * this software. It has been tested carefully, but it is not guaranteed for any particular
- * purposes. The copyright owner does not offer any warranties or representations, nor do
- * they accept any liabilities with respect to them.
- */
-
-package acme.features.any.chirp;
+package acme.features.administrator.announcements;
 
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.announcement.Announcement;
 import acme.entities.chirp.Chirp;
+import acme.features.authenticated.announcements.authenticatedAnnouncementsRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
+import acme.framework.roles.Administrator;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class administratorAnnouncementsShowService implements AbstractCreateService<Administrator, Announcement> {
+public class AdministratorAnnouncementsShowService implements AbstractCreateService<Administrator, Announcement> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -52,7 +43,7 @@ public class administratorAnnouncementsShowService implements AbstractCreateServ
 	}
 
 	@Override
-	public void bind(final Request<Chirp> request, final Announcement entity, final Errors errors) {
+	public void bind(final Request<Announcement> request, final Announcement entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
