@@ -16,3 +16,5 @@ authenticated.announcement.form.label.link = Link
 
 authenticated.announcement.list.label.title = Title
 authenticated.announcement.list.label.body = Body
+
+administrator.announcement.form.button.create = New Annoucement
