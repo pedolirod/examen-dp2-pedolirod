@@ -16,3 +16,5 @@ authenticated.announcement.form.label.link = Enlace
 
 authenticated.announcement.list.label.title = Título
 authenticated.announcement.list.label.body = Cuerpo
+
+administrator.announcement.form.button.create = Nuevo Anuncio
