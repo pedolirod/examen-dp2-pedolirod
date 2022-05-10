@@ -25,12 +25,12 @@ import acme.framework.roles.Any;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class ChirpCreateService implements AbstractCreateService<Administrator, Announcement> {
+public class administratorAnnouncementsShowService implements AbstractCreateService<Administrator, Announcement> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected ChirpRepository repository;
+	protected authenticatedAnnouncementsRepository repository;
 
 	// AbstractCreateService<Administrator, Chirp> interface --------------
 
