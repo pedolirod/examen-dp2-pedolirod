@@ -1,5 +1,7 @@
 package acme.features.administrator.announcements;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,53 +9,44 @@ import acme.entities.announcement.Announcement;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractListService;
 
 @Service
-public class AdministratorAnnouncementsShowService implements AbstractShowService<Administrator, Announcement> {
+public class AdministratorAnnouncementsListService implements AbstractListService<Administrator, Announcement> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected AdministratorAnnouncementsRepository repository;
 
-	// AbstractShowService<Anonymous, Announcement> interface --------------------------
+	// AbstractListService<Anonymous, Announcement>  interface -------------------------
+
 
 	@Override
 	public boolean authorise(final Request<Announcement> request) {
 		assert request != null;
 
-		boolean result;
-		int id;
-		Announcement Announcement;
+		return true;
+	}
+	
+	@Override
+	public Collection<Announcement> findMany(final Request<Announcement> request) {
+		assert request != null;
 
-		id = request.getModel().getInteger("id");
-		Announcement = this.repository.findOneAnnouncementById(id);
-		result = Announcement.isFlag();
+		Collection<Announcement> result;
+
+		result = this.repository.findManyAnnouncement();
 
 		return result;
 	}
-
+	
 	@Override
 	public void unbind(final Request<Announcement> request, final Announcement entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "creationMoment", "body", "flag", "link");
-	}
-
-	@Override
-	public Announcement findOne(final Request<Announcement> request) {
-		assert request != null;
-
-		Announcement result;
-		int id;
-
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneAnnouncementById(id);
-
-		return result;
+		request.unbind(entity, model, "body", "title");
 	}
 
 }
