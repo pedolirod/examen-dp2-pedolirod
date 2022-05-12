@@ -19,7 +19,6 @@
 
 	<jstl:when test="${isNew}">
 		<acme:form>
-			<acme:input-textbox code="administrator.announcement.form.label.creationMoment" path="creationMoment"/>	
 			<acme:input-textbox code="administrator.announcement.form.label.title" path="title"/>	
 			<acme:input-textarea code="administrator.announcement.form.label.body" path="body"/>
 			<acme:input-textbox code="administrator.announcement.form.label.link" path="link"/>
@@ -32,10 +31,10 @@
 	<jstl:otherwise>
 
 		<acme:form readonly="true">
-			<acme:input-textbox code="authenticated.announcement.form.label.creationMoment" path="creationMoment"/>	
-			<acme:input-textbox code="authenticated.announcement.form.label.title" path="title"/>	
-			<acme:input-textarea code="authenticated.announcement.form.label.body" path="body"/>
-			<acme:input-textbox code="authenticated.announcement.form.label.link" path="link"/>
+			<acme:input-textbox code="administrator.announcement.form.label.creationMoment" path="creationMoment"/>	
+			<acme:input-textbox code="administrator.announcement.form.label.title" path="title"/>	
+			<acme:input-textarea code="administrator.announcement.form.label.body" path="body"/>
+			<acme:input-textbox code="administrator.announcement.form.label.link" path="link"/>
 		</acme:form>
 
 	</jstl:otherwise>

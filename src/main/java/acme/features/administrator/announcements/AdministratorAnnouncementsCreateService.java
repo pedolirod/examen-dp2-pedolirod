@@ -48,8 +48,9 @@ public class AdministratorAnnouncementsCreateService implements AbstractCreateSe
 
 		Date moment= new Date(System.currentTimeMillis() - 1);
     
-		request.bind(entity, errors, "title", "creationMoment", "body", "flag", "link");
+		request.bind(entity, errors, "title", "body", "link");
 		entity.setCreationMoment(moment);
+		entity.setFlag(true);
 	}
 
 	@Override
@@ -66,7 +67,7 @@ public class AdministratorAnnouncementsCreateService implements AbstractCreateSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "creationMoment", "body", "flag", "link");
+		request.unbind(entity, model, "title", "body", "link");
 		model.setAttribute("isNew", true);
 	}
 

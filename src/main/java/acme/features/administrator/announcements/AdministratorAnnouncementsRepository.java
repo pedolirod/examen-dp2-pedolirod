@@ -14,7 +14,7 @@ public interface AdministratorAnnouncementsRepository extends AbstractRepository
 	@Query("select a from Announcement a where a.id = :id")
 	Announcement findOneAnnouncementById(int id);
 
-	@Query("select a from Announcement a where a.flag = true")
+	@Query("select a from Announcement a")
 	Collection<Announcement> findManyAnnouncement();
 
 }

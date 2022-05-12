@@ -23,15 +23,7 @@ public class AdministratorAnnouncementsShowService implements AbstractShowServic
 	public boolean authorise(final Request<Announcement> request) {
 		assert request != null;
 
-		boolean result;
-		int id;
-		Announcement Announcement;
-
-		id = request.getModel().getInteger("id");
-		Announcement = this.repository.findOneAnnouncementById(id);
-		result = Announcement.isFlag();
-
-		return result;
+		return true;
 	}
 
 	@Override
