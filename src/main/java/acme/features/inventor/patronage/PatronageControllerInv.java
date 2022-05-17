@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.entities.patronage.Patronage;
+import acme.features.patron.patronage.PatronageUpdateService;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Inventor;
 
@@ -18,6 +19,9 @@ public class PatronageControllerInv extends AbstractController<Inventor, Patrona
 
 		@Autowired
 		protected PatronageShowServiceInv	showService;
+		
+		@Autowired
+		protected PatronageUpdateServiceInv	updateService;
 
 		// Constructors -----------------------------------------------------------
 
@@ -26,6 +30,7 @@ public class PatronageControllerInv extends AbstractController<Inventor, Patrona
 		protected void initialise() {
 			super.addCommand("list", this.listService);
 			super.addCommand("show", this.showService);
+			super.addCommand("update", this.updateService);
 		}
 
 }
