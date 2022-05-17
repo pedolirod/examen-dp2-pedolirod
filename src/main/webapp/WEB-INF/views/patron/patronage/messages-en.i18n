@@ -8,6 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+patron.patronage.form.title.update = Update your worker data
+
 patron.patronage.form.label.status = Status
 patron.patronage.form.label.code = Code
 patron.patronage.form.label.legalStuff = Legal
@@ -18,5 +20,9 @@ patron.patronage.form.label.link = Link
 patron.patronage.form.label.patron = Patron
 patron.patronage.form.label.inventor = Inventor
 
+patron.patronage.form.button.update = Update
+
 patron.patronage.list.label.code = Code
 patron.patronage.list.label.budget = Budget
+
+

@@ -8,6 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+patron.patronage.form.title.update = Actualiza tus datos de trabajador
+
 patron.patronage.form.label.status = Estado
 patron.patronage.form.label.code = Codigo
 patron.patronage.form.label.legalStuff = Legal
@@ -17,5 +19,9 @@ patron.patronage.form.label.finishDate = Fecha fin
 patron.patronage.form.label.link = Link
 patron.patronage.form.label.inventor = Inventor
 
+patron.patronage.form.button.update = Actualizar
+
 patron.patronage.list.label.code = Codigo
-patron.patronage.l.label.budget = Presupuesto
+patron.patronage.list.label.budget = Presupuesto
+
+
