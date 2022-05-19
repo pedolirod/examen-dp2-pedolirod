@@ -14,7 +14,9 @@ any.artifact.form.label.technology = Technology
 any.artifact.form.label.description = Description
 any.artifact.form.label.retail-price = Retail price
 any.artifact.form.label.link = Link
+any.tool.form.button.create = New Tool
 
 any.artifact.list.label.name = Name
 any.artifact.list.label.code = Code
 any.artifact.list.label.description = Description
+any.tool.list.button.create = New Tool

@@ -33,6 +33,8 @@ public class InventorArtifactShowService implements AbstractShowService<Inventor
 		assert model != null;
 
 		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link");
+		
+		model.setAttribute("isNew", false);
 	}
 
 	@Override
@@ -43,7 +45,7 @@ public class InventorArtifactShowService implements AbstractShowService<Inventor
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneToolById(id);
+		result = this.repository.findOneArtifactById(id);
 
 		return result;
 	}

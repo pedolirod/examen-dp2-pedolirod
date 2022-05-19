@@ -21,4 +21,12 @@
 	<acme:list-column code="any.artifact.list.label.description" path="description" width="60%"/>
 </acme:list>
 
+<jstl:choose>
 
+	<jstl:when test="${isComponent}">
+	
+	</jstl:when>
+	<jstl:otherwise>
+		<acme:button code="any.tool.list.button.create" action="/inventor/artifact/create-tool"/>
+	</jstl:otherwise>
+</jstl:choose>

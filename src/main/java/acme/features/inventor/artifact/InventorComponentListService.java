@@ -50,6 +50,8 @@ public class InventorComponentListService implements AbstractListService<Invento
 		assert model != null;
 
 		request.unbind(entity, model, "name", "code", "description");
+		
+		model.setAttribute("isComponent", true);
 	}
 
 }

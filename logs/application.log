@@ -1,8 +1,24 @@
+2022-05-08 18:21:45.781 INFO  [acme.Launcher@main] Starting Launcher using Java 1.8.0_261 on LAPTOP-KD3M7QQ5 with PID 4664 (C:\Users\manol\Desktop\dp2\Workspace-22.0\Workspace-22.0\Frameworks\Acme-Framework-22.5\target\classes started by manol in C:\Users\manol\Desktop\dp2\Workspace-22.0\Workspace-22.0\Projects\Acme-Toolkit) 
+2022-05-08 18:21:45.782 DEBUG [acme.Launcher@main] Running with Spring Boot v2.4.2, Spring v5.3.3 
+2022-05-08 18:21:45.784 INFO  [acme.Launcher@main] The following profiles are active: development,default 
+2022-05-08 18:21:49.913 DEBUG [org.apache.jasper.servlet.JasperInitializer@main] Initializing Jasper for context [application] 
+2022-05-08 18:21:57.818 DEBUG [org.apache.jasper.servlet.JspServlet@main] Scratch dir for the JSP engine is: [C:\Users\manol\AppData\Local\Temp\tomcat.8080.5104570747174182125\work\Tomcat\localhost\acme-toolkit-22.1] 
+2022-05-08 18:21:57.819 DEBUG [org.apache.jasper.servlet.JspServlet@main] IMPORTANT: Do not modify the generated servlets 
+2022-05-08 18:21:57.842 INFO  [acme.Launcher@main] Started Launcher in 12.981 seconds (JVM running for 13.888) 
+2022-05-08 18:21:57.850 DEBUG [acme.Launcher@main] Found classpath entry '/C:/Users/manol/Desktop/dp2/Workspace-22.0/Workspace-22.0/Projects/Acme-Toolkit/target/test-classes/' 
+2022-05-08 18:21:57.850 DEBUG [acme.Launcher@main] Found classpath entry '/C:/Users/manol/Desktop/dp2/Workspace-22.0/Workspace-22.0/Projects/Acme-Toolkit/target/classes/' 
+2022-05-08 18:21:57.851 DEBUG [acme.Launcher@main] Found classpath entry '/C:/Users/manol/Desktop/dp2/Workspace-22.0/Workspace-22.0/Frameworks/Acme-Framework-22.5/target/classes/' 
+2022-05-08 18:21:57.851 DEBUG [acme.Launcher@main] Found classpath entry '/C:/Users/manol/Desktop/dp2/Workspace-22.0/Workspace-22.0/Frameworks/Acme-Framework-22.5/target/test-classes/' 
+2022-05-08 18:21:57.852 DEBUG [acme.Launcher@main] Found classpath entry '/C:/Users/manol/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/2.4.2/spring-boot-starter-tomcat-2.4.2.jar' 
+2022-05-08 18:21:57.852 DEBUG [acme.Launcher@main] Found classpath entry '/C:/Users/manol/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar' 
+2022-05-08 18:21:57.853 DEBUG [acme.Launcher@main] Found classpath entry '/C:/Users/manol/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.41/tomcat-embed-core-9.0.41.jar' 
+2022-05-08 18:21:57.853 DEBUG [acme.Launcher@main] Found classpath entry '/C:/Users/manol/.m2/repository/org/glassfish/jakarta.el/3.0.3/jakarta.el-3.0.3.jar' 
+2022-05-08 18:21:57.853 DEBUG [acme.Launcher@main] Found classpath entry '/C:/Users/manol/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.41/tomcat-embed-websocket-9.0.41.jar' 
+2022-05-08 18:21:57.854 DEBUG [acme.Launcher@main] Found classpath entry '/C:/Users/manol/.m2/repository/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.41/tomcat-embed-jasper-9.0.41.jar' 
 2022-05-12 11:09:47.686 INFO  [acme.Launcher@main] Starting Launcher using Java 1.8.0_261 on LAPTOP-KD3M7QQ5 with PID 10140 (C:\Users\manol\Desktop\dp2\Workspace-22.0\Workspace-22.0\Frameworks\Acme-Framework-22.3\target\classes started by manol in C:\Users\manol\git\Acme-Toolkit) 
 2022-05-12 11:09:47.687 DEBUG [acme.Launcher@main] Running with Spring Boot v2.4.2, Spring v5.3.3 
 2022-05-12 11:09:47.688 INFO  [acme.Launcher@main] The following profiles are active: development,default 
-2022-05-12 11:09:50.278 DEBUG [org.apache.jasper.servlet.JasperInitializer@main] Initializing Jasper for context [application] 
-2022-05-12 11:09:55.972 DEBUG [org.apache.jasper.servlet.JspServlet@main] Scratch dir for the JSP engine is: [C:\Users\manol\AppData\Local\Temp\tomcat.8080.1148179309536734476\work\Tomcat\localhost\acme-toolkit-22.1] 
+2022-05-12 11:09:50.278 DEBUG [org.apache.jasper.servlet.JasperInitializer@main] Initializing Jasper for context [application] 2022-05-12 11:09:55.972 DEBUG [org.apache.jasper.servlet.JspServlet@main] Scratch dir for the JSP engine is: [C:\Users\manol\AppData\Local\Temp\tomcat.8080.1148179309536734476\work\Tomcat\localhost\acme-toolkit-22.1] 
 2022-05-12 11:09:55.973 DEBUG [org.apache.jasper.servlet.JspServlet@main] IMPORTANT: Do not modify the generated servlets 
 2022-05-12 11:09:55.989 INFO  [acme.Launcher@main] Started Launcher in 8.838 seconds (JVM running for 9.399) 
 2022-05-12 11:09:55.995 DEBUG [acme.Launcher@main] Found classpath entry '/C:/Users/manol/git/Acme-Toolkit/target/test-classes/' 
