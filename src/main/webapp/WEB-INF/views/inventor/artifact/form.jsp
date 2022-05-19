@@ -23,8 +23,7 @@
 	
 	<jstl:otherwise>
 	
-	
-		<acme:form readonly="true">
+		<acme:form>
 			<acme:input-textbox code="any.artifact.form.label.name" path="name"/>	
 			<acme:input-textbox code="any.artifact.form.label.code" path="code"/>	
 			<acme:input-textbox code="any.artifact.form.label.technology" path="technology"/>
@@ -32,9 +31,9 @@
 			<acme:input-money code="any.artifact.form.label.retail-price" path="retailPrice"/>
 			<acme:input-url code="any.artifact.form.label.link" path="link"/>
 			
+			<acme:submit code="any.tool.form.button.update" action="/inventor/artifact/update"/>
 		</acme:form>
 		
-		<acme:submit code="any.tool.form.button.update" action="/inventor/artifact/update-tool"/>
 		
 	</jstl:otherwise>
 

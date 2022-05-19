@@ -1,9 +1,5 @@
 package acme.features.inventor.artifact;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,14 +18,12 @@ public class InventorToolUpdateService implements AbstractUpdateService<Inventor
 	@Autowired
 	protected InventorArtifactRepository repository;
 
-	// AbstractUpdateService<Employer, Job> -------------------------------------
-
 
 	@Override
 	public boolean authorise(final Request<Artifact> request) {
 		assert request != null;
 
-		boolean result;
+		boolean result = true;
 		int masterId;
 		Artifact art;
 		Inventor inv;
@@ -38,7 +32,7 @@ public class InventorToolUpdateService implements AbstractUpdateService<Inventor
 		art = this.repository.findOneArtifactById(masterId);
 		inv = art.getInventor();
 		result = request.isPrincipal(inv);
-
+		
 		return result;
 	}
 
@@ -73,7 +67,7 @@ public class InventorToolUpdateService implements AbstractUpdateService<Inventor
 	@Override
 	public Artifact findOne(final Request<Artifact> request) {
 		assert request != null;
-
+		
 		Artifact result;
 		int id;
 
@@ -87,7 +81,7 @@ public class InventorToolUpdateService implements AbstractUpdateService<Inventor
 	public void update(final Request<Artifact> request, final Artifact entity) {
 		assert request != null;
 		assert entity != null;
-
+		
 		this.repository.save(entity);
 	}
 

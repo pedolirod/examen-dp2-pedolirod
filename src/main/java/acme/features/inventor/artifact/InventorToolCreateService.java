@@ -70,7 +70,6 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 		assert model != null;
 
 		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link");
-		model.setAttribute("isNew", true);
 	}
 
 	@Override
