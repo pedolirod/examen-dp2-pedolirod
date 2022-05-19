@@ -8,13 +8,13 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.announcement.form.label.title = Title
-authenticated.announcement.form.label.creationMoment = Creation moment
-authenticated.announcement.form.label.body = Body
-authenticated.announcement.form.label.flag = Flag
-authenticated.announcement.form.label.link = Link
-
-authenticated.announcement.list.label.title = Title
-authenticated.announcement.list.label.body = Body
-
+administrator.announcement.form.label.title = Title
+administrator.announcement.form.label.creationMoment = Creation moment
+administrator.announcement.form.label.body = Body
+administrator.announcement.form.label.flag = Flag
+administrator.announcement.form.label.link = Link
 administrator.announcement.form.button.create = New Annoucement
+
+administrator.announcement.list.label.title = Title
+administrator.announcement.list.label.body = Body
+administrator.announcement.list.label.create = new Announcement
