@@ -5,7 +5,10 @@ import org.springframework.stereotype.Service;
 
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
+import acme.framework.controllers.HttpMethod;
 import acme.framework.controllers.Request;
+import acme.framework.controllers.Response;
+import acme.framework.helpers.PrincipalHelper;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractUpdateService;
 import acme.systemSetting.SystemSetting;
@@ -42,7 +45,12 @@ public class AdministratorSystemSettingUpdateService implements AbstractUpdateSe
 
 	@Override
 	public void unbind(final Request<SystemSetting> request, final SystemSetting entity, final Model model) {
+		assert request !=null;
+		assert entity !=null;
+		assert model != null;
 		
+		request.unbind(entity, model, "weakSpamThreshold", "strongSpamThreshold", "defaultCurrency", "acceptedCurrencies", "weakSpam", "strongSpam");
+
 	}
 
 	@Override
@@ -57,17 +65,28 @@ public class AdministratorSystemSettingUpdateService implements AbstractUpdateSe
 
 	@Override
 	public void validate(final Request<SystemSetting> request, final SystemSetting entity, final Errors errors) {
-		// TODO Auto-generated method stub
-		
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
 	}
 
 	@Override
 	public void update(final Request<SystemSetting> request, final SystemSetting entity) {
-		// TODO Auto-generated method stub
+		assert request !=null;
+		assert entity !=null;
 		
+		this.repository.save(entity);
 	}
 
-	
+	@Override
+	public void onSuccess(final Request<SystemSetting> request, final Response<SystemSetting> response) {
+		assert request != null;
+		assert response != null;
+
+		if (request.isMethod(HttpMethod.POST)) {
+			PrincipalHelper.handleUpdate();
+		}
+	}
 
 	
 }
