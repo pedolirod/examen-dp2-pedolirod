@@ -15,6 +15,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
+<%@ page import="acme.datatypes.StatusType" %>
 
 <acme:form>
 	<acme:input-textbox code="inventor.patronage.form.label.status" path="status"/>	
@@ -29,5 +30,10 @@
 	<acme:button code="inventor.patronage.form.label.patronageReport" action="/inventor/patronage-report/list?patronageId=${id}"/>
 	</jstl:if>
 	
-	<acme:submit code="inventor.patronage.form.button.update" action="/inventor/patronage/update"/>
+	<jstl:choose>
+		<jstl:when test="${status == StatusType.PROPOSED}">
+			<acme:submit code="inventor.patronage.form.button.updateStatus.accept" action="/inventor/patronage/update-status?status=${StatusType.ACCEPTED}"/>
+			<acme:submit code="inventor.patronage.form.button.updateStatus.deny" action="/inventor/patronage/update-status?status=${StatusType.DENIED}"/>
+		</jstl:when>
+	</jstl:choose>
 </acme:form>
