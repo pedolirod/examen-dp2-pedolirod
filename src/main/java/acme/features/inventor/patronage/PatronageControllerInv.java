@@ -21,7 +21,9 @@ public class PatronageControllerInv extends AbstractController<Inventor, Patrona
 		protected PatronageShowServiceInv	showService;
 		
 		@Autowired
-		protected PatronageUpdateServiceInv	updateService;
+		protected PatronageUpdateStatusServiceInv	updateService;
+		
+
 
 		// Constructors -----------------------------------------------------------
 
@@ -30,7 +32,7 @@ public class PatronageControllerInv extends AbstractController<Inventor, Patrona
 		protected void initialise() {
 			super.addCommand("list", this.listService);
 			super.addCommand("show", this.showService);
-			super.addCommand("update", this.updateService);
+			super.addCommand("update-status", "update", this.updateService);
 		}
 
 }

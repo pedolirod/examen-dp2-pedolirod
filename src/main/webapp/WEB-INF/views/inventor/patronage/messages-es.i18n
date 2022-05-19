@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-inventor.patronage.form.title.update = Actualiza tus datos de trabajador
+inventor.patronage.form.title.delete = Eliminar tus datos de trabajador
 
 inventor.patronage.form.label.status = Estado
 inventor.patronage.form.label.code = Codido
@@ -20,7 +20,8 @@ inventor.patronage.form.label.link = Link
 inventor.patronage.form.label.patron = Patron
 inventor.patronage.form.label.patronageReport = Reporte de patronage
 
-inventor.patronage.form.button.update = Actualizar
+inventor.patronage.form.button.updateStatus.accept = Aceptar 
+inventor.patronage.form.button.updateStatus.deny = Denegar 
 
 inventor.patronage.list.label.code = Codigo
 inventor.patronage.list.label.budget = Presupuesto
