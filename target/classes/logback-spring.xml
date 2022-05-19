@@ -26,11 +26,6 @@
 		<property name="rollerName" value="./logs/application.;%d{yyyy-MM-dd}T%d{HH.mm.ss.SSS,aux}.log"/>				
 	</springProfile>
 	
-	<springProfile name="testing">
-		<property name="fileName" value="./logs/testing.log"/>
-		<property name="rollerName" value="./logs/testing.;%d{yyyy-MM-dd}T%d{HH.mm.ss.SSS,aux}.log"/>				
-	</springProfile>
-	
 	<springProfile name="populator">
 		<property name="fileName" value="./logs/populator.log"/>
 		<property name="rollerName" value="./logs/populator.;%d{yyyy-MM-dd}T%d{HH.mm.ss.SSS,aux}.log"/>				
@@ -39,6 +34,11 @@
 	<springProfile name="inquirer">
 		<property name="fileName" value="./logs/inquirer.log"/>
 		<property name="rollerName" value="./logs/inquirer.;%d{yyyy-MM-dd}T%d{HH.mm.ss.SSS,aux}.log"/>				
+	</springProfile>
+	
+	<springProfile name="testing">
+		<property name="fileName" value="./logs/testing.log"/>
+		<property name="rollerName" value="./logs/testing.;%d{yyyy-MM-dd}T%d{HH.mm.ss.SSS,aux}.log"/>				
 	</springProfile>
 
 	<appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
@@ -68,7 +68,7 @@
 	<root level="DEBUG">
 		<appender-ref ref="Console"/>		
 		<appender-ref ref="File"/>
-	</root>
-
+	</root>					
+	
 </configuration>
 
