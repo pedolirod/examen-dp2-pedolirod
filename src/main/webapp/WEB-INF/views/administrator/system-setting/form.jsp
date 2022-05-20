@@ -25,7 +25,7 @@
 	
 	
 			
-	<acme:submit code="administrator.systemSetting.form.button.update" action="/administrator/systemSetting/update"/>
+	<acme:submit code="administrator.systemSetting.update" action="/administrator/system-setting/update"/>
 			
 		
 	
