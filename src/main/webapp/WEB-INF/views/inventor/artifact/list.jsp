@@ -21,10 +21,11 @@
 	<acme:list-column code="any.artifact.list.label.description" path="description" width="60%"/>
 </acme:list>
 
-<jstl:choose>
 
-	<jstl:when test="${isComponent}">
-	
+	<!-- comprobar por qué no me hace el isTool -->
+<jstl:choose>
+	<jstl:when test="${isTool == true}">
+		<acme:button code="any.tool.list.button.create" action="/inventor/artifact/create-tool"/>
 	</jstl:when>
 	<jstl:otherwise>
 		<acme:button code="any.tool.list.button.create" action="/inventor/artifact/create-tool"/>

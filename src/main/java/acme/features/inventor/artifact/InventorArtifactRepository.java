@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.artifact.Artifact;
 import acme.artifact.ArtifactType;
+import acme.artifact.PartOf;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor;
 
@@ -21,5 +22,8 @@ public interface InventorArtifactRepository extends AbstractRepository {
 	
 	@Query("select i from Inventor i where i.id = :id")
 	Inventor findOneInventorByInventorId(int id);
+	
+	@Query("select p from PartOf p where p.artifact.id = :id")
+	Collection<PartOf> findAllPartoOfByArtifact(int id);
 
 }

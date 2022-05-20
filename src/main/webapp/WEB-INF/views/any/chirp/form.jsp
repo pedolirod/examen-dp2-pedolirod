@@ -33,8 +33,8 @@
 		<acme:form readonly="true">
 			<acme:input-textbox code="any.chirp.form.label.creationMoment" path="creationMoment"/>	
 			<acme:input-textbox code="any.chirp.form.label.title" path="title"/>	
-			<acme:input-textarea code="any.chirp.form.label.author" path="author"/>
-			<acme:input-textbox code="any.chirp.form.label.body" path="body"/>
+			<acme:input-textbox code="any.chirp.form.label.author" path="author"/>
+			<acme:input-textarea code="any.chirp.form.label.body" path="body"/>
 			<acme:input-textbox code="any.chirp.form.label.email" path="email"/>
 		</acme:form>
 		

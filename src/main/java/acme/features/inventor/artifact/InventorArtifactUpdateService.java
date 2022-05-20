@@ -4,55 +4,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.artifact.Artifact;
-import acme.artifact.ArtifactType;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
-import acme.framework.services.AbstractCreateService;
+import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorToolCreateService implements AbstractCreateService<Inventor, Artifact> {
+public class InventorArtifactUpdateService implements AbstractUpdateService<Inventor, Artifact> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected InventorArtifactRepository repository;
 
-	// AbstractCreateService<Inventor, Artifact> interface --------------
-
 
 	@Override
 	public boolean authorise(final Request<Artifact> request) {
 		assert request != null;
 
-		return true;
-	}
+		boolean result = true;
+		int masterId;
+		Artifact art;
+		Inventor inv;
 
-	@Override
-	public Artifact instantiate(final Request<Artifact> request) {
-		assert request != null;
-
-		Artifact result;
-
-		result = new Artifact();
-		int i = request.getPrincipal().getActiveRoleId();
-		Inventor inv = repository.findOneInventorByInventorId(i);
-		result.setInventor(inv);
-		result.setType(ArtifactType.TOOL);
-		result.setPublish(false);
-
+		masterId = request.getModel().getInteger("id");
+		art = this.repository.findOneArtifactById(masterId);
+		inv = art.getInventor();
+		result = request.isPrincipal(inv);
+		
 		return result;
-	}
-
-	@Override
-	public void bind(final Request<Artifact> request, final Artifact entity, final Errors errors) {
-		assert request != null;
-		assert entity != null;
-		assert errors != null;
-		
-		request.bind(entity, errors, "name", "code", "technology", "description", "retailPrice", "link");
-		
 	}
 
 	@Override
@@ -60,7 +41,17 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
 		
+	}
+
+	@Override
+	public void bind(final Request<Artifact> request, final Artifact entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		request.bind(entity, errors, "name", "code", "technology", "description", "retailPrice", "link");
 		
 	}
 
@@ -71,15 +62,25 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 		assert model != null;
 
 		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "link");
-		model.setAttribute("isNew", true);
-		model.setAttribute("isTool", true);
 	}
 
 	@Override
-	public void create(final Request<Artifact> request, final Artifact entity) {
+	public Artifact findOne(final Request<Artifact> request) {
+		assert request != null;
+		
+		Artifact result;
+		int id;
+
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneArtifactById(id);
+
+		return result;
+	}
+
+	@Override
+	public void update(final Request<Artifact> request, final Artifact entity) {
 		assert request != null;
 		assert entity != null;
-
 		
 		this.repository.save(entity);
 	}
