@@ -15,6 +15,9 @@ any.artifact.form.label.description = Description
 any.artifact.form.label.retail-price = Retail price
 any.artifact.form.label.link = Link
 any.tool.form.button.create = New Tool
+any.artifact.form.button.update = Update
+any.artifact.form.button.delete = Delete
+any.artifact.form.button.publish = Publish
 
 any.artifact.list.label.name = Name
 any.artifact.list.label.code = Code

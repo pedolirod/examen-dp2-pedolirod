@@ -59,6 +59,9 @@ public class Artifact extends AbstractEntity{
 	
 	protected ArtifactType type;
 	
+	@NotNull
+	protected boolean isPublish;
+	
 
 	//Relationships
 	@NotNull

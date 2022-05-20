@@ -1,17 +1,20 @@
 package acme.features.inventor.artifact;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.artifact.Artifact;
+import acme.artifact.PartOf;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
-import acme.framework.services.AbstractUpdateService;
+import acme.framework.services.AbstractDeleteService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorToolUpdateService implements AbstractUpdateService<Inventor, Artifact> {
+public class InventorArtifactDeleteService implements AbstractDeleteService<Inventor, Artifact> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -78,11 +81,18 @@ public class InventorToolUpdateService implements AbstractUpdateService<Inventor
 	}
 
 	@Override
-	public void update(final Request<Artifact> request, final Artifact entity) {
+	public void delete(Request<Artifact> request, Artifact entity) {
 		assert request != null;
 		assert entity != null;
 		
-		this.repository.save(entity);
+		Collection<PartOf> partOf = this.repository.findAllPartoOfByArtifact(entity.getId());
+		for(PartOf p : partOf) {
+			this.repository.delete(p);
+		}
+		this.repository.delete(entity);
+		
 	}
+
+	
 
 }

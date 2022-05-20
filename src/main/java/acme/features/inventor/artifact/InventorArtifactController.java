@@ -27,7 +27,13 @@ public class InventorArtifactController extends AbstractController<Inventor, Art
 	protected InventorToolCreateService	createToolService;
 	
 	@Autowired
-	protected InventorToolUpdateService	updateToolService;
+	protected InventorArtifactUpdateService	updateService;
+	
+	@Autowired
+	protected InventorArtifactDeleteService	deleteService;
+	
+	@Autowired
+	protected InventorArtifactPublishService	publishService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -37,7 +43,9 @@ public class InventorArtifactController extends AbstractController<Inventor, Art
 		super.addCommand("list-tool","list", this.listToolService);
 		super.addCommand("list-component","list", this.listComponentService);
 		super.addCommand("create-tool","create", this.createToolService);
-		super.addCommand("update", this.updateToolService);
+		super.addCommand("update", this.updateService);
+		super.addCommand("publish","update", this.publishService);
+		super.addCommand("delete", this.deleteService);
 		super.addCommand("show", this.showService);
 	}
 
