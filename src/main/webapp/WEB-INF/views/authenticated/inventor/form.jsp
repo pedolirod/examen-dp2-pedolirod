@@ -18,8 +18,8 @@
 <acme:form>
 	<acme:input-textbox code="authenticated.inventor.form.label.company" path="company"/>
 	<acme:input-textbox code="authenticated.inventor.form.label.sector" path="statement"/>
-	<acme:input-textbox code="authenticated.inventor.form.label.link" path="link"/>
+	<acme:input-url code="authenticated.inventor.form.label.link" path="link"/>
 	
-	<acme:submit test="${command == 'create'}" code="authenticated.inventor.form.button.create" action="/authenticated/patron/create"/>
-	<acme:submit test="${command == 'update'}" code="authenticated.inventor.form.button.update" action="/authenticated/patron/update"/>
+	<acme:submit test="${command == 'create'}" code="authenticated.inventor.form.button.create" action="/authenticated/inventor/create"/>
+	<acme:submit test="${command == 'update'}" code="authenticated.inventor.form.button.update" action="/authenticated/inventor/update"/>
 </acme:form>

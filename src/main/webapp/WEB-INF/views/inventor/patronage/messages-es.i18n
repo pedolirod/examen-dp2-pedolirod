@@ -8,15 +8,20 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-patron.patronage.form.label.status = Estado
-patron.patronage.form.label.code = Codido
-patron.patronage.form.label.legalStuff = Legal
-patron.patronage.form.label.budget = Presupuesto
-patron.patronage.form.label.startDate = Fecha inicio
-patron.patronage.form.label.finishDate = Fecha fin
-patron.patronage.form.label.link = Link
-patron.patronage.form.label.patron = Patron
-patron.patronage.form.label.patronageReport = Reporte de patronage
+inventor.patronage.form.title.delete = Eliminar tus datos de trabajador
 
-patron.patronage.list.label.code = Codigo
-patron.patronage.list.label.budget = Presupuesto
+inventor.patronage.form.label.status = Estado
+inventor.patronage.form.label.code = Codido
+inventor.patronage.form.label.legalStuff = Legal
+inventor.patronage.form.label.budget = Presupuesto
+inventor.patronage.form.label.startDate = Fecha inicio
+inventor.patronage.form.label.finishDate = Fecha fin
+inventor.patronage.form.label.link = Link
+inventor.patronage.form.label.patron = Patron
+inventor.patronage.form.label.patronageReport = Reporte de patronage
+
+inventor.patronage.form.button.updateStatus.accept = Aceptar 
+inventor.patronage.form.button.updateStatus.deny = Denegar 
+
+inventor.patronage.list.label.code = Codigo
+inventor.patronage.list.label.budget = Presupuesto

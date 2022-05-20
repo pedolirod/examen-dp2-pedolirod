@@ -89,3 +89,9 @@ master.menu.tool-kit = Caja de Herramientas
 master.menu.patron = Patrón
 master.menu.patron.patronage = Patrocinio
 
+
+
+master.menu.user-account.become-inventor = Become inventor
+master.menu.user-account.become-patron = Become patron
+master.menu.user-account.inventor = Inventor
+master.menu.user-account.patron = Patron

@@ -88,3 +88,10 @@ master.menu.announcement = Announcement
 # master.menu.tool-kit ########################################################
 master.menu.tool-kit = ToolKit
 
+
+
+
+master.menu.user-account.become-inventor = Become inventor
+master.menu.user-account.become-patron = Become patron
+master.menu.user-account.inventor = Inventor
+master.menu.user-account.patron = Patron
