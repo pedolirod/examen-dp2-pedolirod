@@ -36,11 +36,21 @@ public class InventorToolListService implements AbstractListService<Inventor, Ar
 
 		Collection<Artifact> result;
 
-		int i = request.getPrincipal().getActiveRoleId();
+		final int i = request.getPrincipal().getActiveRoleId();
 		
 		result = this.repository.findManyTool(ArtifactType.TOOL, i);
 
 		return result;
+	}
+	
+	@Override
+	public void unbind(final Request<Artifact> request, final Collection<Artifact> entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+		
+		model.setAttribute("isTool", true);
+		
 	}
 	
 	@Override
