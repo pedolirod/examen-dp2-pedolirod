@@ -1,5 +1,5 @@
 /*
- * InventorToolKitUpdateService.java
+ * InventorToolKitCreateService.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,7 +10,9 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.patron.toolKit;
+package acme.features.inventor.toolKit;
+
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,12 +20,11 @@ import org.springframework.stereotype.Service;
 import acme.artifact.ToolKit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
-
 @Service
-public class InventorToolKitShowService implements AbstractShowService<Inventor, ToolKit>{
+public class InventorToolKitListService implements AbstractListService<Inventor, ToolKit>{
 	
 	@Autowired
 	protected InventorToolKitRepository repository;
@@ -31,17 +32,19 @@ public class InventorToolKitShowService implements AbstractShowService<Inventor,
 	@Override
 	public boolean authorise(final Request<ToolKit> request) {
 		assert request != null;
-		
+
 		return true;
 	}
 
 	@Override
-	public ToolKit findOne(final Request<ToolKit> request) {
+	public Collection<ToolKit> findMany(final Request<ToolKit> request) {
 		assert request != null;
-		
-		final int id = request.getModel().getInteger("id");
-		
-		return this.repository.findOneToolKitById(id);
+
+		Collection<ToolKit> result;
+		final Integer id = request.getPrincipal().getActiveRoleId();
+		result = this.repository.findManyToolKits(id);
+
+		return result;
 	}
 
 	@Override
@@ -50,9 +53,10 @@ public class InventorToolKitShowService implements AbstractShowService<Inventor,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "code", "title", "description", "assemblyNotes", "link");
-		
+		request.unbind(entity, model, "title", "code");
 	}
+
+
 
 
 

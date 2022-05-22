@@ -23,4 +23,22 @@
 	<acme:input-textbox code="inventor.toolkit.form.label.link" path="link"/>
 	
 	<acme:button code="any.toolkit.form.button.partOf" action="/any/part-of/list?masterId=${id}"/>
+	
+	<acme:submit code="any.artifact.form.button.update" action="/inventor/tool-kit/update"/>
+	<acme:submit code="any.artifact.form.button.delete" action="/inventor/tool-kit/delete"/>
+	<acme:submit code="any.artifact.form.button.publish" action="/inventor/tool-kit/publish"/>
+
+<%-- 	<jstl:choose>
+		<jstl:when test="${isNew == true}">
+			<acme:submit code="any.toolKit.form.button.create" action="/inventor/tool-kit/create"/>
+		</jstl:when>
+		<jstl:otherwise>
+			<jstl:if test = "${isPublish == false}">
+				<acme:submit code="any.artifact.form.button.update" action="/inventor/tool-kit/update"/>
+				<acme:submit code="any.artifact.form.button.delete" action="/inventor/tool-kit/delete"/>
+				<acme:submit code="any.artifact.form.button.publish" action="/inventor/tool-kit/publish"/>
+			</jstl:if>
+		</jstl:otherwise>
+	</jstl:choose> --%>
+
 </acme:form>

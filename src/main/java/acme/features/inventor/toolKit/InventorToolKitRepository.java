@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.patron.toolKit;
+package acme.features.inventor.toolKit;
 
 import java.util.Collection;
 

@@ -11,7 +11,11 @@
 	<acme:input-textarea code="any.artifact.form.label.description" path="description"/>
 	<acme:input-money code="any.artifact.form.label.retail-price" path="retailPrice"/>
 	<acme:input-url code="any.artifact.form.label.link" path="link"/>
-	<jstl:choose>
+	<acme:submit code="any.artifact.form.button.update" action="/inventor/artifact/update"/>
+	<acme:submit code="any.artifact.form.button.delete" action="/inventor/artifact/delete"/>
+	<acme:submit code="any.artifact.form.button.publish" action="/inventor/artifact/publish"/>
+	
+ 	<jstl:choose>
 	<jstl:when test="${isNew == true}">
 		<acme:submit code="any.tool.form.button.create" action="/inventor/artifact/create-tool"/>
 	</jstl:when>
@@ -22,7 +26,7 @@
 		<acme:submit code="any.artifact.form.button.publish" action="/inventor/artifact/publish"/>
 		</jstl:if>
 	</jstl:otherwise>
-	</jstl:choose>
+	</jstl:choose> 
 </acme:form>
 
 
