@@ -22,4 +22,8 @@
 	<acme:input-textbox code="administrator.systemSetting.form.label.weakSpam" path="weakSpam"/>
 	<acme:input-textbox code="administrator.systemSetting.form.label.strongSpamThreshold" path="strongSpamThreshold"/>
 	<acme:input-textbox code="administrator.systemSetting.form.label.strongSpam" path="strongSpam"/>
+	
+	<acme:submit code="administrator.systemSetting.update" action="/administrator/system-setting/update"/>
+	
+	
 </acme:form>
