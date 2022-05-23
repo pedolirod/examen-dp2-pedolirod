@@ -17,7 +17,8 @@
 
 
 	
-	
+	<jstl:choose>
+<jstl:when test="${isNew}">
 <acme:form >
 	<acme:input-textbox code="patron.patronage.form.label.status" path="status"/>	
 	<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>	
@@ -26,7 +27,32 @@
 	<acme:input-textbox code="patron.patronage.form.label.startDate" path="startDate"/>
 	<acme:input-textbox code="patron.patronage.form.label.finishDate" path="finishDate"/>
 	<acme:input-textbox code="patron.patronage.form.label.link" path="link"/>
-	<acme:button code="patron.patronage.form.label.inventor" action="/any/user-account/show?masterId=${inventorId}"/>
+	<acme:input-select code="patron.patronage.form.label.inventor" path="inventorId">
+	   			<jstl:forEach items="${inventor}" var="inventor">
+					<acme:input-option code="${inventor.getUserAccount().getUsername()}" value="${inventor.getId()}" selected="${ inventor.getId() == inventId }"/>
+				</jstl:forEach>
+			</acme:input-select>
+<acme:submit code="patron.patronage.form.button.create" action="/patron/patronage/create"/>
 
-	<acme:submit code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
 </acme:form>
+</jstl:when>
+
+
+<jstl:otherwise>	
+<acme:form >
+	<acme:input-textbox code="patron.patronage.form.label.status" path="status"/>	
+	<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>	
+	<acme:input-textarea code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
+	<acme:input-textbox code="patron.patronage.form.label.budget" path="budget"/>
+	<acme:input-textbox code="patron.patronage.form.label.startDate" path="startDate"/>
+	<acme:input-textbox code="patron.patronage.form.label.finishDate" path="finishDate"/>
+	<acme:input-textbox code="patron.patronage.form.label.link" path="link"/>
+
+<jstl:if test="${isPublish == false}">
+<acme:submit code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
+<acme:submit code="patron.patronage.form.button.delete" action="/patron/patronage/delete"/>
+<acme:submit code="patron.patronage.form.button.publish" action="/patron/patronage/publish" />
+</jstl:if>
+</acme:form>
+	</jstl:otherwise>
+</jstl:choose>

@@ -32,7 +32,7 @@ public class PatronageShowServiceInv implements AbstractShowService<Inventor, Pa
 			assert entity != null;
 			assert model != null;
 
-			request.unbind(entity, model, "id", "status", "code", "legalStuff", "budget", "startDate", "link");
+			request.unbind(entity, model, "id", "status", "code", "legalStuff", "budget", "startDate", "link", "isPublish");
 			model.setAttribute("patronId", entity.getPatron().getUserAccount().getId());
 			model.setAttribute("esInventor", true);
 		}

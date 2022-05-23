@@ -35,7 +35,7 @@ public class PatronageListServiceInv implements AbstractListService<Inventor, Pa
 
 			Collection<Patronage> result;
 
-			result = this.repository.findManyPatronage();
+			result = this.repository.findManyPatronageByInv(request.getPrincipal().getActiveRoleId());
 
 			return result;
 		}
