@@ -28,6 +28,6 @@
 		<acme:button code="any.tool.list.button.create" action="/inventor/artifact/create-tool"/>
 	</jstl:when>
 	<jstl:otherwise>
-		<acme:button code="any.tool.list.button.create" action="/inventor/artifact/create-tool"/>
+		<acme:button code="any.tool.list.button.create-component" action="/inventor/artifact/create-component"/>
 	</jstl:otherwise>
 </jstl:choose>

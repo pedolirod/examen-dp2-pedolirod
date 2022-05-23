@@ -36,11 +36,21 @@ public class InventorComponentListService implements AbstractListService<Invento
 
 		Collection<Artifact> result;
 		
-		int i = request.getPrincipal().getActiveRoleId();
+		final int i = request.getPrincipal().getActiveRoleId();
 		
 		result = this.repository.findManyTool(ArtifactType.COMPONENT, i);
 
 		return result;
+	}
+	
+	@Override
+	public void unbind(final Request<Artifact> request, final Collection<Artifact> entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+		
+		model.setAttribute("isTool", false);
+		
 	}
 	
 	@Override
@@ -50,8 +60,6 @@ public class InventorComponentListService implements AbstractListService<Invento
 		assert model != null;
 
 		request.unbind(entity, model, "name", "code", "description");
-		
-		model.setAttribute("isTool", false);
 	}
 
 }
