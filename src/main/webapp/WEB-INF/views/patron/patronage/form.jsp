@@ -17,7 +17,8 @@
 
 
 	
-	
+	<jstl:choose>
+<jstl:when test="${isNew}">
 <acme:form >
 	<acme:input-textbox code="patron.patronage.form.label.status" path="status"/>	
 	<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>	
@@ -26,7 +27,24 @@
 	<acme:input-textbox code="patron.patronage.form.label.startDate" path="startDate"/>
 	<acme:input-textbox code="patron.patronage.form.label.finishDate" path="finishDate"/>
 	<acme:input-textbox code="patron.patronage.form.label.link" path="link"/>
-	<acme:button code="patron.patronage.form.label.inventor" action="/any/user-account/show?masterId=${inventorId}"/>
 
-	<acme:submit code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
+<acme:submit code="patron.patronage.form.button.create" action="/patron/patronage/create-patronage"/>
+
 </acme:form>
+</jstl:when>
+
+
+<jstl:otherwise>	
+<acme:form >
+	<acme:input-textbox code="patron.patronage.form.label.status" path="status"/>	
+	<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>	
+	<acme:input-textarea code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
+	<acme:input-textbox code="patron.patronage.form.label.budget" path="budget"/>
+	<acme:input-textbox code="patron.patronage.form.label.startDate" path="startDate"/>
+	<acme:input-textbox code="patron.patronage.form.label.finishDate" path="finishDate"/>
+	<acme:input-textbox code="patron.patronage.form.label.link" path="link"/>
+
+<acme:submit code="patron.patronage.form.button.update" action="/patron/patronage/update"/>
+</acme:form>
+	</jstl:otherwise>
+</jstl:choose>
