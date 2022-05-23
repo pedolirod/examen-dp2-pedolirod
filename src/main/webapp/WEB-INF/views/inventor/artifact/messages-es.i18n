@@ -22,4 +22,5 @@ any.artifact.form.button.publish = Publicar
 any.artifact.list.label.name = Nombre
 any.artifact.list.label.code = Código
 any.artifact.list.label.description = Descripcion
-any.tool.list.button.create = Nuevo Tool
+any.tool.list.button.create = Nueva Herramienta
+any.tool.list.button.create-component = Nuevo Componente

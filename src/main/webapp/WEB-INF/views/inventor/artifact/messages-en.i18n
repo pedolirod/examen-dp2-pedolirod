@@ -23,3 +23,4 @@ any.artifact.list.label.name = Name
 any.artifact.list.label.code = Code
 any.artifact.list.label.description = Description
 any.tool.list.button.create = New Tool
+any.tool.list.button.create-component = New Component

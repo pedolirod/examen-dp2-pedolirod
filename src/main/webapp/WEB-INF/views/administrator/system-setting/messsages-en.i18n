@@ -14,3 +14,4 @@ administrator.systemSetting.form.label.weakSpamThreshold = Weak spam threshold (
 administrator.systemSetting.form.label.weakSpam = Weak spam terms
 administrator.systemSetting.form.label.strongSpamThreshold = Strong spam threshold (%)
 administrator.systemSetting.form.label.strongSpam = Strong spam terms
+administrator.systemSetting.update = Update

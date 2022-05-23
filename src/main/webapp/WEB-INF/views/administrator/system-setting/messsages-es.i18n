@@ -14,3 +14,4 @@ administrator.systemSetting.form.label.weakSpamThreshold = Límite de spam débi
 administrator.systemSetting.form.label.weakSpam = Términos de spam débil
 administrator.systemSetting.form.label.strongSpamThreshold = Límite de spam fuerte (%)
 administrator.systemSetting.form.label.strongSpam = Términos de spam fuerte
+administrator.systemSetting.update = Actualizar

@@ -17,11 +17,15 @@ public class AdministratorSystemSettingController  extends AbstractController<Ad
 	@Autowired
 	protected AdministratorSystemSettingShowService	showService;
 
+	@Autowired
+	protected AdministratorSystemSettingUpdateService updateService;
+	
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("show", this.showService);
+		super.addCommand("update", this.updateService);
 	}
 }
