@@ -22,4 +22,6 @@
 	<acme:list-column code="inventor.patronage.list.label.budget-converted" path="convertedBudget" width="20%"/>
 </acme:list>
 
+<acme:button code="patron.patronage.list.button.create" action="/patron/patronage/create"/>
+
 
