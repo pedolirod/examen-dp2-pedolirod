@@ -9,7 +9,7 @@
 
 <acme:form>
 	<acme:input-textbox code="any.artifact.form.label.name" path="name" />
-	<acme:input-textbox code="any.artifact.form.label.code" path="code" />
+	<acme:input-textbox code="any.artifact.form.label.code" path="code" placeholder="AAA-000-A" />
 	<acme:input-textbox code="any.artifact.form.label.technology"
 		path="technology" />
 	<acme:input-textarea code="any.artifact.form.label.description"
@@ -21,12 +21,10 @@
 		<jstl:when test="${isNew == true}">
 			<jstl:choose>
 				<jstl:when test="${isTool == true}">
-					tool
 					<acme:submit code="any.tool.form.button.create"
 						action="/inventor/artifact/create-tool" />
 				</jstl:when>
 				<jstl:otherwise>
-				component
 					<acme:submit code="any.tool.form.button.create"
 					action="/inventor/artifact/create-component" />
 				</jstl:otherwise>

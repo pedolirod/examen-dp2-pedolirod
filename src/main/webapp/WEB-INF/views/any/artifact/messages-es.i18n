@@ -11,11 +11,13 @@
 any.artifact.form.label.name = Nombre
 any.artifact.form.label.code = Código
 any.artifact.form.label.technology = Tecnología
-any.artifact.form.label.description = Descripcion
+any.artifact.form.label.description = Descripción
 any.artifact.form.label.retail-price = Precio al por menor 
 any.artifact.form.label.price-converted = Precio convertido
 any.artifact.form.label.link = Enlace
 
 any.artifact.list.label.name = Nombre
 any.artifact.list.label.code = Código
-any.artifact.list.label.description = Descripcion
+any.artifact.list.label.description = Descripción
+
+inventor.artifact.code.repeated = Este código ya está en uso

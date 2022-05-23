@@ -29,4 +29,8 @@ patron.patronage.form.button.publish = Publish
 patron.patronage.list.label.code = Code
 patron.patronage.list.label.budget = Budget
 
+patron.budget.non-negative = The budget must be positive
 
+patron.finishDate.order-error = The finish date must be after the inital date
+
+patron.finishDate.duration-error = The difference between the start and the finish date must be greater than a month

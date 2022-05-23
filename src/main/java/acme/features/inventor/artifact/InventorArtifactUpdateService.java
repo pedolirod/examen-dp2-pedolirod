@@ -42,7 +42,10 @@ public class InventorArtifactUpdateService implements AbstractUpdateService<Inve
 		assert entity != null;
 		assert errors != null;
 
+		final Artifact artifact = this.repository.findByCode(entity.getCode());
+		errors.state(request, artifact == null, "code", "inventor.artifact.code.repeated");
 		
+		errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.artifact.code.repeated.retailPrice.non-negative");
 	}
 
 	@Override

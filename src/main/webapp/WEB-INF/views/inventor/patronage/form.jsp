@@ -19,7 +19,7 @@
 
 <acme:form>
 	<acme:input-textbox code="inventor.patronage.form.label.status" path="status"/>	
-	<acme:input-textbox code="inventor.patronage.form.label.code" path="code"/>	
+	<acme:input-textbox code="inventor.patronage.form.label.code" path="code" placeholder="AAA-000-A"/>	
 	<acme:input-textarea code="inventor.patronage.form.label.legalStuff" path="legalStuff"/>
 	<acme:input-textbox code="inventor.patronage.form.label.budget" path="budget"/>
 	<acme:input-textbox code="inventor.patronage.form.label.startDate" path="startDate"/>

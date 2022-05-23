@@ -21,7 +21,7 @@
 <jstl:when test="${isNew}">
 <acme:form >
 	<acme:input-textbox code="patron.patronage.form.label.status" path="status"/>	
-	<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>	
+	<acme:input-textbox code="patron.patronage.form.label.code" path="code" placeholder="AAA-000-A"/>	
 	<acme:input-textarea code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
 	<acme:input-textbox code="patron.patronage.form.label.budget" path="budget"/>
 	<acme:input-textbox code="patron.patronage.form.label.startDate" path="startDate"/>

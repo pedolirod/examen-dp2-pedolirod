@@ -36,8 +36,8 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 		Artifact result;
 
 		result = new Artifact();
-		int i = request.getPrincipal().getActiveRoleId();
-		Inventor inv = repository.findOneInventorByInventorId(i);
+		final int i = request.getPrincipal().getActiveRoleId();
+		final Inventor inv = this.repository.findOneInventorByInventorId(i);
 		result.setInventor(inv);
 		result.setType(ArtifactType.TOOL);
 		result.setPublish(false);
@@ -61,7 +61,10 @@ public class InventorToolCreateService implements AbstractCreateService<Inventor
 		assert entity != null;
 		assert errors != null;
 		
+		final Artifact artifact = this.repository.findByCode(entity.getCode());
+		errors.state(request, artifact == null, "code", "inventor.artifact.code.repeated");
 		
+		errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.artifact.code.repeated.retailPrice.non-negative");
 	}
 
 	@Override

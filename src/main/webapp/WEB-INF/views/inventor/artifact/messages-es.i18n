@@ -20,8 +20,10 @@ any.artifact.form.button.update = Actualizar
 any.artifact.form.button.delete = Eliminar
 any.artifact.form.button.publish = Publicar
 
+inventor.artifact.code.repeated.retailPrice.non-negative = El precio al por menor debe ser positivo
+
 any.artifact.list.label.name = Nombre
 any.artifact.list.label.code = Código
-any.artifact.list.label.description = Descripcion
+any.artifact.list.label.description = Descripción
 any.tool.list.button.create = Nueva Herramienta
 any.tool.list.button.create-component = Nuevo Componente

@@ -1,8 +1,8 @@
 package acme.features.patron.patronage;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Optional;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,10 +11,7 @@ import acme.datatypes.StatusType;
 import acme.entities.patronage.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
-import acme.framework.controllers.HttpMethod;
 import acme.framework.controllers.Request;
-import acme.framework.controllers.Response;
-import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 import acme.roles.Patron;
@@ -73,8 +70,8 @@ public class PatronageCreateService implements AbstractCreateService<Patron, Pat
 	
 		
 		result = new Patronage();
-		int patronId = request.getPrincipal().getActiveRoleId();
-		Patron patron = this.repository.findPatronById(patronId);
+		final int patronId = request.getPrincipal().getActiveRoleId();
+		final Patron patron = this.repository.findPatronById(patronId);
 		
 		
 	
@@ -92,9 +89,19 @@ public class PatronageCreateService implements AbstractCreateService<Patron, Pat
 		assert entity != null;
 		assert errors != null;
 		
+		errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.budget.non-negative");
 		
+		errors.state(request, entity.getFinishDate().after(entity.getStartDate()), "finishDate", "patron.finishDate.order-error");
+
+		final LocalDateTime startDate = entity.getStartDate().toInstant()
+		      .atZone(ZoneId.systemDefault())
+		      .toLocalDateTime();
 		
+		final LocalDateTime finishDate = entity.getFinishDate().toInstant()
+		      .atZone(ZoneId.systemDefault())
+		      .toLocalDateTime();
 		
+		errors.state(request, Duration.between(startDate, finishDate).toDays() > 30, "finishDate", "patron.finishDate.duration-error");
 	}
 
 	@Override
@@ -102,7 +109,7 @@ public class PatronageCreateService implements AbstractCreateService<Patron, Pat
 		assert request != null;
 		assert entity != null;
 		
-		Inventor inv=this.repository.findInvById(request.getModel().getInteger("inventorId"));
+		final Inventor inv=this.repository.findInvById(request.getModel().getInteger("inventorId"));
 		entity.setInventor(inv);
 		this.repository.save(entity);
 	}

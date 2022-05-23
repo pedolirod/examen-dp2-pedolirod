@@ -29,4 +29,7 @@ public interface InventorArtifactRepository extends AbstractRepository {
 	
 	@Query("select s from SystemSetting s")
 	SystemSetting findSystemSetting();
+	
+	@Query("select a from Artifact a where a.code=:code")
+	Artifact findByCode(String code);
 }

@@ -19,3 +19,5 @@ any.artifact.form.label.link = Link
 any.artifact.list.label.name = Name
 any.artifact.list.label.code = Code
 any.artifact.list.label.description = Description
+
+inventor.artifact.code.repeated = This code is already in used

@@ -25,3 +25,5 @@ any.artifact.list.label.code = Code
 any.artifact.list.label.description = Description
 any.tool.list.button.create = New Tool
 any.tool.list.button.create-component = New Component
+
+inventor.artifact.code.repeated.retailPrice.non-negative = The retail price must be positive
