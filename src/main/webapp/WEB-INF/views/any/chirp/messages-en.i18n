@@ -18,3 +18,4 @@ any.chirp.form.button.create = New Chirp
 any.chirp.list.label.title = Title
 any.chirp.list.label.body = Body
 any.chirp.list.button.create = New Chirp
+any.chirp.confirmation = Checkbox spam

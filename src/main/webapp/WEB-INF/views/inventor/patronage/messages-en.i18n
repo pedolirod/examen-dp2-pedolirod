@@ -14,12 +14,13 @@ inventor.patronage.form.label.status = Status
 inventor.patronage.form.label.code = Code
 inventor.patronage.form.label.legalStuff = Legal
 inventor.patronage.form.label.budget = Budget
-inventor.patronage.form.label.startDate = startDate
-inventor.patronage.form.label.finishDate = finishDate
+inventor.patronage.list.label.budget-converted = Converted budget
+inventor.patronage.form.label.startDate = start Date
+inventor.patronage.form.label.finishDate = finish Date
 inventor.patronage.form.label.link = Link
 inventor.patronage.form.label.patron = Patron
 inventor.patronage.form.label.inventor = Inventor
-inventor.patronage.form.label.patronageReport = patronage Report
+inventor.patronage.form.label.patronageReport = Patronage report
 
 inventor.patronage.form.button.updateStatus.accept = Accept
 inventor.patronage.form.button.updateStatus.deny = Deny

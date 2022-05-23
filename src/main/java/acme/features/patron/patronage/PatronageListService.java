@@ -8,8 +8,11 @@ import org.springframework.stereotype.Service;
 import acme.entities.patronage.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractListService;
 import acme.roles.Patron;
+import acme.systemSetting.SystemSetting;
+import acme.utils.moneyExchange.MoneyExchangeUtils;
 
 @Service
 public class PatronageListService implements AbstractListService<Patron, Patronage>{
@@ -47,6 +50,9 @@ public class PatronageListService implements AbstractListService<Patron, Patrona
 			assert model != null;
 
 			request.unbind(entity, model, "code", "budget");
+			final SystemSetting systemSetting = this.repository.findSystemSetting();
+			final Money convertedBudget = MoneyExchangeUtils.computeMoneyExchange(entity.getBudget(), systemSetting.getDefaultCurrency());
+			model.setAttribute("convertedBudget", convertedBudget);
 		}
 
 }

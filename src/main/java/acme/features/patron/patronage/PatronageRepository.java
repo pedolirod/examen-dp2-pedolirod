@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import acme.entities.patronage.Patronage;
 import acme.entities.patronage.PatronageReport;
 import acme.framework.repositories.AbstractRepository;
+import acme.systemSetting.SystemSetting;
 import acme.roles.Inventor;
 import acme.roles.Patron;
 
@@ -21,6 +22,9 @@ public interface PatronageRepository extends AbstractRepository{
 	@Query("select a from Patronage a")
 	Collection<Patronage> findManyPatronage();
 	
+	@Query("select s from SystemSetting s")
+	SystemSetting findSystemSetting();
+
 	@Query("select patron from Patron patron where patron.id = :id")
 	Patron findPatronById(int id);
 	
@@ -32,5 +36,4 @@ public interface PatronageRepository extends AbstractRepository{
 	
 	@Query("select i from PatronageReport i where i.patronage = :patronage")
 	List<PatronageReport> findPR(Patronage patronage);
-
 }

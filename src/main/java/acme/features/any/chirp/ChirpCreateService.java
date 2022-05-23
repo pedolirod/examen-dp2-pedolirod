@@ -18,11 +18,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.chirp.Chirp;
+import acme.features.administrator.systemSetting.AdministratorSystemSettingRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractCreateService;
+import acme.systemSetting.SpamValidator;
 
 @Service
 public class ChirpCreateService implements AbstractCreateService<Any, Chirp> {
@@ -31,6 +33,10 @@ public class ChirpCreateService implements AbstractCreateService<Any, Chirp> {
 
 	@Autowired
 	protected ChirpRepository repository;
+	
+	@Autowired
+	protected AdministratorSystemSettingRepository strepo;
+	
 
 	// AbstractCreateService<Administrator, Chirp> interface --------------
 
@@ -71,6 +77,27 @@ public class ChirpCreateService implements AbstractCreateService<Any, Chirp> {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if(!errors.hasErrors("title")){
+			errors.state(request, SpamValidator.validate(entity.getTitle(), this.strepo.findWeakSpamThreshold()
+				,this.strepo.findStrongSpamThreshold() ,this.strepo.findWeakSpam() , this.strepo.findStrongSpam()), "title","form.error.spam");
+		}
+		
+		if(!errors.hasErrors("body")){
+			errors.state(request, SpamValidator.validate(entity.getBody(), this.strepo.findWeakSpamThreshold()
+				,this.strepo.findStrongSpamThreshold() ,this.strepo.findWeakSpam() , this.strepo.findStrongSpam()), "title","form.error.spam");
+		}
+		
+		
+		if(!errors.hasErrors("author")){
+			errors.state(request, SpamValidator.validate(entity.getAuthor(), this.strepo.findWeakSpamThreshold()
+				,this.strepo.findStrongSpamThreshold() ,this.strepo.findWeakSpam() , this.strepo.findStrongSpam()), "title","form.error.spam");
+		}
+		
+		
+		
+		final boolean confirmation= request.getModel().getBoolean("confirmation");
+		errors.state(request, confirmation, "confirmation", "any.Chirp.confirmation.error");
 
 	}
 
@@ -82,6 +109,8 @@ public class ChirpCreateService implements AbstractCreateService<Any, Chirp> {
 
 		request.unbind(entity, model, "title", "author", "body", "email");
 		model.setAttribute("isNew", true);
+		model.setAttribute("confirmation", false);
+		
 	}
 
 	@Override
