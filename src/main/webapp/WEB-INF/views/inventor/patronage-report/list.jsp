@@ -20,4 +20,6 @@
 	<acme:list-column code="inventor.patronageReport.list.label.memorandum" path="memorandum" width="80%"/>
 </acme:list>
 
+<acme:button code="inventor.patronage.report.form.button.create" action="/inventor/patronage-report/create?masterId=${masterId}"/>
+
 
