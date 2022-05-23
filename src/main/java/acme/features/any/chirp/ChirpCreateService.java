@@ -96,8 +96,8 @@ public class ChirpCreateService implements AbstractCreateService<Any, Chirp> {
 		
 		
 		
-		final boolean confirmation= request.getModel().getBoolean("confirmation");
-		errors.state(request, confirmation, "confirmation", "any.Chirp.confirmation.error");
+		final boolean spam= request.getModel().getBoolean("checkbox");
+		errors.state(request, spam, "checkbox", "any.chirp.confirmation.error");
 
 	}
 

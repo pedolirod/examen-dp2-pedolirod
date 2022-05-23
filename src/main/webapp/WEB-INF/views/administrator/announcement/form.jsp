@@ -23,6 +23,7 @@
 			<acme:input-textarea code="administrator.announcement.form.label.body" path="body"/>
 			<acme:input-textbox code="administrator.announcement.form.label.link" path="link"/>
 
+			<acme:input-checkbox code="administrator.announcement.confirmation" path="checkbox"/> 
 			<acme:submit code="administrator.announcement.form.button.create" action="/administrator/announcement/create"/>
 		</acme:form>
 

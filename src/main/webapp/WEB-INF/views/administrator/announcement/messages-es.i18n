@@ -18,3 +18,4 @@ administrator.announcement.form.button.create = Nuevo Anuncio
 administrator.announcement.list.label.title = Título
 administrator.announcement.list.label.body = Cuerpo
 administrator.announcement.list.label.create = Nuevo Anuncio
+administrator.announcement.confirmation = Spam checkbox
