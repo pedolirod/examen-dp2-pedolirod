@@ -30,10 +30,10 @@
 	<acme:button code="inventor.patronage.form.label.patronageReport" action="/inventor/patronage-report/list?patronageId=${id}"/>
 	</jstl:if>
 	
-	<jstl:choose>
-		<jstl:when test="${status == StatusType.PROPOSED}">
+	
+		<jstl:if test="${status == StatusType.PROPOSED && isPublish==true}">
 			<acme:submit code="inventor.patronage.form.button.updateStatus.accept" action="/inventor/patronage/update-status?status=${StatusType.ACCEPTED}"/>
 			<acme:submit code="inventor.patronage.form.button.updateStatus.deny" action="/inventor/patronage/update-status?status=${StatusType.DENIED}"/>
-		</jstl:when>
-	</jstl:choose>
+		</jstl:if>
+	
 </acme:form>

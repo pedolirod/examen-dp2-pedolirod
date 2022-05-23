@@ -16,6 +16,7 @@ import acme.framework.controllers.Request;
 import acme.framework.controllers.Response;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractCreateService;
+import acme.roles.Inventor;
 import acme.roles.Patron;
 
 
@@ -24,6 +25,7 @@ public class PatronageCreateService implements AbstractCreateService<Patron, Pat
 	
 	@Autowired
 	protected PatronageRepository repository;
+	
 		
 	// AbstractCreateService<Patron, Patronage> interface ---------------------
 	
@@ -41,7 +43,7 @@ public class PatronageCreateService implements AbstractCreateService<Patron, Pat
 		assert errors != null;
 		
 
-		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "startDate", "link");
+		request.bind(entity, errors,"status", "code", "legalStuff", "budget", "startDate", "finishDate", "link");
 		
 	}
 	
@@ -54,8 +56,10 @@ public class PatronageCreateService implements AbstractCreateService<Patron, Pat
 		assert model != null;
 		
 		
-		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "startDate", "link");
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "startDate", "finishDate", "link");
 		model.setAttribute("isNew", true);
+		model.setAttribute("inventor", this.repository.findInvList());
+		
 
 	}
 	
@@ -73,11 +77,11 @@ public class PatronageCreateService implements AbstractCreateService<Patron, Pat
 		Patron patron = this.repository.findPatronById(patronId);
 		
 		
-		
 	
 		result.setPatron(patron);
+		result.setInventor(this.repository.findInvList().get(1));
 		result.setStatus(StatusType.PROPOSED);
-		
+		result.setPublish(false);
 		
 		return result;
 	}
@@ -98,6 +102,8 @@ public class PatronageCreateService implements AbstractCreateService<Patron, Pat
 		assert request != null;
 		assert entity != null;
 		
+		Inventor inv=this.repository.findInvById(request.getModel().getInteger("inventorId"));
+		entity.setInventor(inv);
 		this.repository.save(entity);
 	}
 	

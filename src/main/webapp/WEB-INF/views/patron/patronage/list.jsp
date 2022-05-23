@@ -21,6 +21,6 @@
 	
 </acme:list>
 
-<acme:button code="patron.patronage.list.button.create" action="/patron/patronage/create-patronage"/>
+<acme:button code="patron.patronage.list.button.create" action="/patron/patronage/create"/>
 
 

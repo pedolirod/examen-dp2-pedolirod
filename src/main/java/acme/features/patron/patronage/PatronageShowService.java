@@ -32,7 +32,7 @@ public class PatronageShowService implements AbstractShowService<Patron, Patrona
 			assert entity != null;
 			assert model != null;
 
-			request.unbind(entity, model, "id", "status", "code", "legalStuff", "budget", "startDate", "link");
+			request.unbind(entity, model, "id", "status", "code", "legalStuff", "budget", "startDate", "finishDate", "link", "isPublish");
 			model.setAttribute("inventorId", entity.getInventor().getUserAccount().getId());
 			model.setAttribute("esInventor", false);
 		}

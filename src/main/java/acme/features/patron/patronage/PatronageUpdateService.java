@@ -34,7 +34,7 @@ public class PatronageUpdateService implements AbstractUpdateService<Patron, Pat
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "id", "status", "code", "legalStuff", "budget", "startDate", "link");
+		request.unbind(entity, model, "id", "status", "code", "legalStuff", "budget", "startDate" , "finishDate", "link");
 		model.setAttribute("inventorId", entity.getInventor().getUserAccount().getId());
 		model.setAttribute("esInventor", false);
 	}
@@ -58,7 +58,7 @@ public class PatronageUpdateService implements AbstractUpdateService<Patron, Pat
 		assert entity != null;
 		assert errors != null;
 		
-		request.bind(entity, errors, "id", "status", "code", "legalStuff", "budget", "startDate", "link");
+		request.bind(entity, errors, "id", "status", "code", "legalStuff", "budget", "startDate" , "finishDate", "link");
 		
 	}
 
