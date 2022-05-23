@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.patronage.Patronage;
 import acme.framework.repositories.AbstractRepository;
+import acme.systemSetting.SystemSetting;
 
 @Repository
 public interface PatronageRepository extends AbstractRepository{
@@ -16,5 +17,8 @@ public interface PatronageRepository extends AbstractRepository{
 
 	@Query("select a from Patronage a")
 	Collection<Patronage> findManyPatronage();
+	
+	@Query("select s from SystemSetting s")
+	SystemSetting findSystemSetting();
 
 }

@@ -18,7 +18,9 @@
 <acme:list>
 	<acme:list-column code="any.artifact.list.label.name" path="name" width="20%"/>
 	<acme:list-column code="any.artifact.list.label.code" path="code" width="20%"/>
-	<acme:list-column code="any.artifact.list.label.description" path="description" width="60%"/>
+	<acme:list-column code="any.artifact.list.label.description" path="description" width="50%"/>
+	<acme:list-column code="any.artifact.form.label.retail-price" path="retailPrice" width="10%"/>
+	<acme:list-column code="any.artifact.form.label.price-converted" path="convertedPrice" width="10%"/>
 </acme:list>
 
 

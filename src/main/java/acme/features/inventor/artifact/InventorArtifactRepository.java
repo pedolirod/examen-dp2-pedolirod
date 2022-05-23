@@ -10,6 +10,7 @@ import acme.artifact.ArtifactType;
 import acme.artifact.PartOf;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor;
+import acme.systemSetting.SystemSetting;
 
 @Repository
 public interface InventorArtifactRepository extends AbstractRepository {
@@ -25,5 +26,7 @@ public interface InventorArtifactRepository extends AbstractRepository {
 	
 	@Query("select p from PartOf p where p.artifact.id = :id")
 	Collection<PartOf> findAllPartoOfByArtifact(int id);
-
+	
+	@Query("select s from SystemSetting s")
+	SystemSetting findSystemSetting();
 }
