@@ -25,7 +25,7 @@
 			
 			
 			
-			<acme:input-checkbox code="any.chirp.confirmation" path="confirmation"/> 
+			<acme:input-checkbox code="any.chirp.confirmation" path="checkbox"/> 
 			<acme:submit code="any.chirp.form.button.create" action="/any/chirp/create"/>
 			
 			

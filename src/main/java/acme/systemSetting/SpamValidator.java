@@ -1,7 +1,6 @@
 package acme.systemSetting;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,8 +27,8 @@ public class SpamValidator {
 		}
 		
 		
-		final String myRegexStrong = SpamValidator.regexBuilder(strongSpamList);
-		final String myRegexWeak =  SpamValidator.regexBuilder(weakSpamList);
+		final String myRegexStrong = SpamValidator.expressions(strongSpamList);
+		final String myRegexWeak =  SpamValidator.expressions(weakSpamList);
 		
 		
 		final Double strongSpamPercentage = SpamValidator.percentageSpamInText(myRegexStrong, txt);
@@ -47,8 +46,8 @@ public class SpamValidator {
 	}
 	
 	
-	private static String regexBuilder(final List<String> spam) {
-		final StringBuilder regexBuilder =  new StringBuilder();
+	private static String expressions(final List<String> spam) {
+		final StringBuilder regex =  new StringBuilder();
 		
 		for(int i= 0; i<spam.size(); i++) {
 			final  String word= spam.get(i);
@@ -56,20 +55,20 @@ public class SpamValidator {
 			final String[] parts= word.split(" ");
 			
 			if(parts.length>1) {
-				final StringBuilder auxBuilder = new StringBuilder();
+				final StringBuilder auxString = new StringBuilder();
 				
 				for(int j= 0; j<parts.length; j++) {
 					if(j== parts.length - 1) {
-						auxBuilder.append(parts[j]);
+						auxString.append(parts[j]);
 					}else {
-						auxBuilder.append(parts[j]+ "[^\\w]*");
+						auxString.append(parts[j]+ "[^\\w]*");
 					}
 				}
 				
 				if(i == spam.size() - 1) {
-					regexBuilder.append(auxBuilder.toString());
+					regex.append(auxString.toString());
 				}else {
-					regexBuilder.append(auxBuilder.toString() + "|");
+					regex.append(auxString.toString() + "|");
 				}
 				
 				
@@ -78,15 +77,15 @@ public class SpamValidator {
 				
 			} else {
 				if (i== spam.size() - 1) {
-					regexBuilder.append(word);
+					regex.append(word);
 				}else {
-					regexBuilder.append(word + "|");
+					regex.append(word + "|");
 				}
 			}
 			
 		}
 		
-		return regexBuilder.toString();
+		return regex.toString();
 		
 	}
 	
@@ -104,10 +103,15 @@ public class SpamValidator {
 		return (matches/ numberWords)*100.0;
 	}
 	
-	private static int countWordsText(final String txt) {
-		final String [] result= Arrays.stream(txt.split(" ")).filter(e->e.trim().length()>0).toArray(String[]:: new);
-		return result.length ;
+//	private static int countWordsText(final String txt) {
+//		final String [] result= Arrays.stream(txt.split(" ")).filter(e->e.trim().length()>0).toArray(String[]:: new);
+//		return result.length ;
+//	}
+	
+	private static int countWordsText(final String txt ) {
+		return txt.split(" ").length;
 	}
+	
 	
 	
 	private static int totalMatches(final Matcher match) {

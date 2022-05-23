@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.announcement.Announcement;
+import acme.features.administrator.systemSetting.AdministratorSystemSettingRepository;
 import acme.features.authenticated.announcements.authenticatedAnnouncementsRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractCreateService;
+import acme.systemSetting.SpamValidator;
 
 @Service
 public class AdministratorAnnouncementsCreateService implements AbstractCreateService<Administrator, Announcement> {
@@ -20,6 +22,10 @@ public class AdministratorAnnouncementsCreateService implements AbstractCreateSe
 
 	@Autowired
 	protected authenticatedAnnouncementsRepository repository;
+	
+	@Autowired
+	protected AdministratorSystemSettingRepository strepo;
+	
 
 	// AbstractCreateService<Administrator, Chirp> interface --------------
 
@@ -35,7 +41,7 @@ public class AdministratorAnnouncementsCreateService implements AbstractCreateSe
 	public Announcement instantiate(final Request<Announcement> request) {
 		assert request != null;
 
-		Announcement result = new Announcement();
+		final Announcement result = new Announcement();
 
 		return result;
 	}
@@ -46,7 +52,7 @@ public class AdministratorAnnouncementsCreateService implements AbstractCreateSe
 		assert entity != null;
 		assert errors != null;
 
-		Date moment= new Date(System.currentTimeMillis() - 1);
+		final Date moment= new Date(System.currentTimeMillis() - 1);
     
 		request.bind(entity, errors, "title", "body", "link");
 		entity.setCreationMoment(moment);
@@ -58,6 +64,21 @@ public class AdministratorAnnouncementsCreateService implements AbstractCreateSe
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		if(!errors.hasErrors("title")){
+			errors.state(request, SpamValidator.validate(entity.getTitle(), this.strepo.findWeakSpamThreshold()
+				,this.strepo.findStrongSpamThreshold() ,this.strepo.findWeakSpam() , this.strepo.findStrongSpam()), "title","form.error.spam");
+		}
+		
+		if(!errors.hasErrors("body")){
+			errors.state(request, SpamValidator.validate(entity.getBody(), this.strepo.findWeakSpamThreshold()
+				,this.strepo.findStrongSpamThreshold() ,this.strepo.findWeakSpam() , this.strepo.findStrongSpam()), "title","form.error.spam");
+		}
+		
+
+		final boolean spam= request.getModel().getBoolean("checkbox");
+		errors.state(request, spam, "checkbox", "administrator.announcement.confirmation.error");
+		
 
 	}
 
