@@ -21,6 +21,10 @@ patron.patronage.form.label.patron = Patron
 patron.patronage.form.label.inventor = Inventor
 
 patron.patronage.form.button.update = Update
+patron.patronage.list.button.create = Create
+patron.patronage.form.button.create = Create
+patron.patronage.form.button.delete = Delete
+patron.patronage.form.button.publish = Publish
 
 patron.patronage.list.label.code = Code
 patron.patronage.list.label.budget = Budget

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import acme.entities.patronage.Patronage;
 import acme.framework.repositories.AbstractRepository;
 import acme.systemSetting.SystemSetting;
+import acme.roles.Inventor;
 
 @Repository
 public interface PatronageRepositoryInv extends AbstractRepository{
@@ -20,5 +21,6 @@ public interface PatronageRepositoryInv extends AbstractRepository{
 	
 	@Query("select s from SystemSetting s")
 	SystemSetting findSystemSetting();
-
+	@Query("select a from Patronage a where a.inventor.id = :i")
+	Collection<Patronage> findManyPatronageByInv(Integer i);
 }
