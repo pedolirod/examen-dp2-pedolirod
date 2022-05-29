@@ -26,7 +26,7 @@ administrator.dashboard.form.label.deviation-prize-in = Desviación del precio e
 administrator.dashboard.form.label.max-prize-in = Precio máximo en
 administrator.dashboard.form.label.min-prize-in = Precio mínimo en
 
-administrator.dashboard.form.title.tools = Patrocinios
+administrator.dashboard.form.title.patronages = Patrocinios
 administrator.dashboard.form.label.total-number-of= Número total de patrocinios
 administrator.dashboard.form.label.avg-budget-of= Presupuesto medio en
 administrator.dashboard.form.label.deviation-budget-of=  Desviación del presupuesto en
