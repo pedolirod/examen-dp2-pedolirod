@@ -180,11 +180,11 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 		final Collection<Artifact> toolList = this.repository.findArtifact(ArtifactType.TOOL);
 		final List<Artifact> cl= new ArrayList<Artifact>(toolList);
 		
-		Double maxUsd=cl.get(0).getRetailPrice().getAmount();
-		Double maxGbp=cl.get(0).getRetailPrice().getAmount();
-		Double minEur= cl.get(0).getRetailPrice().getAmount();
-		Double minUsd= cl.get(0).getRetailPrice().getAmount();
-		Double minGbp= cl.get(0).getRetailPrice().getAmount();
+		Double maxUsd=cl.size()>0? cl.get(0).getRetailPrice().getAmount():0.;
+		Double maxGbp=cl.size()>0? cl.get(0).getRetailPrice().getAmount():0.;
+		Double minEur= cl.size()>0? cl.get(0).getRetailPrice().getAmount():0.;
+		Double minUsd=cl.size()>0? cl.get(0).getRetailPrice().getAmount():0.;
+		Double minGbp= cl.size()>0? cl.get(0).getRetailPrice().getAmount():0.;
 		
 		for(final Artifact c: toolList) {
 			final Double prize = c.getRetailPrice().getAmount(); 
@@ -260,10 +260,12 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 				
 				final int nPatronage = patronages.size();
 				Double totalPatronage= 0.;
-				Double maxPatronage= pl.get(0).getBudget().getAmount();
-				Double minPatronage= pl.get(0).getBudget().getAmount();
+				Double maxPatronage= 0.;
+				Double minPatronage=0.;
 				Double desviationPatronage= 0.;
-							
+				if(nPatronage>0) {
+				maxPatronage= pl.get(0).getBudget().getAmount();
+				minPatronage= pl.get(0).getBudget().getAmount();
 				for(final Patronage p:patronages) {
 					final double prize= p.getBudget().getAmount();
 					
@@ -278,13 +280,14 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 					desviationPatronage+=(prize - totalPatronage/nPatronage)
 						  *(prize - totalPatronage/nPatronage);
 				}
-				
+				}
 				mPatronage.put(StatusType.values()[i], nPatronage);
 				mMaxPatronage.put(StatusType.values()[i], maxPatronage);
 				mMinPatronage.put(StatusType.values()[i], minPatronage);
-				mAvgPatronage.put(StatusType.values()[i], totalPatronage/nPatronage);
-				mDesviationPatronage.put(StatusType.values()[i], Math.sqrt(desviationPatronage/nPatronage));
-			}
+				mAvgPatronage.put(StatusType.values()[i], nPatronage!=0?totalPatronage/nPatronage:0);
+				mDesviationPatronage.put(StatusType.values()[i], nPatronage!=0?Math.sqrt(desviationPatronage/nPatronage):0);
+				}
+			
 		
 		result.setTotalNumberOfComponents(n);
 		result.setDeviationPrize(mDesviation);
