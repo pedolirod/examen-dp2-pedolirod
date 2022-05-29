@@ -96,7 +96,7 @@
 		</td>
 	</tr>
 </table>
-
+<jstl:if test="${adminDashboard.totalNumberOfTools != 0}">
 <h3>
 	<acme:message code="administrator.dashboard.form.title.currencies" />
 </h3>
@@ -143,6 +143,7 @@
 		</tr>
 	</jstl:forEach>
 </table>
+</jstl:if>
 <h2>
 	<acme:message code="administrator.dashboard.form.title.patronages" />
 </h2>
@@ -157,6 +158,7 @@
 		</tr>
 	</jstl:forEach>
 	<jstl:forEach var="entry" items="${adminDashboard.avgBudget.entrySet()}">
+	<jstl:if test= "${entry.value!=0}">
 		<tr>
 			<th scope="row"><acme:message
 					code="administrator.dashboard.form.label.avg-budget-of" /> <acme:print
@@ -164,8 +166,10 @@
 			</th>
 			<td><acme:print value="${entry.value}" />
 		</tr>
+		</jstl:if>
 	</jstl:forEach>
 	<jstl:forEach var="entry" items="${adminDashboard.deviationBudget.entrySet()}">
+	<jstl:if test= "${entry.value!=0}">
 		<tr>
 			<th scope="row"><acme:message
 					code="administrator.dashboard.form.label.deviation-budget-of" /> <acme:print
@@ -173,8 +177,10 @@
 			</th>
 			<td><acme:print value="${entry.value}" />
 		</tr>
+		</jstl:if>
 	</jstl:forEach>
 	<jstl:forEach var="entry" items="${adminDashboard.maxdBudget.entrySet()}">
+	<jstl:if test= "${entry.value!=0}">
 		<tr>
 			<th scope="row"><acme:message
 					code="administrator.dashboard.form.label.max-prize-in" /> <acme:print
@@ -182,8 +188,10 @@
 			</th>
 			<td><acme:print value="${entry.value}" />
 		</tr>
+		</jstl:if>
 	</jstl:forEach>
 	<jstl:forEach var="entry" items="${adminDashboard.minBudget.entrySet()}">
+	<jstl:if test= "${entry.value!=0}">
 		<tr>
 			<th scope="row"><acme:message
 					code="administrator.dashboard.form.label.min-prize-in" /> <acme:print
@@ -191,5 +199,7 @@
 			</th>
 			<td><acme:print value="${entry.value}" />
 		</tr>
+		</jstl:if>
 	</jstl:forEach>
+	
 </table>
