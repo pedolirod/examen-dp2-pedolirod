@@ -1,28 +1,32 @@
-package acme.features.inventor.patronage;
+package acme.features.inventor.chimpum;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.patronage.Patronage;
+import acme.entities.chimpum.Chimpum;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Inventor;
 
 @Controller
-public class PatronageControllerInv extends AbstractController<Inventor, Patronage>{
+public class ChimpumController extends AbstractController<Inventor, Chimpum>{
 	// Internal state ---------------------------------------------------------
 
 		@Autowired
-		protected PatronageListServiceInv	listService;
+		protected ChimpumListService	listService;
 
 		@Autowired
-		protected PatronageShowServiceInv	showService;
+		protected ChimpumShowService	showService;
 		
 		@Autowired
-		protected PatronageUpdateStatusServiceInv	updateService;
+		protected ChimpumUpdateService	updateService;
 		
-
+		@Autowired
+		protected ChimpumCreateService	createService;
+		
+		@Autowired
+		protected ChimpumDeleteService	deleteService;
 
 		// Constructors -----------------------------------------------------------
 
@@ -31,7 +35,9 @@ public class PatronageControllerInv extends AbstractController<Inventor, Patrona
 		protected void initialise() {
 			super.addCommand("list", this.listService);
 			super.addCommand("show", this.showService);
-			super.addCommand("update-status", "update", this.updateService);
+			super.addCommand("update", this.updateService);
+			super.addCommand("create", this.createService);
+			super.addCommand("delete", this.deleteService);
 		}
 
 }

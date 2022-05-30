@@ -78,6 +78,7 @@ master.menu.inventor.artifact.tool = Tool
 master.menu.inventor.artifact.component = Component
 master.menu.inventor.patronage = Patronage
 master.menu.inventor.tool-kit = Toolkits
+master.menu.inventor.chimpum = Chimpums
 
 # master.menu.patron ########################################################
 master.menu.patron = Patron
