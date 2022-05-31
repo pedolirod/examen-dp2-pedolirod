@@ -3,6 +3,8 @@ package acme.features.inventor.chimpum;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,7 +38,15 @@ public class ChimpumUpdateService implements AbstractUpdateService<Inventor, Chi
 
 		request.unbind(entity, model, "code", "creationMoment", "title", "description", "period", "budget", "link");
 		model.setAttribute("isNew", false);
-		model.setAttribute("artifact", this.repository.findArtifactList());
+		List<Artifact> listArt = this.repository.findArtifactList();
+		Artifact a = new Artifact();
+		listArt.add(0, a);
+		a = entity.getArtefact();
+		if(entity.getArtefact() != null) {
+			listArt.add(0, a);
+		}
+		
+		model.setAttribute("artifact", listArt);
 	}
 
 	@Override
@@ -78,6 +88,17 @@ public class ChimpumUpdateService implements AbstractUpdateService<Inventor, Chi
 		      .atZone(ZoneId.systemDefault())
 		      .toLocalDateTime();
 		errors.state(request, Duration.between(finishDate, startDate).toDays() > 30, "period", "inventor.Chimpum.period.duration-error");
+//		Collection<Chimpum>chl = this.repository.findManyChimpum();
+//		boolean exist = true;
+//		for(Chimpum c : chl) {
+//			if(c.getArtefact().equals(entity.getArtefact())) {
+//				if(!c.equals(entity)) {
+//					exist = false;
+//					break;
+//				}
+//			}
+//		}
+//		errors.state(request, exist, "artifact", "inventor.Chimpum.period.duplicated-artifact");
 	}
 
 	@Override

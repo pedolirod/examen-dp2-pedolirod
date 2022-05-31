@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import acme.artifact.Artifact;
 import acme.artifact.PartOf;
+import acme.entities.chimpum.Chimpum;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -89,6 +90,13 @@ public class InventorArtifactDeleteService implements AbstractDeleteService<Inve
 		for(PartOf p : partOf) {
 			this.repository.delete(p);
 		}
+		
+		Collection<Chimpum> chimpum = this.repository.findAllChimpum();
+		for(Chimpum c : chimpum) {
+			c.setArtefact(null);
+			this.repository.save(c);
+		}
+		
 		this.repository.delete(entity);
 		
 	}

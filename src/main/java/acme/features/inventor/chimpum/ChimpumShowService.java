@@ -1,8 +1,11 @@
 package acme.features.inventor.chimpum;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.artifact.Artifact;
 import acme.entities.chimpum.Chimpum;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -34,7 +37,15 @@ public class ChimpumShowService implements AbstractShowService<Inventor, Chimpum
 
 			request.unbind(entity, model, "code", "creationMoment", "title", "description", "period", "budget", "link");
 			model.setAttribute("isNew", false);
-			model.setAttribute("artifact", this.repository.findArtifactList());
+			List<Artifact> listArt = this.repository.findArtifactList();
+			Artifact a = new Artifact();
+			listArt.add(0, a);
+			a = entity.getArtefact();
+			if(entity.getArtefact() != null) {
+				listArt.add(0, a);
+			}
+			
+			model.setAttribute("artifact", listArt);
 		}
 
 		@Override

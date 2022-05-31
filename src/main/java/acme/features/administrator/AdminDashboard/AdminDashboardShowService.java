@@ -15,6 +15,7 @@ import acme.Dashboard.AdminDashboard;
 import acme.artifact.Artifact;
 import acme.artifact.ArtifactType;
 import acme.datatypes.StatusType;
+import acme.entities.chimpum.Chimpum;
 import acme.entities.patronage.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -304,6 +305,107 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 		result.setDeviationBudget(mDesviationPatronage);
 		result.setMaxdBudget(mMaxPatronage);
 		result.setMinBudget(mMinPatronage);
+		
+		
+	//	Examen ------------------------------------------------------------------------------------------
+		
+		final int nChimpum = this.repository.findAllChimpums().size();
+		final Double nArtifacts = Double.valueOf(this.repository.findArtifact(ArtifactType.TOOL).size());	//cambiar en funcion de si es Tool o component
+		
+		result.setRatioOfArtifactsWithChimpum(nArtifacts>0? nChimpum/nArtifacts:0.);
+		
+		final Map<String, Double> mAverageChimpumBudget= new HashMap<String, Double>();
+		final Map<String, Double> mDeviationChimpumBudget= new HashMap<String, Double>();
+		final Map<String, Double> mMinChimpumBudget= new HashMap<String, Double>();
+		final Map<String, Double> mMaxChimpumBudget= new HashMap<String, Double>();
+
+		
+		nEur= 0;
+		nUsd= 0;
+		nGbp= 0;
+		totalEur= 0.;
+		totalUsd= 0.;
+		totalGbp= 0.;
+		
+		
+		desviationEur= 0.;
+		desviationUsd= 0.;
+		desviationGbp= 0.;
+			
+		final Collection<Chimpum> chimpumList = this.repository.findAllChimpums();
+		
+		maxEur=0.;
+		maxUsd=0.;
+		maxGbp=0.;
+		minEur=Double.MAX_VALUE;
+		minUsd=Double.MAX_VALUE;
+		minGbp=Double.MAX_VALUE;
+		
+		for(final Chimpum c: chimpumList) {
+			final Double prize = c.getBudget().getAmount(); 
+			switch (c.getBudget().getCurrency()) {
+			case "EUR":
+				totalEur+=c.getBudget().getAmount();
+				nEur++;
+				
+				maxEur= prize>maxEur?prize:maxEur;
+				minEur= prize<minEur?prize:minEur;
+				
+				break;
+			case "USD":
+				totalUsd+=c.getBudget().getAmount();
+				nUsd++;
+
+				maxUsd= prize>maxUsd?prize:maxUsd;
+				minUsd= prize<minUsd?prize:minUsd;
+				
+				break;
+			case "GBP":
+				totalGbp+=c.getBudget().getAmount();
+				nGbp++;
+
+				maxGbp= prize>maxGbp?prize:maxGbp;
+				minGbp= prize<minGbp?prize:minGbp;
+				
+				break;
+			}
+			
+		}
+		for(final Chimpum c: chimpumList) {
+			switch (c.getBudget().getCurrency()) {
+			case "EUR":
+				desviationEur+=(c.getBudget().getAmount() - totalEur!=0?totalEur/nEur:0.)
+					  *(c.getBudget().getAmount() - totalEur!=0?totalEur/nEur:0.);
+				break;
+			case "USD":
+				desviationUsd+=(c.getBudget().getAmount() - totalUsd!=0?totalUsd/nUsd:0.)
+					  *(c.getBudget().getAmount() - totalUsd!=0?totalUsd/nUsd:0.);
+				break;
+			case "GBP":
+				desviationGbp+=(c.getBudget().getAmount() - totalGbp!=0?totalGbp/nGbp:0.)
+					  *(c.getBudget().getAmount() - totalGbp!=0?totalGbp/nGbp:0.);
+				break;
+			}
+		}
+		
+		
+		mAverageChimpumBudget.put("EUR", totalEur!=0?totalEur/nEur:0.);
+		mAverageChimpumBudget.put("USD", totalUsd!=0?totalUsd/nUsd:0.);
+		mAverageChimpumBudget.put("GBP", totalGbp!=0?totalGbp/nGbp:0.);
+		mMaxChimpumBudget.put("EUR", maxEur);
+		mMaxChimpumBudget.put("USD", maxUsd);
+		mMaxChimpumBudget.put("GBP", maxGbp);
+		mMinChimpumBudget.put("EUR", minEur==Double.MAX_VALUE?0.:minEur);
+		mMinChimpumBudget.put("USD", minUsd==Double.MAX_VALUE?0.:minUsd);
+		mMinChimpumBudget.put("GBP", minGbp==Double.MAX_VALUE?0.:minGbp);
+		mDeviationChimpumBudget.put("EUR", nEur!=0?Math.sqrt(desviationEur/nEur):0);
+		mDeviationChimpumBudget.put("USD", nUsd!=0?Math.sqrt(desviationUsd/nUsd):0);
+		mDeviationChimpumBudget.put("GBP", nGbp!=0?Math.sqrt(desviationGbp/nGbp):0);
+		result.setAverageChimpumBudget(mAverageChimpumBudget);
+		result.setMaxChimpumBudget(mMaxChimpumBudget);
+		result.setMinChimpumBudget(mMinChimpumBudget);
+		result.setDeviationChimpumBudget(mDeviationChimpumBudget);
+		
 		return result;
 	}
 

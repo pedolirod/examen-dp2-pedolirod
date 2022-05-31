@@ -22,9 +22,11 @@ inventor.chimpum.form.label.link = Enlace
 inventor.chimpum.form.label.artifact = Artefacto
 
 inventor.chimpum.list.button.create = Nuevo Chimpum
+inventor.chimpum.form.label.create = Crear
 inventor.chimpum.form.label.update = Actualizar
 inventor.chimpum.form.label.delete = Eliminar
 
 inventor.Chimpum.code.repeated.retailPrice.non-negative = El presupuesto debe ser positivo
 inventor.Chimpum.period.order-error = La fecha final debe ser posterior a la fecha de inicio o actual
 inventor.Chimpum.period.duration-error = La diferencia entre la fecha de inicio y final debe ser superior a un mes
+inventor.Chimpum.period.duplicated-artifact = Ya existe un chimpum asociado a ese artefacto
