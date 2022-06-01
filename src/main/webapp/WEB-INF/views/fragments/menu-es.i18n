@@ -75,7 +75,8 @@ master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.inventor = Inventor
 master.menu.inventor.artifact.tool = Herramientas
 master.menu.inventor.artifact.component = Componentes
-master.menu.inventor.patronage = Patronage
+master.menu.inventor.patronage = Patrocinio
+patron.patron.form.title.patron-dashboard = Panel de Patrón
 master.menu.inventor.tool-kit = Caja de Herramientas
 
 # master.menu.announcement ########################################################
