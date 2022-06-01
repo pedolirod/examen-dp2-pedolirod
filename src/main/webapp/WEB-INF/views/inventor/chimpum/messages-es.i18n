@@ -29,4 +29,4 @@ inventor.chimpum.form.label.delete = Eliminar
 inventor.Chimpum.code.repeated.retailPrice.non-negative = El presupuesto debe ser positivo
 inventor.Chimpum.period.order-error = La fecha final debe ser posterior a la fecha de inicio o actual
 inventor.Chimpum.period.duration-error = La diferencia entre la fecha de inicio y final debe ser superior a un mes
-inventor.Chimpum.period.duplicated-artifact = Ya existe un chimpum asociado a ese artefacto
+inventor.Chimpum.period.code-error = Ya existe este código

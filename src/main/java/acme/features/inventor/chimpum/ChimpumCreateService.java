@@ -3,7 +3,6 @@ package acme.features.inventor.chimpum;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -80,14 +79,8 @@ public class ChimpumCreateService implements AbstractCreateService<Inventor, Chi
 		
 		errors.state(request, Duration.between(finishDate, startDate).toDays() > 30, "period", "inventor.Chimpum.period.duration-error");
 		
-//		Collection<Chimpum>chl = this.repository.findManyChimpum();
-//		boolean exist = false;
-//		for(Chimpum c : chl) {
-//			if(c.getArtefact().equals(entity.getArtefact())) {
-//				exist = true;
-//			}
-//		}
-//		errors.state(request, exist, "artifact", "inventor.Chimpum.period.duplicated-artifact");
+		Chimpum ch = this.repository.findAnyChimpumByCode(entity.getCode());
+		errors.state(request, ch==null, "code", "inventor.Chimpum.period.code-error");
 	}
 
 	@Override

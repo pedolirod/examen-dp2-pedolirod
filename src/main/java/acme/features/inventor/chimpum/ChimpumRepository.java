@@ -19,10 +19,13 @@ public interface ChimpumRepository extends AbstractRepository{
 	@Query("select c from Chimpum c")
 	Collection<Chimpum> findManyChimpum();
 	
-	@Query("select a from Artifact a")
+	@Query("select a from Artifact a LEFT JOIN Chimpum c ON c.artefact=a WHERE c IS NULL")
 	List<Artifact> findArtifactList();
 	
 	@Query("select a from Artifact a where a.id = :id")
 	Artifact findArtifactById(int id);
+	
+	@Query("select c from Chimpum c where c.code = :code")
+	Chimpum findAnyChimpumByCode(String code);
 	
 }
