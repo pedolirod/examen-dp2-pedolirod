@@ -22,6 +22,12 @@ public class InventorPartOfController extends AbstractController<Inventor,PartOf
 	protected InventorPartOfShowService	showService;
 	
 	@Autowired
+	protected InventorPartOfDeleteService	deleteService;
+	
+	@Autowired
+	protected InventorPartOfUpdateService	updateService;
+	
+	@Autowired
 	protected InventorPartOfListComponentService listComponentService;
 	
 	@Autowired
@@ -41,7 +47,8 @@ public class InventorPartOfController extends AbstractController<Inventor,PartOf
 		super.addCommand("show", this.showService);
 		super.addCommand("add-tool", "create", this.addToolService);
 		super.addCommand("add-component", "create", this.addComponentService);
-		
+		super.addCommand("delete", this.deleteService);
+		super.addCommand("update", this.updateService);
 	}
 
 }

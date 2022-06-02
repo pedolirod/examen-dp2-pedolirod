@@ -25,9 +25,6 @@ public class InventorPartOfShowService implements AbstractShowService<Inventor,P
 	@Override
 	public boolean authorise(final Request<PartOf> request) {
 		assert request != null;
-		
-		//check propiedad isDraftMode().
-		
 		return true;
 	}
 
@@ -46,7 +43,9 @@ public class InventorPartOfShowService implements AbstractShowService<Inventor,P
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "quantity", "artifact", "toolkit");
+		request.unbind(entity, model, "id", "quantity", "artifact", "artifact.type", "toolkit");
+		
+		model.setAttribute("toolkitIsPublish", entity.getToolkit().isPublish());
 		
 		final int i = request.getPrincipal().getActiveRoleId();
 		final Inventor inv = this.repository.findOneInventorByInventorId(i);

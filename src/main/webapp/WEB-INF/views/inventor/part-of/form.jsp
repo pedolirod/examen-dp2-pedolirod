@@ -14,11 +14,12 @@
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
+<%@ page import="acme.artifact.ArtifactType" %>
 
 <acme:form>
 	<jstl:if test="${!acme:anyOf(command, 'add-tool')}">
 		<acme:input-integer code="any.partof.form.label.quantity"
-			path="quantity" />
+			path="quantity" readonly="${artifact.type == ArtifactType.TOOL}" />
 	</jstl:if>
 	<acme:input-select code="any.partof.list.label.artifact"
 		path="artifact">
@@ -35,10 +36,10 @@
 		<acme:submit code="patron.patronage.form.button.create"
 			action="/inventor/part-of/add-component?masterId=${toolkit.id}" />
 	</jstl:if>
-	<jstl:if test="${acme:anyOf(command, 'show')}">
+	<jstl:if test="${acme:anyOf(command, 'show') && !toolkitIsPublish}">
 		<acme:submit code="patron.patronage.form.button.update"
-			action="/inventor/part-of/update?masterId=${toolkit.id}" />
+			action="/inventor/part-of/update?id=${id}" />
 		<acme:submit code="patron.patronage.form.button.delete"
-			action="/inventor/part-of/delete?masterId=${toolkit.id}" />
+			action="/inventor/part-of/delete?id=${id}" />
 	</jstl:if>
 </acme:form>
