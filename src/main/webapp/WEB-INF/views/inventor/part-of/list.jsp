@@ -16,8 +16,20 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="inventor.toolkit.list.label.title" path="title" width="50%"/>
-	<acme:list-column code="inventor.toolkit.list.label.code" path="code" width="50%"/>
+	<acme:list-column code="any.partof.list.label.quantity" path="quantity"
+		width="20%" />
+	<acme:list-column code="any.partof.list.label.artifact"
+		path="artifact.name" width="80%" />
 </acme:list>
+<jstl:choose>
+	<jstl:when test="${acme:anyOf(command, 'list-tool')}">
+		<acme:button code="inventor.partOf.add.tool"
+			action="/inventor/part-of/add-tool?masterId=${masterId}" />
+	</jstl:when>
+	<jstl:when test="${acme:anyOf(command, 'list-component')}">
+		<acme:button code="inventor.partOf.add.component"
+			action="/inventor/part-of/add-component?masterId=${masterId}" />
+	</jstl:when>
+</jstl:choose>
 
-<acme:button code="inventor.toolkit.list.button.create" action="/inventor/tool-kit/create"/>
+
