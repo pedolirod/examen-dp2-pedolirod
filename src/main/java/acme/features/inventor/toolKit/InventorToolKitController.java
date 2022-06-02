@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.patron.toolKit;
+package acme.features.inventor.toolKit;
 
 import javax.annotation.PostConstruct;
 
@@ -33,6 +33,18 @@ public class InventorToolKitController extends AbstractController<Inventor, Tool
 
 	@Autowired
 	protected InventorToolKitShowService showService;
+	
+	@Autowired
+	protected InventorToolKitCreateService createService;
+	
+	@Autowired
+	protected InventorToolKitUpdateService updateService;
+	
+	@Autowired
+	protected InventorToolKitDeleteService deleteService;
+	
+	@Autowired
+	protected InventorToolKitPublishService publishService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -41,6 +53,11 @@ public class InventorToolKitController extends AbstractController<Inventor, Tool
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
+		super.addCommand("create", createService);
+		super.addCommand("update", this.updateService);
+		super.addCommand("delete", this.deleteService);
+		super.addCommand("publish","update", this.publishService);
+		
 	}
 
 }

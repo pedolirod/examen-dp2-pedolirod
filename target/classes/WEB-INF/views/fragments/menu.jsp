@@ -58,7 +58,7 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.authenticated.announcement" action="/administrator/announcement/create"/>
 			
-			<acme:menu-suboption code="any.menu.artifact.tool" action="/administrator/admin-dashboard/show"/>
+			<acme:menu-suboption code="administrator.dashboard.form.title.admin-dashboard" action="/administrator/admin-dashboard/show"/>
 		</acme:menu-option>
 
 		
