@@ -77,20 +77,19 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 			Double totalEur= 0.;
 			Double totalUsd= 0.;
 			Double totalGbp= 0.;
-			Double maxEur= 0.;
 			
 			Double desviationEur= 0.;
 			Double desviationUsd= 0.;
 			Double desviationGbp= 0.;
 			
 			final Collection<Artifact> componentList = this.repository.findArtifactTechnologyCurrency(technology, ArtifactType.COMPONENT);
-			final List<Artifact> cl= new ArrayList<Artifact>(componentList);
 			
-			Double maxUsd=cl.get(0).getRetailPrice().getAmount();
-			Double maxGbp=cl.get(0).getRetailPrice().getAmount();
-			Double minEur= cl.get(0).getRetailPrice().getAmount();
-			Double minUsd= cl.get(0).getRetailPrice().getAmount();
-			Double minGbp= cl.get(0).getRetailPrice().getAmount();
+			Double maxEur=0.;
+			Double maxUsd=0.;
+			Double maxGbp=0.;
+			Double minEur=Double.MAX_VALUE;
+			Double minUsd=Double.MAX_VALUE;
+			Double minGbp=Double.MAX_VALUE;
 			
 			for(final Artifact c: componentList) {
 				final Double prize = c.getRetailPrice().getAmount(); 
@@ -146,11 +145,11 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 			mTechCurr.put(pUsd, totalUsd!=0?totalUsd/nUsd:0.);
 			mTechCurr.put(pGbp, totalGbp!=0?totalGbp/nGbp:0.);
 			mMax.put(pEur, maxEur);
-			mMax.put(pEur, maxUsd);
-			mMax.put(pEur, maxGbp);
-			mMin.put(pEur, minEur);
-			mMin.put(pEur, minUsd);
-			mMin.put(pEur, minGbp);
+			mMax.put(pUsd, maxUsd);
+			mMax.put(pGbp, maxGbp);
+			mMin.put(pEur, minEur==Double.MAX_VALUE?0.:minEur);
+			mMin.put(pUsd, minUsd==Double.MAX_VALUE?0.:minUsd);
+			mMin.put(pGbp, minGbp==Double.MAX_VALUE?0.:minGbp);
 			mDesviation.put(pEur, nEur!=0?Math.sqrt(desviationEur/nEur):0);
 			mDesviation.put(pUsd, nUsd!=0?Math.sqrt(desviationUsd/nUsd):0);
 			mDesviation.put(pGbp, nGbp!=0?Math.sqrt(desviationGbp/nGbp):0);
@@ -172,20 +171,19 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 		Double totalEur= 0.;
 		Double totalUsd= 0.;
 		Double totalGbp= 0.;
-		Double maxEur= 0.;
 		
 		Double desviationEur= 0.;
 		Double desviationUsd= 0.;
 		Double desviationGbp= 0.;
 			
 		final Collection<Artifact> toolList = this.repository.findArtifact(ArtifactType.TOOL);
-		final List<Artifact> cl= new ArrayList<Artifact>(toolList);
 		
-		Double maxUsd=cl.size()>0? cl.get(0).getRetailPrice().getAmount():0.;
-		Double maxGbp=cl.size()>0? cl.get(0).getRetailPrice().getAmount():0.;
-		Double minEur= cl.size()>0? cl.get(0).getRetailPrice().getAmount():0.;
-		Double minUsd=cl.size()>0? cl.get(0).getRetailPrice().getAmount():0.;
-		Double minGbp= cl.size()>0? cl.get(0).getRetailPrice().getAmount():0.;
+		Double maxEur=0.;
+		Double maxUsd=0.;
+		Double maxGbp=0.;
+		Double minEur=Double.MAX_VALUE;
+		Double minUsd=Double.MAX_VALUE;
+		Double minGbp=Double.MAX_VALUE;
 		
 		for(final Artifact c: toolList) {
 			final Double prize = c.getRetailPrice().getAmount(); 
@@ -241,9 +239,9 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 		mMaxTools.put("EUR", maxEur);
 		mMaxTools.put("USD", maxUsd);
 		mMaxTools.put("GBP", maxGbp);
-		mMinTools.put("EUR", minEur);
-		mMinTools.put("USD", minUsd);
-		mMinTools.put("GBP", minGbp);
+		mMinTools.put("EUR", minEur==Double.MAX_VALUE?0.:minEur);
+		mMinTools.put("USD", minUsd==Double.MAX_VALUE?0.:minUsd);
+		mMinTools.put("GBP", minGbp==Double.MAX_VALUE?0.:minGbp);
 		mDesviationTools.put("EUR", nEur!=0?Math.sqrt(desviationEur/nEur):0);
 		mDesviationTools.put("USD", nUsd!=0?Math.sqrt(desviationUsd/nUsd):0);
 		mDesviationTools.put("GBP", nGbp!=0?Math.sqrt(desviationGbp/nGbp):0);
@@ -257,7 +255,6 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 			
 			for (int i=0; i<3;i++) {
 				final Collection<Patronage> patronages= this.repository.findPatronage(StatusType.values()[i]);
-				final List<Patronage> pl= new ArrayList<Patronage>(patronages);
 				
 				final int nPatronage = patronages.size();
 				Double totalPatronage= 0.;
@@ -265,8 +262,8 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 				Double minPatronage=0.;
 				Double desviationPatronage= 0.;
 				if(nPatronage>0) {
-				maxPatronage= pl.get(0).getBudget().getAmount();
-				minPatronage= pl.get(0).getBudget().getAmount();
+				maxPatronage= 0.;
+				minPatronage= Double.MAX_VALUE;
 				for(final Patronage p:patronages) {
 					final double prize= p.getBudget().getAmount();
 					
@@ -284,7 +281,7 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 				}
 				mPatronage.put(StatusType.values()[i], nPatronage);
 				mMaxPatronage.put(StatusType.values()[i], maxPatronage);
-				mMinPatronage.put(StatusType.values()[i], minPatronage);
+				mMinPatronage.put(StatusType.values()[i], minPatronage==Double.MAX_VALUE?0.:minPatronage);
 				mAvgPatronage.put(StatusType.values()[i], nPatronage!=0?totalPatronage/nPatronage:0);
 				mDesviationPatronage.put(StatusType.values()[i], nPatronage!=0?Math.sqrt(desviationPatronage/nPatronage):0);
 				}

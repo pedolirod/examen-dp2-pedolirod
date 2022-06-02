@@ -36,4 +36,7 @@ public interface PatronageRepository extends AbstractRepository{
 	
 	@Query("select i from PatronageReport i where i.patronage = :patronage")
 	List<PatronageReport> findPR(Patronage patronage);
+
+	@Query("select p from Patronage p where p.code = :code")
+	Patronage findOnePatronageByCode(String code);
 }

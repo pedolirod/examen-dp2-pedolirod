@@ -10,6 +10,7 @@ import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
+import acme.systemSetting.SystemSetting;
 
 @Service
 public class InventorComponentCreateService implements AbstractCreateService<Inventor, Artifact> {
@@ -61,10 +62,18 @@ public class InventorComponentCreateService implements AbstractCreateService<Inv
 		assert entity != null;
 		assert errors != null;
 		
+		final SystemSetting s = this.repository.findSystemSetting();
+		
 		final Artifact artifact = this.repository.findByCode(entity.getCode());
+		if(entity.getRetailPrice()!=null) {
+		errors.state(request, s.getAcceptedCurrencies().contains(entity.getRetailPrice().getCurrency()) ,
+			  "retailPrice", "inventor.artifact.retailPrice.not-able-currency");
+		errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.artifact.code.repeated.retailPrice.non-negative");
+		}else {
+			errors.state(request, entity.getRetailPrice()!=null, "retailPrice", "inventor.artifact.retailPrice.null");
+		}
 		errors.state(request, artifact == null, "code", "inventor.artifact.code.repeated");
 		
-		errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.artifact.code.repeated.retailPrice.non-negative");
 	}
 
 	@Override

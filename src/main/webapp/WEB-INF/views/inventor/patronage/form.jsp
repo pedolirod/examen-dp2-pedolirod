@@ -25,7 +25,7 @@
 	<acme:input-textbox code="inventor.patronage.form.label.startDate" path="startDate"/>
 	<acme:input-textbox code="inventor.patronage.form.label.finishDate" path="finishDate"/>
 	<acme:input-textbox code="inventor.patronage.form.label.link" path="link"/>
-	<acme:button code="inventor.patronage.form.label.patron" action="/any/user-account/show?masterId=${patronId}"/>
+	<acme:button code="inventor.patronage.form.label.patron" action="/any/user-account/show?id=${patronId}"/>
 	<jstl:if test="${esInventor}">
 	<acme:button code="inventor.patronage.form.label.patronageReport" action="/inventor/patronage-report/list?patronageId=${id}"/>
 	</jstl:if>

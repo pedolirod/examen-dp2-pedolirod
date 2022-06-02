@@ -27,3 +27,5 @@ any.tool.list.button.create = New Tool
 any.tool.list.button.create-component = New Component
 
 inventor.artifact.code.repeated.retailPrice.non-negative = The retail price must be positive
+inventor.artifact.retailPrice.not-able-currency = The currency must be EUR, GBP or USD
+inventor.artifact.retailPrice.null= The retail price must not be null

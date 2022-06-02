@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.patron.toolKit;
+package acme.features.inventor.toolKit;
 
 import java.util.Collection;
 
@@ -42,7 +42,7 @@ public class InventorToolKitListService implements AbstractListService<Inventor,
 
 		Collection<ToolKit> result;
 		final Integer id = request.getPrincipal().getActiveRoleId();
-		result = this.repository.findManyToolKits(id);
+		result = this.repository.findManyToolKitsByInventorId(id);
 
 		return result;
 	}
