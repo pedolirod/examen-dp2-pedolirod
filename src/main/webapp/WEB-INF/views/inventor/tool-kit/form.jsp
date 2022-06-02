@@ -22,5 +22,6 @@
 	<acme:input-textbox code="inventor.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
 	<acme:input-textbox code="inventor.toolkit.form.label.link" path="link"/>
 	
-	<acme:button code="any.toolkit.form.button.partOf" action="/any/part-of/list?masterId=${id}"/>
+	<acme:button code="any.toolkit.form.button.partOf.component" action="/inventor/part-of/list-component?masterId=${id}"/>
+	<acme:button code="any.toolkit.form.button.partOf.tool" action="/inventor/part-of/list-tool?masterId=${id}"/>
 </acme:form>
