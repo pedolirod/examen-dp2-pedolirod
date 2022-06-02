@@ -1,6 +1,10 @@
 package acme.features.patron.patronage;
 
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -67,6 +71,23 @@ public class PatronageUpdateService implements AbstractUpdateService<Patron, Pat
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		Patronage p = this.repository.findOnePatronageByCode(entity.getCode());
+		errors.state(request, entity.getCode().equals(p.getCode())|| p==null, "code", "patron.code.repeted");
+		
+		errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.budget.non-negative");
+		
+		errors.state(request, entity.getFinishDate().after(entity.getStartDate()), "finishDate", "patron.finishDate.order-error");
+
+		final LocalDateTime startDate = entity.getStartDate().toInstant()
+		      .atZone(ZoneId.systemDefault())
+		      .toLocalDateTime();
+		
+		final LocalDateTime finishDate = entity.getFinishDate().toInstant()
+		      .atZone(ZoneId.systemDefault())
+		      .toLocalDateTime();
+		
+		errors.state(request, Duration.between(startDate, finishDate).toDays() > 30, "finishDate", "patron.finishDate.duration-error");
 		
 	}
 

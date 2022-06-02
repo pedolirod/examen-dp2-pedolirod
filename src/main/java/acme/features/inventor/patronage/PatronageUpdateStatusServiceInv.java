@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.patronage.Patronage;
 import acme.datatypes.StatusType;
-import acme.features.patron.patronage.PatronageRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.HttpMethod;
@@ -14,7 +13,6 @@ import acme.framework.controllers.Response;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
-import acme.roles.Patron;
 
 @Service
 public class PatronageUpdateStatusServiceInv implements AbstractUpdateService<Inventor, Patronage>{

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.entities.patronage.Patronage;
-import acme.features.patron.patronage.PatronageUpdateService;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Inventor;
 

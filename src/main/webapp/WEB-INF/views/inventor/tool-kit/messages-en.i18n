@@ -8,11 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-inventor.announcement.form.label.title = Title:
-inventor.announcement.form.label.creationMoment = Creation moment
-inventor.announcement.form.label.body = Body
-inventor.announcement.form.label.flag = Flag
-inventor.announcement.form.label.link = Link
+inventor.toolkit.form.label.title = Title
+inventor.toolkit.form.label.code = Code
+inventor.toolkit.form.label.description = Description
+inventor.toolkit.form.label.assemblyNotes = Assembly notes
+inventor.toolkit.form.label.link = Link
 
 inventor.announcement.list.label.title = Title
 inventor.announcement.list.label.body = Body
@@ -36,3 +36,7 @@ inventor.toolkit.form.label.link = Link
 
 any.toolkit.form.button.partOf.component = Components
 any.toolkit.form.button.partOf.tool = Tools
+inventor.toolkit.list.label.title = Title
+inventor.toolkit.list.label.code = Code
+
+any.toolkit.form.button.partOf = Parts Of

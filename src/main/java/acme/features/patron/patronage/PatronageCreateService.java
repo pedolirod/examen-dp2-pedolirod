@@ -89,6 +89,9 @@ public class PatronageCreateService implements AbstractCreateService<Patron, Pat
 		assert entity != null;
 		assert errors != null;
 		
+		Patronage p = this.repository.findOnePatronageByCode(entity.getCode());
+		errors.state(request, p==null, "code", "patron.code.repeted");
+		
 		errors.state(request, entity.getBudget().getAmount() > 0, "budget", "patron.budget.non-negative");
 		
 		errors.state(request, entity.getFinishDate().after(entity.getStartDate()), "finishDate", "patron.finishDate.order-error");
