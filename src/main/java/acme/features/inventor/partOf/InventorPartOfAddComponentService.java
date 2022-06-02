@@ -17,7 +17,7 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorPartOfAddToolService implements AbstractCreateService<Inventor, PartOf> {
+public class InventorPartOfAddComponentService implements AbstractCreateService<Inventor, PartOf> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -79,11 +79,10 @@ public class InventorPartOfAddToolService implements AbstractCreateService<Inven
 		assert model != null;
 
 		request.unbind(entity, model, "artifact", "toolkit");
-		
 		final int i = request.getPrincipal().getActiveRoleId();
 		final Inventor inv = this.repository.findOneInventorByInventorId(i);
-		final Collection<Artifact> artifacts = this.repository.findArtifactsByTypeInventor(ArtifactType.TOOL, inv);
-		final Collection<Artifact> artifactsInToolkit = this.repository.findArtifactsByTypeToolkit(ArtifactType.TOOL, entity.getToolkit());
+		final Collection<Artifact> artifacts = this.repository.findArtifactsByTypeInventor(ArtifactType.COMPONENT, inv);
+		final Collection<Artifact> artifactsInToolkit = this.repository.findArtifactsByTypeToolkit(ArtifactType.COMPONENT, entity.getToolkit());
 		model.setAttribute("artifacts", artifacts.stream().filter(a -> !artifactsInToolkit.contains(a)).collect(Collectors.toList()));
 	}
 

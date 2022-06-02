@@ -33,10 +33,16 @@ public interface InventorPartOfRepository extends AbstractRepository {
 	@Query("select p from PartOf p where p.toolkit.id = :masterId and p.artifact.type = :type")
 	Collection<PartOf> findManyPartOfByMasterId(int masterId, ArtifactType type);
 	
-	@Query("select a from Artifact a left join PartOf po on po.artifact=a where (po.toolkit is null or po.toolkit<>:toolkit) and a.type=:type and a.inventor=:inventor")
-	Collection<Artifact> findArtifactsByTypeToolKitInventor(ArtifactType type, ToolKit toolkit, Inventor inventor);
+	@Query("select a from Artifact a where a.type=:type and a.inventor=:inventor")
+	Collection<Artifact> findArtifactsByTypeInventor(ArtifactType type, Inventor inventor);
+	
+	@Query("select po.artifact from PartOf po where po.artifact.type=:type and po.toolkit=:toolkit")
+	Collection<Artifact> findArtifactsByTypeToolkit(ArtifactType type, ToolKit toolkit);
 
 	@Query("select i from Inventor i where i.id=:id")
 	Inventor findOneInventorByInventorId(int id);
+
+	@Query("select a from Artifact a where a.id=:artifactId")
+	Artifact findArtifactById(Integer artifactId);
 
 }

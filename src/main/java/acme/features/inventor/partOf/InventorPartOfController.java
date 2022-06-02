@@ -26,6 +26,9 @@ public class InventorPartOfController extends AbstractController<Inventor,PartOf
 	
 	@Autowired
 	protected InventorPartOfAddToolService addToolService;
+	
+	@Autowired
+	protected InventorPartOfAddComponentService addComponentService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -37,6 +40,7 @@ public class InventorPartOfController extends AbstractController<Inventor,PartOf
 		super.addCommand("list-tool", "list", this.listToolService);
 		super.addCommand("show", this.showService);
 		super.addCommand("add-tool", "create", this.addToolService);
+		super.addCommand("add-component", "create", this.addComponentService);
 		
 	}
 

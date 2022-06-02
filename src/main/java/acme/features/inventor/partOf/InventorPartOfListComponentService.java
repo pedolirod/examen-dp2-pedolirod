@@ -36,6 +36,15 @@ public class InventorPartOfListComponentService implements AbstractListService<I
 		return this.repository.findManyPartOfByMasterId(masterId, ArtifactType.COMPONENT);
 		
 	}
+	
+	@Override
+	public void unbind(final Request<PartOf> request, final Collection<PartOf> entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+		
+		model.setAttribute("masterId", request.getModel().getInteger("masterId"));
+	}
 
 	@Override
 	public void unbind(final Request<PartOf> request, final PartOf entity, final Model model) {
