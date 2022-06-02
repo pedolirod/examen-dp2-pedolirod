@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.patron.toolKit;
+package acme.features.inventor.toolKit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,7 +50,7 @@ public class InventorToolKitShowService implements AbstractShowService<Inventor,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "code", "title", "description", "assemblyNotes", "link");
+		request.unbind(entity, model, "code", "title", "description", "assemblyNotes", "link", "isPublish");
 		
 	}
 
