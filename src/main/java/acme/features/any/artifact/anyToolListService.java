@@ -9,11 +9,8 @@ import acme.artifact.Artifact;
 import acme.artifact.ArtifactType;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.datatypes.Money;
 import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
-import acme.systemSetting.SystemSetting;
-import acme.utils.moneyExchange.MoneyExchangeUtils;
 
 @Service
 public class anyToolListService implements AbstractListService<Any, Artifact> {
@@ -51,9 +48,9 @@ public class anyToolListService implements AbstractListService<Any, Artifact> {
 		assert model != null;
 
 		request.unbind(entity, model, "name", "code", "description", "retailPrice");
-		final SystemSetting systemSetting = this.repository.findSystemSetting();
-		final Money convertedPrice = MoneyExchangeUtils.computeMoneyExchange(entity.getRetailPrice(), systemSetting.getDefaultCurrency());
-		model.setAttribute("convertedPrice", convertedPrice);
+//		final SystemSetting systemSetting = this.repository.findSystemSetting();
+//		final Money convertedPrice = MoneyExchangeUtils.computeMoneyExchange(entity.getRetailPrice(), systemSetting.getDefaultCurrency());
+//		model.setAttribute("convertedPrice", convertedPrice);
 	}
 
 }

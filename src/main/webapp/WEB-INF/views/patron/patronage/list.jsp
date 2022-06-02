@@ -16,9 +16,8 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="patron.patronage.list.label.code" path="code" width="20%"/>
-	<acme:list-column code="patron.patronage.list.label.budget" path="budget" width="20%"/>
-	<acme:list-column code="inventor.patronage.list.label.budget" path="budget" width="20%"/>
+	<acme:list-column code="patron.patronage.list.label.code" path="code" width="40%"/>
+	<acme:list-column code="patron.patronage.list.label.budget" path="budget" width="40%"/>
 	<acme:list-column code="inventor.patronage.list.label.budget-converted" path="convertedBudget" width="20%"/>
 </acme:list>
 

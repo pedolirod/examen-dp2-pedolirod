@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import acme.entities.patronage.Patronage;
 import acme.framework.repositories.AbstractRepository;
 import acme.systemSetting.SystemSetting;
-import acme.roles.Inventor;
 
 @Repository
 public interface PatronageRepositoryInv extends AbstractRepository{

@@ -79,7 +79,7 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 			Double desviationUsd= 0.;
 			Double desviationGbp= 0.;
 			
-			final List<Patronage> pl= new ArrayList<Patronage>(patronages);
+//			final List<Patronage> pl= new ArrayList<Patronage>(patronages);
 			
 			Double maxEur=0.;
 			Double maxUsd=0.;
@@ -98,8 +98,6 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 					maxEur= prize>maxEur?prize:maxEur;
 					minEur= prize<minEur?prize:minEur;
 					
-					System.out.println("maximo"+ maxEur);
-					System.out.println("minimo"+minEur);
 					break;
 				case "USD":
 					totalUsd+=prize;
@@ -156,7 +154,6 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, P
 			mDesviation.put(pUsd, nUsd!=0?Math.sqrt(desviationUsd/nUsd):0);
 			mDesviation.put(pGbp, nGbp!=0?Math.sqrt(desviationGbp/nGbp):0);
 			
-			System.out.println(mMin);
 		}
 		
 		result.setTotalNumberOfPatronages(mStatCurr);
