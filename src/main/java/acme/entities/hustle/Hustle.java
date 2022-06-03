@@ -1,4 +1,4 @@
-package acme.entities.chimpum;
+package acme.entities.hustle;
 
 import java.util.Date;
 
@@ -24,7 +24,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Chimpum extends AbstractEntity{
+public class Hustle extends AbstractEntity{
 
 	//Serialisation identifier
 	
@@ -43,25 +43,25 @@ public class Chimpum extends AbstractEntity{
 		
 		@NotBlank
 		@Length(min=1,max=100)
-		protected String title;
+		protected String theme;
 		
 		@NotBlank
 		@Length(min=1,max=255)
-		protected String description;
+		protected String summary;
 		
 		@Temporal(TemporalType.TIMESTAMP)
 		protected Date period;
 		
-		protected Money budget;
+		protected Money share;
 		
 		@URL
-		protected String link;
+		protected String furtherInfo;
 		
 		
 		//Relationships
 		@Valid
 		@OneToOne(optional = true)
-		protected Artifact artefact;	
+		protected Artifact component;	
 		
 	
 }

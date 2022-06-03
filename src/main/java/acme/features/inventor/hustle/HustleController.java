@@ -1,32 +1,32 @@
-package acme.features.inventor.chimpum;
+package acme.features.inventor.hustle;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.chimpum.Chimpum;
+import acme.entities.hustle.Hustle;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Inventor;
 
 @Controller
-public class ChimpumController extends AbstractController<Inventor, Chimpum>{
+public class HustleController extends AbstractController<Inventor, Hustle>{
 	// Internal state ---------------------------------------------------------
 
 		@Autowired
-		protected ChimpumListService	listService;
+		protected HustleListService	listService;
 
 		@Autowired
-		protected ChimpumShowService	showService;
+		protected HustleShowService	showService;
 		
 		@Autowired
-		protected ChimpumUpdateService	updateService;
+		protected HustleUpdateService	updateService;
 		
 		@Autowired
-		protected ChimpumCreateService	createService;
+		protected HustleCreateService	createService;
 		
 		@Autowired
-		protected ChimpumDeleteService	deleteService;
+		protected HustleDeleteService	deleteService;
 
 		// Constructors -----------------------------------------------------------
 

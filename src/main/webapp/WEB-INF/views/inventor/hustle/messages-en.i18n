@@ -1,0 +1,33 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+inventor.hustle.list.label.code = Code
+inventor.hustle.list.label.theme = Title
+inventor.hustle.list.label.summary = Description
+
+
+inventor.hustle.form.label.theme = Theme
+inventor.hustle.form.label.code = Code
+inventor.hustle.form.label.creationMoment = Creation Moment
+inventor.hustle.form.label.summary = Summary
+inventor.hustle.form.label.period = Period
+inventor.hustle.form.label.share = Share
+inventor.hustle.form.label.furtherInfo = Further Info
+inventor.hustle.form.label.artifact = Component
+
+inventor.hustle.list.button.create = New Hustle
+inventor.hustle.form.label.create = Create
+inventor.hustle.form.label.update = Update
+inventor.hustle.form.label.delete = Delete
+
+inventor.hustle.code.repeated.retailPrice.non-negative = The budget must be positive
+inventor.hustle.period.order-error = The finish date must be after the inital date or actual
+inventor.hustle.period.duration-error = The difference between the start and the finish date must be greater than a month
+inventor.hustle.period.code-error = This code already exists

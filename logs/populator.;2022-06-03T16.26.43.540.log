@@ -1,0 +1,4 @@
+2022-06-03 16:26:40.930 INFO  [acme.Launcher@main] Starting Launcher using Java 1.8.0_281 on LAPTOP-23RRLASM with PID 11284 (C:\Users\oliva\OneDrive\Escritorio\Workspace-22.0\Frameworks\Acme-Framework-22.7\target\classes started by oliva in C:\Users\oliva\git\examen-dp2-pedolirod) 
+2022-06-03 16:26:40.930 DEBUG [acme.Launcher@main] Running with Spring Boot v2.4.2, Spring v5.3.3 
+2022-06-03 16:26:40.931 INFO  [acme.Launcher@main] The following profiles are active: development,populator 
+2022-06-03 16:26:43.531 DEBUG [org.apache.jasper.servlet.JasperInitializer@main] Initializing Jasper for context [application] 

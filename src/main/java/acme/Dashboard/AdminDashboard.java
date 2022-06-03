@@ -37,11 +37,11 @@ public class AdminDashboard implements Serializable{
 		protected Map<StatusType,Double> minBudget;
 		
 	//	Examen -----------------------------------------------------------------
-		protected Double ratioOfArtifactsWithChimpum;
-		protected Map<String, Double> averageChimpumBudget;
-		protected Map<String, Double> deviationChimpumBudget;
-		protected Map<String, Double> minChimpumBudget;
-		protected Map<String, Double> maxChimpumBudget;
+		protected Double ratioOfArtifactsWithHustle;
+		protected Map<String, Double> averageHustleShare;
+		protected Map<String, Double> deviationHustleShare;
+		protected Map<String, Double> minHustleShare;
+		protected Map<String, Double> maxHustleShare;
 		
 	// Derived attributes -----------------------------------------------------
 

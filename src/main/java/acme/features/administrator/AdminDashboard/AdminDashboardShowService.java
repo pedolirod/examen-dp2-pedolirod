@@ -15,7 +15,7 @@ import acme.Dashboard.AdminDashboard;
 import acme.artifact.Artifact;
 import acme.artifact.ArtifactType;
 import acme.datatypes.StatusType;
-import acme.entities.chimpum.Chimpum;
+import acme.entities.hustle.Hustle;
 import acme.entities.patronage.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -306,15 +306,15 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 		
 	//	Examen ------------------------------------------------------------------------------------------
 		
-		final int nChimpum = this.repository.findAllChimpums().size();
-		final Double nArtifacts = Double.valueOf(this.repository.findArtifact(ArtifactType.TOOL).size());	//cambiar en funcion de si es Tool o component
+		final int nHustle = this.repository.findAllHustles().size();
+		final Double nComponents = Double.valueOf(this.repository.findArtifact(ArtifactType.COMPONENT).size());	
 		
-		result.setRatioOfArtifactsWithChimpum(nArtifacts>0? nChimpum/nArtifacts:0.);
+		result.setRatioOfArtifactsWithHustle(nComponents>0? nHustle/nComponents:0.);
 		
-		final Map<String, Double> mAverageChimpumBudget= new HashMap<String, Double>();
-		final Map<String, Double> mDeviationChimpumBudget= new HashMap<String, Double>();
-		final Map<String, Double> mMinChimpumBudget= new HashMap<String, Double>();
-		final Map<String, Double> mMaxChimpumBudget= new HashMap<String, Double>();
+		final Map<String, Double> mAverageHustleShare= new HashMap<String, Double>();
+		final Map<String, Double> mDeviationHustleShare= new HashMap<String, Double>();
+		final Map<String, Double> mMinHustleShare= new HashMap<String, Double>();
+		final Map<String, Double> mMaxHustleShare= new HashMap<String, Double>();
 
 		
 		nEur= 0;
@@ -329,7 +329,7 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 		desviationUsd= 0.;
 		desviationGbp= 0.;
 			
-		final Collection<Chimpum> chimpumList = this.repository.findAllChimpums();
+		final Collection<Hustle> HustleList = this.repository.findAllHustles();
 		
 		maxEur=0.;
 		maxUsd=0.;
@@ -338,11 +338,11 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 		minUsd=Double.MAX_VALUE;
 		minGbp=Double.MAX_VALUE;
 		
-		for(final Chimpum c: chimpumList) {
-			final Double prize = c.getBudget().getAmount(); 
-			switch (c.getBudget().getCurrency()) {
+		for(final Hustle c: HustleList) {
+			final Double prize = c.getShare().getAmount(); 
+			switch (c.getShare().getCurrency()) {
 			case "EUR":
-				totalEur+=c.getBudget().getAmount();
+				totalEur+=c.getShare().getAmount();
 				nEur++;
 				
 				maxEur= prize>maxEur?prize:maxEur;
@@ -350,7 +350,7 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 				
 				break;
 			case "USD":
-				totalUsd+=c.getBudget().getAmount();
+				totalUsd+=c.getShare().getAmount();
 				nUsd++;
 
 				maxUsd= prize>maxUsd?prize:maxUsd;
@@ -358,7 +358,7 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 				
 				break;
 			case "GBP":
-				totalGbp+=c.getBudget().getAmount();
+				totalGbp+=c.getShare().getAmount();
 				nGbp++;
 
 				maxGbp= prize>maxGbp?prize:maxGbp;
@@ -368,40 +368,40 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 			}
 			
 		}
-		for(final Chimpum c: chimpumList) {
-			switch (c.getBudget().getCurrency()) {
+		for(final Hustle c: HustleList) {
+			switch (c.getShare().getCurrency()) {
 			case "EUR":
-				desviationEur+=(c.getBudget().getAmount() - totalEur!=0?totalEur/nEur:0.)
-					  *(c.getBudget().getAmount() - totalEur!=0?totalEur/nEur:0.);
+				desviationEur+=(c.getShare().getAmount() - totalEur!=0?totalEur/nEur:0.)
+					  *(c.getShare().getAmount() - totalEur!=0?totalEur/nEur:0.);
 				break;
 			case "USD":
-				desviationUsd+=(c.getBudget().getAmount() - totalUsd!=0?totalUsd/nUsd:0.)
-					  *(c.getBudget().getAmount() - totalUsd!=0?totalUsd/nUsd:0.);
+				desviationUsd+=(c.getShare().getAmount() - totalUsd!=0?totalUsd/nUsd:0.)
+					  *(c.getShare().getAmount() - totalUsd!=0?totalUsd/nUsd:0.);
 				break;
 			case "GBP":
-				desviationGbp+=(c.getBudget().getAmount() - totalGbp!=0?totalGbp/nGbp:0.)
-					  *(c.getBudget().getAmount() - totalGbp!=0?totalGbp/nGbp:0.);
+				desviationGbp+=(c.getShare().getAmount() - totalGbp!=0?totalGbp/nGbp:0.)
+					  *(c.getShare().getAmount() - totalGbp!=0?totalGbp/nGbp:0.);
 				break;
 			}
 		}
 		
 		
-		mAverageChimpumBudget.put("EUR", totalEur!=0?totalEur/nEur:0.);
-		mAverageChimpumBudget.put("USD", totalUsd!=0?totalUsd/nUsd:0.);
-		mAverageChimpumBudget.put("GBP", totalGbp!=0?totalGbp/nGbp:0.);
-		mMaxChimpumBudget.put("EUR", maxEur);
-		mMaxChimpumBudget.put("USD", maxUsd);
-		mMaxChimpumBudget.put("GBP", maxGbp);
-		mMinChimpumBudget.put("EUR", minEur==Double.MAX_VALUE?0.:minEur);
-		mMinChimpumBudget.put("USD", minUsd==Double.MAX_VALUE?0.:minUsd);
-		mMinChimpumBudget.put("GBP", minGbp==Double.MAX_VALUE?0.:minGbp);
-		mDeviationChimpumBudget.put("EUR", nEur!=0?Math.sqrt(desviationEur/nEur):0);
-		mDeviationChimpumBudget.put("USD", nUsd!=0?Math.sqrt(desviationUsd/nUsd):0);
-		mDeviationChimpumBudget.put("GBP", nGbp!=0?Math.sqrt(desviationGbp/nGbp):0);
-		result.setAverageChimpumBudget(mAverageChimpumBudget);
-		result.setMaxChimpumBudget(mMaxChimpumBudget);
-		result.setMinChimpumBudget(mMinChimpumBudget);
-		result.setDeviationChimpumBudget(mDeviationChimpumBudget);
+		mAverageHustleShare.put("EUR", totalEur!=0?totalEur/nEur:0.);
+		mAverageHustleShare.put("USD", totalUsd!=0?totalUsd/nUsd:0.);
+		mAverageHustleShare.put("GBP", totalGbp!=0?totalGbp/nGbp:0.);
+		mMaxHustleShare.put("EUR", maxEur);
+		mMaxHustleShare.put("USD", maxUsd);
+		mMaxHustleShare.put("GBP", maxGbp);
+		mMinHustleShare.put("EUR", minEur==Double.MAX_VALUE?0.:minEur);
+		mMinHustleShare.put("USD", minUsd==Double.MAX_VALUE?0.:minUsd);
+		mMinHustleShare.put("GBP", minGbp==Double.MAX_VALUE?0.:minGbp);
+		mDeviationHustleShare.put("EUR", nEur!=0?Math.sqrt(desviationEur/nEur):0);
+		mDeviationHustleShare.put("USD", nUsd!=0?Math.sqrt(desviationUsd/nUsd):0);
+		mDeviationHustleShare.put("GBP", nGbp!=0?Math.sqrt(desviationGbp/nGbp):0);
+		result.setAverageHustleShare(mAverageHustleShare);
+		result.setMaxHustleShare(mMaxHustleShare);
+		result.setMinHustleShare(mMinHustleShare);
+		result.setDeviationHustleShare(mDeviationHustleShare);
 		
 		return result;
 	}
