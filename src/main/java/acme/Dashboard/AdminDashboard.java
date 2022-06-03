@@ -36,6 +36,13 @@ public class AdminDashboard implements Serializable{
 		protected Map<StatusType,Double> maxdBudget;
 		protected Map<StatusType,Double> minBudget;
 		
+	//	Examen -----------------------------------------------------------------
+		protected Double ratioOfArtifactsWithHustle;
+		protected Map<String, Double> averageHustleShare;
+		protected Map<String, Double> deviationHustleShare;
+		protected Map<String, Double> minHustleShare;
+		protected Map<String, Double> maxHustleShare;
+		
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------

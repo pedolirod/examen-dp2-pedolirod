@@ -15,6 +15,7 @@ import acme.Dashboard.AdminDashboard;
 import acme.artifact.Artifact;
 import acme.artifact.ArtifactType;
 import acme.datatypes.StatusType;
+import acme.entities.hustle.Hustle;
 import acme.entities.patronage.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -301,6 +302,107 @@ public class AdminDashboardShowService implements AbstractShowService<Administra
 		result.setDeviationBudget(mDesviationPatronage);
 		result.setMaxdBudget(mMaxPatronage);
 		result.setMinBudget(mMinPatronage);
+		
+		
+	//	Examen ------------------------------------------------------------------------------------------
+		
+		final int nHustle = this.repository.findAllHustles().size();
+		final Double nComponents = Double.valueOf(this.repository.findArtifact(ArtifactType.COMPONENT).size());	
+		
+		result.setRatioOfArtifactsWithHustle(nComponents>0? nHustle/nComponents:0.);
+		
+		final Map<String, Double> mAverageHustleShare= new HashMap<String, Double>();
+		final Map<String, Double> mDeviationHustleShare= new HashMap<String, Double>();
+		final Map<String, Double> mMinHustleShare= new HashMap<String, Double>();
+		final Map<String, Double> mMaxHustleShare= new HashMap<String, Double>();
+
+		
+		nEur= 0;
+		nUsd= 0;
+		nGbp= 0;
+		totalEur= 0.;
+		totalUsd= 0.;
+		totalGbp= 0.;
+		
+		
+		desviationEur= 0.;
+		desviationUsd= 0.;
+		desviationGbp= 0.;
+			
+		final Collection<Hustle> HustleList = this.repository.findAllHustles();
+		
+		maxEur=0.;
+		maxUsd=0.;
+		maxGbp=0.;
+		minEur=Double.MAX_VALUE;
+		minUsd=Double.MAX_VALUE;
+		minGbp=Double.MAX_VALUE;
+		
+		for(final Hustle c: HustleList) {
+			final Double prize = c.getShare().getAmount(); 
+			switch (c.getShare().getCurrency()) {
+			case "EUR":
+				totalEur+=c.getShare().getAmount();
+				nEur++;
+				
+				maxEur= prize>maxEur?prize:maxEur;
+				minEur= prize<minEur?prize:minEur;
+				
+				break;
+			case "USD":
+				totalUsd+=c.getShare().getAmount();
+				nUsd++;
+
+				maxUsd= prize>maxUsd?prize:maxUsd;
+				minUsd= prize<minUsd?prize:minUsd;
+				
+				break;
+			case "GBP":
+				totalGbp+=c.getShare().getAmount();
+				nGbp++;
+
+				maxGbp= prize>maxGbp?prize:maxGbp;
+				minGbp= prize<minGbp?prize:minGbp;
+				
+				break;
+			}
+			
+		}
+		for(final Hustle c: HustleList) {
+			switch (c.getShare().getCurrency()) {
+			case "EUR":
+				desviationEur+=(c.getShare().getAmount() - totalEur!=0?totalEur/nEur:0.)
+					  *(c.getShare().getAmount() - totalEur!=0?totalEur/nEur:0.);
+				break;
+			case "USD":
+				desviationUsd+=(c.getShare().getAmount() - totalUsd!=0?totalUsd/nUsd:0.)
+					  *(c.getShare().getAmount() - totalUsd!=0?totalUsd/nUsd:0.);
+				break;
+			case "GBP":
+				desviationGbp+=(c.getShare().getAmount() - totalGbp!=0?totalGbp/nGbp:0.)
+					  *(c.getShare().getAmount() - totalGbp!=0?totalGbp/nGbp:0.);
+				break;
+			}
+		}
+		
+		
+		mAverageHustleShare.put("EUR", totalEur!=0?totalEur/nEur:0.);
+		mAverageHustleShare.put("USD", totalUsd!=0?totalUsd/nUsd:0.);
+		mAverageHustleShare.put("GBP", totalGbp!=0?totalGbp/nGbp:0.);
+		mMaxHustleShare.put("EUR", maxEur);
+		mMaxHustleShare.put("USD", maxUsd);
+		mMaxHustleShare.put("GBP", maxGbp);
+		mMinHustleShare.put("EUR", minEur==Double.MAX_VALUE?0.:minEur);
+		mMinHustleShare.put("USD", minUsd==Double.MAX_VALUE?0.:minUsd);
+		mMinHustleShare.put("GBP", minGbp==Double.MAX_VALUE?0.:minGbp);
+		mDeviationHustleShare.put("EUR", nEur!=0?Math.sqrt(desviationEur/nEur):0);
+		mDeviationHustleShare.put("USD", nUsd!=0?Math.sqrt(desviationUsd/nUsd):0);
+		mDeviationHustleShare.put("GBP", nGbp!=0?Math.sqrt(desviationGbp/nGbp):0);
+		result.setAverageHustleShare(mAverageHustleShare);
+		result.setMaxHustleShare(mMaxHustleShare);
+		result.setMinHustleShare(mMinHustleShare);
+		result.setDeviationHustleShare(mDeviationHustleShare);
+		
 		return result;
 	}
 

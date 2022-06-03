@@ -203,3 +203,64 @@
 	</jstl:forEach>
 	
 </table>
+
+<h2>
+	<acme:message code="administrator.dashboard.form.title.chimpum" />
+</h2>
+
+<table class="table table-sm">
+	<tr>
+		<th scope="row"><acme:message
+				code="administrator.dashboard.form.label.ratio-of-artifacts" />
+		</th>
+		<td><acme:print value="${adminDashboard.ratioOfArtifactsWithChimpum}" />
+		</td>
+	</tr>
+</table>
+
+<h3>
+	<acme:message code="administrator.dashboard.form.title.currencies" />
+</h3>
+
+<table class="table table-sm">
+	<jstl:forEach var="entry" items="${adminDashboard.averageChimpumBudget.entrySet()}">
+		<tr>
+			<th scope="row"><acme:message
+					code="administrator.dashboard.form.label.avg-budget-of" /> <acme:print
+					value="${entry.key}" />
+			</th>
+			<td><acme:print value="${entry.value}" /> <acme:print
+					value="${entry.key}" /></td>
+		</tr>
+	</jstl:forEach>
+	<jstl:forEach var="entry" items="${adminDashboard.deviationChimpumBudget.entrySet()}">
+		<tr>
+			<th scope="row"><acme:message
+					code="administrator.dashboard.form.label.deviation-budget-of" /> <acme:print
+					value="${entry.key}" />
+			</th>
+			<td><acme:print value="${entry.value}" /> <acme:print
+					value="${entry.key}" /></td>
+		</tr>
+	</jstl:forEach>
+	<jstl:forEach var="entry" items="${adminDashboard.maxChimpumBudget.entrySet()}">
+		<tr>
+			<th scope="row"><acme:message
+					code="administrator.dashboard.form.label.max-prize-in" /> <acme:print
+					value="${entry.key}" />
+			</th>
+			<td><acme:print value="${entry.value}" /> <acme:print
+					value="${entry.key}" /></td>
+		</tr>
+	</jstl:forEach>
+	<jstl:forEach var="entry" items="${adminDashboard.minChimpumBudget.entrySet()}">
+		<tr>
+			<th scope="row"><acme:message
+					code="administrator.dashboard.form.label.min-prize-in" /> <acme:print
+					value="${entry.key}" />
+			</th>
+			<td><acme:print value="${entry.value}" /> <acme:print
+					value="${entry.key}" /></td>
+		</tr>
+	</jstl:forEach>
+</table>
